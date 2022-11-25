@@ -1,6 +1,13 @@
 :root {
     --debug-border-color: red;
-
+    
+    /* CSS HEX */
+    --international-orange-engineering: #c30000ff;
+    --kombu-green: #374434ff;
+    --windsor-tan: #9d5312ff;
+    --camel: #bb9b81ff;
+    --jonquil: #fbcf1eff;
+    
     --game-width: 75%;
     --button-row-width: 70%;
     
