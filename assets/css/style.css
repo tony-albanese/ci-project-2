@@ -199,14 +199,12 @@ width: 50px;
 
     h1 {
         font-size: 52px;
-        grid-column: 1/3;
-        grid-row: 1;
     }
 }
 
 /* Media query for a mobile screen */
 @media only screen and (max-width: 425px) {
-
+    /* 
     h1 {
         font-size: 48px;
         margin-bottom: 2em;
@@ -237,6 +235,6 @@ width: 50px;
     button-row {
         flex-direction: column;
     }
-
+ */
     
 }
