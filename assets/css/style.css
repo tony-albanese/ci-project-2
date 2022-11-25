@@ -95,3 +95,11 @@ game-tile-panel img {
     min-width: 180px;
     padding: 1.5em;
 }
+
+/* Style the play button */
+#play-button {
+    width: 300px;
+    height: 100px;
+    font-size: xxx-large;
+    border-radius: 12px;
+}
