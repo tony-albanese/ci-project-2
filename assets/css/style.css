@@ -32,6 +32,8 @@
 h1 {
     font-size: 60px;
     margin-bottom: 0.5em;
+    grid-row: 1;
+    grid-column: 1/6;
 }
 
 body {
@@ -63,8 +65,8 @@ game-area {
     justify-items: center;
     width: 100%;
     height: auto;
-    grid-template-columns: auto; 
-    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto auto auto; 
+    grid-template-rows: auto auto auto auto;
 
 }
 
@@ -74,7 +76,9 @@ game-play-panel {
     height: auto;
     justify-content: center;
     align-items: flex-end;
-
+    grid-row: 2;
+    grid-column: 1/6;
+   
 }
 
 /* Style the cards that show the players and computers choices. */
@@ -137,6 +141,8 @@ game-tile-panel{
     justify-content: space-evenly;
     padding: 1em;
     flex-wrap: wrap;
+    grid-row: 3;
+    grid-column: 2/5;
 }
 
 game-tile-panel img {
@@ -167,6 +173,8 @@ button-row {
     align-items: baseline;
     justify-content: flex-end;
     margin-right: 20%;
+    grid-row: 4;
+    grid-column: 2/5;
 }
 
 settings-panel {
