@@ -147,7 +147,6 @@ game-tile-panel{
 
 game-tile-panel img {
     box-sizing: border-box;
-  
     max-width: 200px;
     padding: 1.5em;
 }
@@ -224,27 +223,40 @@ height: 50px;
     game-area {
         grid-template-areas: 
         "header-area header-area"
-        "player-area computer-area"
-        "score-area score-area"
-        "tile-area tile-area"
-        "button-area settings-area"
+        "game-play-panel-area game-play-panel-area"
+        "tile-area tile-area" 
+        "button-area settings-area" 
+        
         ;
     }
 
     h1 {
         grid-area: header-area;
+        font-size: large;
     }
 
+    game-play-panel {
+        flex-direction: column;
+        grid-area: game-play-panel-area;
+    }
+    game-tile-panel img {
+        width: 125px;
+    }
+    
     player-card {
-        grid-area: card-area;
+        width: 150px;
+        height: 150px;
     }
 
+    
     computer-card {
-        grid-area: card-area;
+        width: 150px;
+        height: 150px;
     }
 
     score-board {
-        grid-area: score-area;
+        width: 150px;
+        height: 150px;
     }
 
     game-tile-panel {
@@ -253,9 +265,24 @@ height: 50px;
 
     #play-button {
         grid-area: button-area;
+        width: 200px;
+        height: 50px;
+        font-size: medium;
     }
     
     settings-panel{
         grid-area: settings-area;
+        font-size: x-large;
+        justify-content:space-around;
+    }
+
+    #difficulty-level-switch {  
+        width: 25px;
+        height: 25px;
+        margin-right: 1em;
+        }
+
+    label {
+        text-align: center;
     }
 }
