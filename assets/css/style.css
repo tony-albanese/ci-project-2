@@ -14,6 +14,12 @@
     display: grid;
 }
 
+/* Set size of images.
+    All image tiles should fit the size of the container.
+*/
+.tile {
+    height: 100%;
+}
 /* Style the game area */
 game-area {
     width: 100%;
