@@ -31,6 +31,7 @@ game-area {
     justify-items: center;
     width: 100%;
     height: auto;
+
 }
 
 game-play-panel {
@@ -38,6 +39,7 @@ game-play-panel {
     width: 1000px;
     height: auto;
     justify-content: center;
+    align-items: flex-end;
 
 }
 
