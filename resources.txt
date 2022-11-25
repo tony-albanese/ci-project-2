@@ -1,0 +1,17 @@
+rocks image
+<a href="https://www.flaticon.com/free-icons/rocks" title="rocks icons">Rocks icons created by Freepik - Flaticon</a>
+
+paper image
+<a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by Freepik - Flaticon</a>
+
+scissors image
+<a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors icons created by Freepik - Flaticon</a>
+
+lizard
+<a href="https://www.flaticon.com/free-icons/lizard" title="lizard icons">Lizard icons created by Freepik - Flaticon</a>
+
+spock/vulcan image
+<a href="https://www.flaticon.com/free-icons/spock" title="spock icons">Spock icons created by Freepik - Flaticon</a>
+
+question image
+<a href="https://www.flaticon.com/free-icons/question" title="question icons">Question icons created by Pixel perfect - Flaticon</a>
