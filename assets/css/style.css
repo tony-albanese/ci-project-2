@@ -221,5 +221,41 @@ height: 50px;
 /* Media query for a mobile screen */
 @media only screen and (max-width: 425px) {
 
+    game-area {
+        grid-template-areas: 
+        "header-area header-area"
+        "player-area computer-area"
+        "score-area score-area"
+        "tile-area tile-area"
+        "button-area settings-area"
+        ;
+    }
+
+    h1 {
+        grid-area: header-area;
+    }
+
+    player-card {
+        grid-area: card-area;
+    }
+
+    computer-card {
+        grid-area: card-area;
+    }
+
+    score-board {
+        grid-area: score-area;
+    }
+
+    game-tile-panel {
+        grid-area: tile-area;
+    }
+
+    #play-button {
+        grid-area: button-area;
+    }
     
+    settings-panel{
+        grid-area: settings-area;
+    }
 }
