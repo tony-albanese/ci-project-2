@@ -3,3 +3,13 @@
     padding: 0;
     border: none;
 }
+
+/* Make every element with this class a flex container */
+.flex-container {
+    display: flex;
+}
+
+/* Make every element with this class a grid container. */
+.grid-container {
+    display: grid;
+}
