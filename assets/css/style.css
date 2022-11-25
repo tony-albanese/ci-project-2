@@ -138,7 +138,7 @@ grid-row: 2;
 game-tile-panel{
    
     width: var(--game-width);
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 1em;
     flex-wrap: wrap;
     grid-row: 3;
