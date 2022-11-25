@@ -173,7 +173,6 @@ button-row {
     width: var(--button-row-width);
     align-items: baseline;
     justify-content: flex-end;
-    margin-right: 20%;
     grid-row: 4;
     grid-column: 2/5;
 }
@@ -199,6 +198,15 @@ width: 50px;
 
     h1 {
         font-size: 52px;
+    }
+}
+
+
+/* Media query for a mobile screen */
+
+@media only screen and (max-width: 768px){
+    game-area {
+        margin-top: 1em;
     }
 }
 
