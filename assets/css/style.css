@@ -116,3 +116,11 @@ button-row {
     justify-content: flex-end;
     margin-right: 20%;
 }
+
+settings-panel {
+    font-size: xx-large;
+}
+
+#difficulty-level-switch {
+width: 50px;
+}
