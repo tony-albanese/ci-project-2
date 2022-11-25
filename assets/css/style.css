@@ -14,6 +14,12 @@
     display: grid;
 }
 
+/* Style the game area */
+game-area {
+    width: 100%;
+    height: auto;
+}
+
 /* Style the cards that show the players and computers choices. */
 player-card, computer-card {
 width: 300px;
