@@ -87,7 +87,7 @@ justify-items: center;
 }
 
 player-card h2, computer-card h2 {
-    font-size: xx-large;
+    font-size: xxx-large;
 }
 
 .player-color {
@@ -118,7 +118,7 @@ align-self: end;
 score-board p {
     justify-self: center;
     align-self: center;
-    font-size: xxx-large
+    font-size: xxx-large;
 }
 #player-score {
 grid-column: 1;
