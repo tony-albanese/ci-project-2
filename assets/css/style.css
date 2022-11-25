@@ -295,3 +295,26 @@ height: 50px;
         text-align: center;
     }
 }
+
+
+@media only screen and (max-width: 320px){
+    game-tile-panel img {
+        width: 115px;
+    }
+    
+    player-card {
+        width: 125px;
+        height: 125px;
+    }
+
+    
+    computer-card {
+        width: 125px;
+        height: 125px;
+    }
+
+    score-board {
+        width: 125px;
+        height: 125px;
+    }
+}
