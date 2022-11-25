@@ -17,24 +17,24 @@
 
     <game-area class="grid-container">
         <!--Could add image logo instead.-->
-        <h1>Rock, Paper, Scissors, Lizard, <span class="spock">Spock</span>!</h1>
+        <h1 class="header-area">Rock, Paper, Scissors, Lizard, <span class="spock">Spock</span>!</h1>
     
         <game-play-panel class="flex-container">
             
 
-            <player-card class="grid-container">
-                <h2 id="player-card-header" class="player-color">You</h2>
+            <player-card class="grid-container player-area">
+                <h2 id="player-card-header" class="player-color player-area">You</h2>
                 <img src="assets/images/question-player.png" alt="A question mark" class="tile">
                 
             </player-card>
 
-            <score-board class="grid-container">
+            <score-board class="grid-container score-area">
                 <h2>Score</h2>
                 <p id="player-score" class="player-color">0</p>
                 <p id="computer-score" class="computer-color">0</p>
             </score-board>
 
-            <computer-card class="grid-container">
+            <computer-card class="grid-container computer-area">
                 <h2 id="computer-card-header" class="computer-color">Shelbot</h2>
                 <img src="assets/images/question-computer.png" alt="A question mark." class="tile">
 
@@ -43,7 +43,7 @@
         </game-play-panel>
 
        
-        <game-tile-panel class="flex-container">
+        <game-tile-panel class="flex-container tile-area">
          
             <img id="rock-tile"  src="assets/images/rock.png" alt="rock">
             <img id="paper-tile"  src="assets/images/paper.png" alt="paper">
@@ -56,9 +56,9 @@
         
 
         
-        <button id="play-button"><i class="fa-solid fa-play"></i></button>
+        <button id="play-button" class="button-area"><i class="fa-solid fa-play"></i></button>
 
-        <settings-panel class="flex-container">
+        <settings-panel class="flex-container settings-area">
             <label for="difficulty-level-switch">Difficult Mode</label>
             <input id="difficulty-level-switch" type="checkbox">
         </settings-panel>
