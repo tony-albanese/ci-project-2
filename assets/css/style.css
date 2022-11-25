@@ -74,6 +74,18 @@ justify-items: center;
 
 }
 
+player-card h2, computer-card h2 {
+    font-size: xx-large;
+}
+
+.player-color {
+color: var(--kombu-green);
+}
+
+.computer-color {
+color: var(--jonquil);
+}
+
 /* Style the scoreboard */
 
 score-board {
