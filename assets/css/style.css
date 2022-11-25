@@ -227,9 +227,13 @@ height: 50px;
         ;
     }
 
+    game-play-panel {
+        align-items: center;
+    }
+
     h1 {
         grid-area: header-area;
-        font-size: large;
+        font-size: x-large;
     }
 
     score-board h2 {
