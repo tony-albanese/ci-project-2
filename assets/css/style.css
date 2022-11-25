@@ -31,6 +31,7 @@ game-area {
     justify-items: center;
     width: 100%;
     height: auto;
+    grid-template-rows: auto auto auto;
 
 }
 
@@ -77,4 +78,20 @@ grid-row: 2;
 #computer-score{
 grid-column: 2;
 grid-row: 2;
+}
+
+/* Style the game-tile-panel */
+game-tile-panel{
+    border: 2px solid blue;
+    width: 50%;
+    justify-content: space-evenly;
+    padding: 1em;
+    flex-wrap: wrap;
+}
+
+game-tile-panel img {
+    box-sizing: border-box;
+    width: 20%;
+    min-width: 180px;
+    padding: 1.5em;
 }
