@@ -168,6 +168,14 @@ settings-panel {
     font-size: xx-large;
 }
 
+/* Style the switch */
 #difficulty-level-switch {
 width: 50px;
+}
+
+
+/* style the spock span */
+.spock {
+    text-transform: uppercase;
+    color: var(--international-orange-engineering);
 }
