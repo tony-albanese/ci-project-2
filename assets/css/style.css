@@ -79,6 +79,8 @@ score-board {
 }
 
 score-board h2 {
+
+font-size: 36px;
 grid-column: 1/3;
 grid-row: 1;
 align-self: end;
@@ -87,6 +89,7 @@ align-self: end;
 score-board p {
     justify-self: center;
     align-self: center;
+    font-size: xxx-large
 }
 #player-score {
 grid-column: 1;
