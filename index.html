@@ -10,34 +10,36 @@
 
 <body>
 
-    <game-area>
+    <game-area class="grid-container">
         <!--Could add image logo instead.-->
         <h1>Rock, Paper, Scissors, Lizard, Spock!</h1>
         This is stage for the entire game.
-        <game-play-panel>
+        <game-play-panel class="flex-container">
             This will hold the player cards, the score area, and the computer card.
 
-            <player-card>
-
+            <player-card class="grid-container">
+                <h2>You</h2>
             </player-card>
 
-            <score-board>
+            <score-board class="grid-container">
+                <h2>Score</h2>
 
             </score-board>
 
-            <computer-card>
-                
+            <computer-card class="grid-container">
+                <h2>Computer</h2>
+
             </computer-card>
 
         </game-play-panel>
 
-        <game-tile-panel>
+        <game-tile-panel class="flex-container">
 
         </game-tile-panel>
 
         <button>Play!</button>
 
-        <settings-panel>
+        <settings-panel class="flex-container">
 
         </settings-panel>
     </game-area>
