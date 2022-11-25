@@ -3,14 +3,24 @@
     --debug-border-color: red;
     
     /* CSS HEX */
-    --international-orange-engineering: #c30000ff;
+    --international-orange-engineering: rgb(195, 0, 0);
     --kombu-green: #374434ff;
     --windsor-tan: #9d5312ff;
     --camel: #bb9b81ff;
     --jonquil: #fbcf1eff;
+
+    /* CSS HEX */
+--space-cadet: #1e2245ff;
+--st-patricks-blue: #2a2f71ff;
+--linen: #fcefe6ff;
+--mimi-pink: #f8d0e0ff;
+--firebrick: #ba1a26ff;
     
     --game-width: 75%;
     --button-row-width: 70%;
+
+    --background-color:#fcefe6;
+    --computer-color:#2a2f71ff;
     
 }
 
@@ -25,6 +35,7 @@ h1 {
 
 body {
     font-family: 'Anton', sans-serif;
+    background-color: var(--background-color);
 }
 
 
@@ -79,11 +90,11 @@ player-card h2, computer-card h2 {
 }
 
 .player-color {
-color: var(--kombu-green);
+color: var(--international-orange-engineering);
 }
 
 .computer-color {
-color: var(--jonquil);
+color: var(--computer-color);
 }
 
 /* Style the scoreboard */
