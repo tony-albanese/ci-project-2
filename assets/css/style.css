@@ -1,5 +1,9 @@
 :root {
     --debug-border-color: red;
+
+    --game-width: 75%;
+    --button-row-width: 70%;
+    
 }
 
 * {
@@ -38,7 +42,7 @@ game-area {
 
 game-play-panel {
     border: 1px solid var(--debug-border-color);
-    width: 1000px;
+    width: var(--game-width);
     height: auto;
     justify-content: center;
     align-items: flex-end;
@@ -84,7 +88,7 @@ grid-row: 2;
 /* Style the game-tile-panel */
 game-tile-panel{
     border: 2px solid blue;
-    width: 50%;
+    width: var(--game-width);
     justify-content: space-evenly;
     padding: 1em;
     flex-wrap: wrap;
@@ -107,7 +111,7 @@ game-tile-panel img {
 }
 
 button-row {
-    width: 100%;
+    width: var(--button-row-width);
     align-items: baseline;
     justify-content: flex-end;
     margin-right: 20%;
