@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPSLS!</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <game-area class="grid-container">
+        <!--Could add image logo instead.-->
+        <h1>Rock, Paper, Scissors, Lizard, Spock!</h1>
+    
+        <game-play-panel class="flex-container">
+            
+
+            <player-card class="grid-container">
+                <h2>You</h2>
+                <img src="assets/images/question.png" alt="A question mark" class="tile">
+                
+            </player-card>
+
+            <score-board class="grid-container">
+                <h2>Score</h2>
+                <p id="player-score">0</p>
+                <p id="computer-score">0</p>
+            </score-board>
+
+            <computer-card class="grid-container">
+                <h2>Computer</h2>
+                <img src="assets/images/question.png" alt="A question mark." class="tile">
+
+            </computer-card>
+
+        </game-play-panel>
+
+       
+        <game-tile-panel class="flex-container">
+         
+            <img id="rock-tile"  src="assets/images/rock.png" alt="rock">
+            <img id="paper-tile"  src="assets/images/paper.png" alt="paper">
+            <img id="scissors-tile"  src="assets/images/scissors.png" alt="scissors">
+            <img id="lizard-tile"  src="assets/images/lizard.png" alt="lizard">
+            <img id="spock-tile"  src="assets/images/spock.png" alt="spock">
+
+        </game-tile-panel>
+
+        
+
+        <button-row class="flex-container">
+        <button id="play-button">Play!</button>
+
+        <settings-panel class="flex-container">
+            <label for="difficulty-level-switch">Difficult Mode</label>
+            <input id="difficulty-level-switch" type="checkbox">
+        </settings-panel>
+        </button-row>
+
+
+
+    </game-area>
+
+
+</body>
+
+</html>
