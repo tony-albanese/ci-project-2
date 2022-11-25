@@ -153,6 +153,8 @@ game-tile-panel img {
     font-size: xxx-large;
     border-radius: 12px;
     margin-right: 10%;
+    background-color: var(--international-orange-engineering);
+    color: var(--linen);
 }
 
 button-row {
