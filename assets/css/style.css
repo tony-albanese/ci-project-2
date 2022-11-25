@@ -16,8 +16,8 @@
 --mimi-pink: #f8d0e0ff;
 --firebrick: #ba1a26ff;
     
-    --game-width: 75%;
-    --button-row-width: 70%;
+    --game-width: 85%;
+    --button-row-width: 75%;
 
     --background-color:#fcefe6;
     --computer-color:#2a2f71ff;
@@ -191,4 +191,12 @@ width: 50px;
 .spock {
     text-transform: uppercase;
     color: var(--international-orange-engineering);
+}
+
+/* Media query for a laptop screen */
+@media only screen and (max-width: 1440px) {
+
+    h1 {
+        font-size: 52px;
+    }
 }
