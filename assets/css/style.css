@@ -8,6 +8,7 @@
     border: none;
 }
 
+
 /* Make every element with this class a flex container */
 .flex-container {
     display: flex;
@@ -102,4 +103,12 @@ game-tile-panel img {
     height: 100px;
     font-size: xxx-large;
     border-radius: 12px;
+    margin-right: 10%;
+}
+
+button-row {
+    width: 100%;
+    align-items: baseline;
+    justify-content: flex-end;
+    margin-right: 20%;
 }
