@@ -13,3 +13,9 @@
 .grid-container {
     display: grid;
 }
+
+/* Style the cards that show the players and computers choices. */
+player-card, computer-card {
+width: 300px;
+height: 300px;
+}
