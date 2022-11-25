@@ -22,9 +22,9 @@
     All image tiles should fit the size of the container.
 */
 .tile {
-    width: 200px;
-    height: 200px;
+    width: 80%;
 }
+
 /* Style the game area */
 game-area {
     border: 1px solid blue;
