@@ -92,10 +92,15 @@ function setImage(userChoice, computerChoice) {
 
 function userWins() {
 console.log("Win!");
+let playerScore = parseInt( document.getElementById("player-score").innerText);
+document.getElementById("player-score").innerText = ++playerScore;
+
 }
 
 function userLoses() {
 console.log("Lose!");
+let computerScore = parseInt(document.getElementById("computer-score").innerText);
+document.getElementById("computer-score").innerText = ++computerScore;
 }
 
 function userTies() {
