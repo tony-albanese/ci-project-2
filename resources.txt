@@ -15,3 +15,17 @@ spock/vulcan image
 
 question image
 <a href="https://www.flaticon.com/free-icons/question" title="question icons">Question icons created by Pixel perfect - Flaticon</a>
+
+
+
+Rules from https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock
+Scissors cuts Paper
+Paper covers Rock
+Rock crushes Lizard
+Lizard poisons Spock
+Spock smashes Scissors
+Scissors decapitates Lizard
+Lizard eats Paper
+Paper disproves Spock
+Spock vaporizes Rock
+(and as it always has) Rock crushes Scissors
