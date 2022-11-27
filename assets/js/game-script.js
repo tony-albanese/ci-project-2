@@ -1,4 +1,4 @@
-const { fuchsia } = require("color-name");
+
 
 document.addEventListener("DOMContentLoaded", function(){
     // Add click listener to play button.
@@ -29,13 +29,21 @@ function checkBoxClickCallback(event){
 }
 
 function startRound(){
-    alert("Initiate gameplay sequence.");
+    alert("Round");
 }
 
 function onTileClick(event){
     let clickedTileId = this.id;
     console.log(clickedTileId);
     alert(`You clicked ${clickedTileId}`);
+
+    
+    let userChoiceValue = this.getAttribute("data-value");
+    let computerChoice = generateComputerChoice();
+    let computerChoiceValue = computerChoice.getAttribute("data-value");
+
+    determineRoundWinner(userChoice+computerChoice);
+
 }
 
 function generateComputerChoice(){
