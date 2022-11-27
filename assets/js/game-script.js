@@ -17,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   
 
-
-
 });
 
 
@@ -33,5 +31,13 @@ function startRound(event){
 function onTileClick(event){
     let clickedTileId = this.id;
     console.log(clickedTileId);
-    alert("You clicked ${clickedTileId}")
+    alert(`You clicked ${clickedTileId}`);
+}
+
+function generateComputerChoice(){
+    let gameTiles = document.getElementsByClassName('game-tile');
+    let randomIndex = Math.floor(Math.random()*5);
+    let computerChoice = gameTiles[randomIndex]
+    console.log(computerChoice.getAttribute("data-value"));
+    return computerChoice;
 }
