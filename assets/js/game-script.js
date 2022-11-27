@@ -1,3 +1,5 @@
+const { fuchsia } = require("color-name");
+
 document.addEventListener("DOMContentLoaded", function(){
     // Add click listener to play button.
     let playButton = document.getElementById("play-button");
@@ -71,4 +73,17 @@ function determineRoundWinner(choiceString){
 
 
     }
+}
+
+
+function userWins() {
+alert("Win!")
+}
+
+function userLoses() {
+alert("Lose!")
+}
+
+function userTies() {
+alert("Tie!")
 }
