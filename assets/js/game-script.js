@@ -3,7 +3,7 @@ const { fuchsia } = require("color-name");
 document.addEventListener("DOMContentLoaded", function(){
     // Add click listener to play button.
     let playButton = document.getElementById("play-button");
-    playButton.addEventListener("click", startRound);
+    playButton.addEventListener("click", startGame);
 
     // Add click listener to check button
     let checkBox = document.getElementById("difficulty-level-switch");
@@ -17,16 +17,18 @@ document.addEventListener("DOMContentLoaded", function(){
     for(let tile of gameTiles){
         tile.addEventListener("click", onTileClick);
     }
-  
-
 });
 
+function startGame(event) {
+    alert("Game started")
+    playRound();
+}
 
 function checkBoxClickCallback(event){
     alert("The checkbox was clicked");
 }
 
-function startRound(event){
+function startRound(){
     alert("Initiate gameplay sequence.");
 }
 
@@ -45,7 +47,6 @@ function generateComputerChoice(){
 }
 
 function determineRoundWinner(choiceString){
-
 
     switch(choiceString){
         case 'scissorspaper':
