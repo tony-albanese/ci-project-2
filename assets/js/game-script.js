@@ -10,8 +10,13 @@ document.addEventListener("DOMContentLoaded", function(){
     // Add click listener to choice tiles.
     // Get the container and loop through the siblings.
 
-    let tilePanel = document.getElementsByTagName("game-tile-panel");
-    console.log(tilePanel);
+    let gameTiles = document.getElementsByClassName('game-tile');
+    
+    for(let tile of gameTiles){
+        tile.addEventListener("click", onTileClick);
+    }
+  
+
 
 
 });
@@ -23,4 +28,10 @@ function checkBoxClickCallback(event){
 
 function startRound(event){
     alert("Initiate gameplay sequence.");
+}
+
+function onTileClick(event){
+    let clickedTileId = this.id;
+    console.log(clickedTileId);
+    alert("You clicked ${clickedTileId}")
 }
