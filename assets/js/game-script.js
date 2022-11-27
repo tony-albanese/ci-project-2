@@ -41,3 +41,34 @@ function generateComputerChoice(){
     console.log(computerChoice.getAttribute("data-value"));
     return computerChoice;
 }
+
+function determineRoundWinner(choiceString){
+
+
+    switch(choiceString){
+        case 'scissorspaper':
+        case 'paperrock':
+        case 'rocklizard':
+        case 'lizardspock':
+        case 'spockscissors':
+        case 'scissorslizard':
+        case 'lizardpaper':
+        case 'paperspock':
+        case 'spockrock':
+        case 'rockscissors':
+            userWins();
+            break;
+
+        case 'rockrock':
+        case 'paperpaper':
+        case 'lizardlizard':
+        case 'scissorsscissors':
+        case 'spockspock':
+            userTies();
+            break;
+        default:
+            userLoses();
+
+
+    }
+}
