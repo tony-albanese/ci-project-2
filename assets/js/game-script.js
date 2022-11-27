@@ -35,14 +35,15 @@ function startRound(){
 function onTileClick(event){
     let clickedTileId = this.id;
     console.log(clickedTileId);
-    alert(`You clicked ${clickedTileId}`);
-
     
     let userChoiceValue = this.getAttribute("data-value");
     let computerChoice = generateComputerChoice();
     let computerChoiceValue = computerChoice.getAttribute("data-value");
 
-    determineRoundWinner(userChoice+computerChoice);
+    setImage(this, computerChoice);
+
+    console.log(userChoiceValue+computerChoiceValue);
+    determineRoundWinner(userChoiceValue+computerChoiceValue);
 
 }
 
@@ -84,15 +85,19 @@ function determineRoundWinner(choiceString){
     }
 }
 
+function setImage(userChoice, computerChoice) {
+    document.getElementById("player-choice-card").setAttribute("src", userChoice.getAttribute("src"));
+    document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
+}
 
 function userWins() {
-alert("Win!")
+console.log("Win!");
 }
 
 function userLoses() {
-alert("Lose!")
+console.log("Lose!");
 }
 
 function userTies() {
-alert("Tie!")
+console.log("Tie");
 }
