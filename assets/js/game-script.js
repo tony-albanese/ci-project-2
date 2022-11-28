@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     // Add click listener to play button.
     let playButton = document.getElementById("play-button");
-    playButton.addEventListener("click", startGame);
+    playButton.addEventListener("click", launchGame);
 
     // Add click listener to check button
     let checkBox = document.getElementById("difficulty-level-switch");
@@ -41,25 +41,23 @@ const processClick = async (clickedElement)  =>{
     console.log(userChoiceValue+computerChoiceValue);
     determineRoundWinner(userChoiceValue+computerChoiceValue);
     await sleep(2000);
-    await sleep(1000);
     resetImages();
-
-    if(currentRound <= 3) {
-        startGame();
+    await sleep(1000);
+    console.log(currentRound);
+    if(currentRound < 3) {
+        playRound();
     } else {
         alert("Game over.")
     }
-
-
 }
 
+function launchGame(event) {
+    playRound();
+}
 
-
-
-function startGame(event) {
-    currentRound++;
+function playRound() {
+currentRound++;
     alert("Rock paper scissors lizard spock!")
-    
 }
 
 function checkBoxClickCallback(event){
@@ -69,22 +67,6 @@ function checkBoxClickCallback(event){
 
     function onTileClick(event){
         processClick(this);
-    /*
-    let clickedTileId = this.id;
-    console.log(clickedTileId);
-    
-    let userChoiceValue = this.getAttribute("data-value");
-    let computerChoice = generateComputerChoice();
-    let computerChoiceValue = computerChoice.getAttribute("data-value");
-
-    setImage(this, computerChoice);
-
-    console.log(userChoiceValue+computerChoiceValue);
-    determineRoundWinner(userChoiceValue+computerChoiceValue);
-    wait(1500);
-    resetImages();
-    startGame();
-*/
 }
 
 function resetImages(){
