@@ -1,6 +1,6 @@
 
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
     // Add click listener to play button.
     let playButton = document.getElementById("play-button");
     playButton.addEventListener("click", launchGame);
@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function(){
     // Get the container and loop through the siblings.
 
     let gameTiles = document.getElementsByClassName('game-tile');
-    
-    for(let tile of gameTiles){
+
+    for (let tile of gameTiles) {
         tile.addEventListener("click", onTileClick);
     }
 });
@@ -26,9 +26,9 @@ var currentRound = 0;
 var boardReady = false;
 var difficultGame = false;
 
-function onTileClick(event){
-  
-    if(boardReady && !difficultGame){
+function onTileClick(event) {
+
+    if (boardReady && !difficultGame) {
         onEasyGameClick(this);
     }
 }
@@ -36,7 +36,7 @@ function onTileClick(event){
 function launchGame(event) {
     boardReady = true;
     resetGame();
-    if(difficultGame) {
+    if (difficultGame) {
         console.log("Run difficult game");
     } else {
         launchEasyGameSequence();
@@ -44,23 +44,24 @@ function launchGame(event) {
 
 }
 
-async function launchEasyGameSequence(){
-    if(currentRound < maxRounds){
+async function launchEasyGameSequence() {
+    if (currentRound < maxRounds) {
         boardReady = true;
         currentRound++;
         console.log("Current round" + currentRound);
         document.getElementById("round-value").innerText = currentRound;
         resetImages();
 
-    } else {await(1000);
-       let winner = determineGameWinner();
-      alertWinner(winner);
+    } else {
+        await (1000);
+        let winner = determineGameWinner();
+        alertWinner(winner);
         console.log(winner);
-       boardReady = false;
+        boardReady = false;
     }
 }
 
-async function onEasyGameClick(clickedButton){
+async function onEasyGameClick(clickedButton) {
     boardReady = false;
     let userChoiceValue = clickedButton.getAttribute("data-value");
     console.log(userChoiceValue);
@@ -76,35 +77,35 @@ async function onEasyGameClick(clickedButton){
     determineRoundWinner(choiceString);
 
     launchEasyGameSequence();
-    
+
 }
 
 
-function determineGameWinner(){
-    let playerScore =  parseInt(document.getElementById("player-score").innerText);
+function determineGameWinner() {
+    let playerScore = parseInt(document.getElementById("player-score").innerText);
     let computerScore = parseInt(document.getElementById("computer-score").innerText);
 
-    if(playerScore===computerScore) {
+    if (playerScore === computerScore) {
         return "The game is a tie."
-    } else if (playerScore >computerScore) {
+    } else if (playerScore > computerScore) {
         return "You won the game!!"
     } else {
         return "Shelbot won the game."
     }
 }
 
-function generateComputerChoice(){
+function generateComputerChoice() {
     let gameTiles = document.getElementsByClassName('game-tile');
-    let randomIndex = Math.floor(Math.random()*5);
+    let randomIndex = Math.floor(Math.random() * 5);
     let computerChoice = gameTiles[randomIndex]
     console.log(computerChoice.getAttribute("data-value"));
     return computerChoice;
 }
 
 
-function determineRoundWinner(choiceString){
+function determineRoundWinner(choiceString) {
 
-    switch(choiceString){
+    switch (choiceString) {
         case 'scissorspaper':
         case 'paperrock':
         case 'rocklizard':
@@ -135,12 +136,12 @@ function setImages(userChoice, computerChoice) {
     document.getElementById("player-choice-card").setAttribute("src", userChoice.getAttribute("src"));
     document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
 }
-function resetImages(){
+function resetImages() {
     document.getElementById("player-choice-card").setAttribute("src", "assets/images/question-player.png");
     document.getElementById("computer-choice-card").setAttribute("src", "assets/images/question-computer.png");
 }
 
-function resetGame(){
+function resetGame() {
     currentRound = 1;
     boardReady = false;
     document.getElementById("computer-score").innerText = 0;
@@ -152,32 +153,32 @@ function resetGame(){
 function userWins() {
     console.log("Win!");
     alert("You win!");
-    let playerScore = parseInt( document.getElementById("player-score").innerText);
+    let playerScore = parseInt(document.getElementById("player-score").innerText);
     document.getElementById("player-score").innerText = ++playerScore;
-    
-    }
-    
-    function userLoses() {
+
+}
+
+function userLoses() {
     alert("You lose!")
     console.log("Lose!");
     let computerScore = parseInt(document.getElementById("computer-score").innerText);
     document.getElementById("computer-score").innerText = ++computerScore;
-    }
-    
-    function userTies() {
+}
+
+function userTies() {
     alert("Tie!")
     console.log("Tie");
-    }
+}
 
-    function resetGame(){
-        currentRound = 0;
-        document.getElementById("computer-score").innerText = 0;
-        document.getElementById("player-score").innerText = 0;
-        document.getElementById("round-value").innerText = 1;
-        resetImages();
-    }
+function resetGame() {
+    currentRound = 0;
+    document.getElementById("computer-score").innerText = 0;
+    document.getElementById("player-score").innerText = 0;
+    document.getElementById("round-value").innerText = 1;
+    resetImages();
+}
 
-async function alertWinner(winner){
+async function alertWinner(winner) {
     await sleep(1000);
     alert(winner);
 }
