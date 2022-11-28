@@ -19,18 +19,23 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 });
 
+var maxRounds = 3;
+var currentRound = 0;
 function startGame(event) {
-    alert("Game started")
-    playRound();
+        if(currentRound < maxRounds){
+        alert("Rock, Paper, Scissors, Lizard Spock!");
+        currentRound++;
+    } else {
+        // Determine the game winner.
+        // Reset the entire game.
+        alert("Game over");
+    }
 }
 
 function checkBoxClickCallback(event){
     alert("The checkbox was clicked");
 }
 
-function startRound(){
-    alert("Round");
-}
 
 function onTileClick(event){
     let clickedTileId = this.id;
@@ -41,10 +46,19 @@ function onTileClick(event){
     let computerChoiceValue = computerChoice.getAttribute("data-value");
 
     setImage(this, computerChoice);
+    wait(500);
 
     console.log(userChoiceValue+computerChoiceValue);
     determineRoundWinner(userChoiceValue+computerChoiceValue);
+    wait(1500);
+    resetImages();
+    startGame();
 
+}
+
+function resetImages(){
+    document.getElementById("player-choice-card").setAttribute("src", "assets/images/question.png");
+    document.getElementById("computer-choice-card").setAttribute("src", "assets/images/question.png");
 }
 
 function generateComputerChoice(){
@@ -92,17 +106,20 @@ function setImage(userChoice, computerChoice) {
 
 function userWins() {
 console.log("Win!");
+alert("You win!");
 let playerScore = parseInt( document.getElementById("player-score").innerText);
 document.getElementById("player-score").innerText = ++playerScore;
 
 }
 
 function userLoses() {
+alert("You lose!")
 console.log("Lose!");
 let computerScore = parseInt(document.getElementById("computer-score").innerText);
 document.getElementById("computer-score").innerText = ++computerScore;
 }
 
 function userTies() {
+alert("Tie!")
 console.log("Tie");
 }
