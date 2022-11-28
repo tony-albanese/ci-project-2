@@ -70,8 +70,8 @@ function checkBoxClickCallback(event){
 }
 
 function resetImages(){
-    document.getElementById("player-choice-card").setAttribute("src", "assets/images/question.png");
-    document.getElementById("computer-choice-card").setAttribute("src", "assets/images/question.png");
+    document.getElementById("player-choice-card").setAttribute("src", "assets/images/question-player.png");
+    document.getElementById("computer-choice-card").setAttribute("src", "assets/images/question-computer.png");
 }
 
 function generateComputerChoice(){
