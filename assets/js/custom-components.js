@@ -27,6 +27,13 @@ var GameArea = /** @class */ (function (_super) {
     }
     return GameArea;
 }(HTMLDivElement));
+var GamePlayPanel = /** @class */ (function (_super) {
+    __extends(GamePlayPanel, _super);
+    function GamePlayPanel() {
+        return _super.call(this) || this;
+    }
+    return GamePlayPanel;
+}(HTMLDivElement));
 var GameTilePanel = /** @class */ (function (_super) {
     __extends(GameTilePanel, _super);
     function GameTilePanel() {
@@ -34,5 +41,38 @@ var GameTilePanel = /** @class */ (function (_super) {
     }
     return GameTilePanel;
 }(HTMLDivElement));
+var PlayerCard = /** @class */ (function (_super) {
+    __extends(PlayerCard, _super);
+    function PlayerCard() {
+        return _super.call(this) || this;
+    }
+    return PlayerCard;
+}(HTMLDivElement));
+var ScoreBoard = /** @class */ (function (_super) {
+    __extends(ScoreBoard, _super);
+    function ScoreBoard() {
+        return _super.call(this) || this;
+    }
+    return ScoreBoard;
+}(HTMLDivElement));
+var ComputerCard = /** @class */ (function (_super) {
+    __extends(ComputerCard, _super);
+    function ComputerCard() {
+        return _super.call(this) || this;
+    }
+    return ComputerCard;
+}(HTMLDivElement));
+var SettingsPanel = /** @class */ (function (_super) {
+    __extends(SettingsPanel, _super);
+    function SettingsPanel() {
+        return _super.call(this) || this;
+    }
+    return SettingsPanel;
+}(HTMLDivElement));
 customElements.define("game-area", GameArea, { "extends": "div" });
 customElements.define("game-tile-panel", GameTilePanel, { "extends": "div" });
+customElements.define("game-play-panel", GamePlayPanel, { "extends": "div" });
+customElements.define("player-card", PlayerCard, { "extends": "div" });
+customElements.define("score-board", ScoreBoard, { "extends": "div" });
+customElements.define("computer-card", ComputerCard, { "extends": "div" });
+customElements.define("settings-panel", SettingsPanel, { "extends": "div" });
