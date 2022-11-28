@@ -52,9 +52,10 @@ async function launchEasyGameSequence(){
         document.getElementById("round-value").innerText = currentRound;
         resetImages();
 
-    } else {
+    } else {await(1000);
        let winner = determineGameWinner();
-       alert(winner);
+      alertWinner(winner);
+        console.log(winner);
        boardReady = false;
     }
 }
@@ -175,3 +176,8 @@ function userWins() {
         document.getElementById("round-value").innerText = 1;
         resetImages();
     }
+
+async function alertWinner(winner){
+    await sleep(1000);
+    alert(winner);
+}
