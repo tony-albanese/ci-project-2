@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
 var maxRounds = 3;
-var currentRound = 0;
+var currentRound = 1;
 var boardReady = false;
 
 
@@ -45,7 +45,8 @@ const processClick = async (clickedElement)  =>{
     console.log(currentRound);
     if(currentRound < 3) {
         resetImages();
-        await sleep(2000);
+        currentRound++;
+        await sleep(1400);
         playRound();
     } else {
         alert("Game over.")
@@ -58,8 +59,9 @@ function launchGame(event) {
 }
 
 function playRound() {
+    document.getElementById("round-value").innerText = currentRound;
+    sleep(1000);
     boardReady = true;
-currentRound++;
     alert("Rock paper scissors lizard spock!")
 }
 
