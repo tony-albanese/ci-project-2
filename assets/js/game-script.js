@@ -144,7 +144,3 @@ function userTies() {
 alert("Tie!")
 console.log("Tie");
 }
-
-
-let gameTilePanel = document.getElementsByTagName("game-tile-panel");
-console.log(gameTilePanel[0].children.length);
