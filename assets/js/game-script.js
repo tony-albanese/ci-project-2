@@ -27,6 +27,21 @@ var boardReady = false;
 
 
 
+function onTileClick(event) {
+    if (boardReady == true) {
+        boardReady = false;
+    }
+
+}
+
+
+
+
+
+
+
+/*
+
 const processClick = async (clickedElement)  =>{
 
     let clickedTileId = clickedElement.id;
@@ -73,13 +88,6 @@ function checkBoxClickCallback(event){
 }
 
 
-    function onTileClick(event){
-        if(boardReady == true) {
-            processClick(this);
-            boardReady = false;
-        }
-        
-}
 
 function resetImages(){
     document.getElementById("player-choice-card").setAttribute("src", "assets/images/question-player.png");
@@ -169,3 +177,7 @@ function announceGameWinner(){
         return "Shelbot won the game."
     }
 }
+
+
+
+ */
