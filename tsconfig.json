@@ -4,7 +4,5 @@
       "module": "commonjs",
       "outDir": "assets/js",
       "sourceMap": true,
-    },
-
-    "include": ["assets/ts/*"]
-  }
+    }
+  } , "assets/js/custom-components.ts", "assets/js/custom-components.js", "assets/js/custom-components.js", "assets/js/custom-components.js", "assets/js/custom-components.js"
