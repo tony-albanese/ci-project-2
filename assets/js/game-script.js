@@ -50,11 +50,12 @@ const processClick = async (clickedElement)  =>{
         playRound();
     } else {
         alert("Game over.")
+        boardReady = false;
     }
 }
 
 function launchGame(event) {
-    //Reset game method
+    resetGame();
     playRound();
 }
 
@@ -143,4 +144,13 @@ document.getElementById("computer-score").innerText = ++computerScore;
 function userTies() {
 alert("Tie!")
 console.log("Tie");
+}
+
+function resetGame(){
+    currentRound = 1;
+    boardReady = false;
+    document.getElementById("computer-score").innerText = 0;
+    document.getElementById("player-score").innerText = 0;
+    document.getElementById("round-value").innerText = currentRound;
+    resetImages();
 }
