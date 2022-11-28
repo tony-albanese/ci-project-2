@@ -23,11 +23,11 @@ const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
 var maxRounds = 3;
 var currentRound = 0;
+var boardReady = false;
 
 
 
 const processClick = async (clickedElement)  =>{
-
 
     let clickedTileId = clickedElement.id;
     console.log(clickedTileId);
@@ -40,11 +40,12 @@ const processClick = async (clickedElement)  =>{
     await sleep(500);
     console.log(userChoiceValue+computerChoiceValue);
     determineRoundWinner(userChoiceValue+computerChoiceValue);
-    await sleep(2000);
-    resetImages();
+    
     await sleep(1000);
     console.log(currentRound);
     if(currentRound < 3) {
+        resetImages();
+        await sleep(2000);
         playRound();
     } else {
         alert("Game over.")
@@ -52,10 +53,12 @@ const processClick = async (clickedElement)  =>{
 }
 
 function launchGame(event) {
+    //Reset game method
     playRound();
 }
 
 function playRound() {
+    boardReady = true;
 currentRound++;
     alert("Rock paper scissors lizard spock!")
 }
@@ -66,7 +69,11 @@ function checkBoxClickCallback(event){
 
 
     function onTileClick(event){
-        processClick(this);
+        if(boardReady == true) {
+            processClick(this);
+            boardReady = false;
+        }
+        
 }
 
 function resetImages(){
