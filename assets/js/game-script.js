@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // Add click listener to check button
     let checkBox = document.getElementById("difficulty-level-switch");
-    checkBox.addEventListener("click", checkBoxClickCallback);
+    // checkBox.addEventListener("click", checkBoxClickCallback);
 
     // Add click listener to choice tiles.
     // Get the container and loop through the siblings.
@@ -22,76 +22,74 @@ document.addEventListener("DOMContentLoaded", function(){
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
 var maxRounds = 3;
-var currentRound = 1;
+var currentRound = 0;
 var boardReady = false;
+var difficultGame = false;
 
-
-
-function onTileClick(event) {
-    if (boardReady == true) {
-        boardReady = false;
-    }
-
-}
-
-
-
-
-
-
-
-/*
-
-const processClick = async (clickedElement)  =>{
-
-    let clickedTileId = clickedElement.id;
-    console.log(clickedTileId);
-    
-    let userChoiceValue = clickedElement.getAttribute("data-value");
-    let computerChoice = generateComputerChoice();
-    let computerChoiceValue = computerChoice.getAttribute("data-value");
-
-    setImage(clickedElement, computerChoice);
-    await sleep(500);
-    console.log(userChoiceValue+computerChoiceValue);
-    determineRoundWinner(userChoiceValue+computerChoiceValue);
-    
-    await sleep(1000);
-    console.log(currentRound);
-    if(currentRound < 3) {
-        resetImages();
-        currentRound++;
-        await sleep(1400);
-        playRound();
-    } else {
-        let message = announceGameWinner();
-        console.log(message);
-        alert(message);
-        boardReady = false;
+function onTileClick(event){
+  
+    if(boardReady && !difficultGame){
+        onEasyGameClick(this);
     }
 }
 
 function launchGame(event) {
-    resetGame();
-    playRound();
-}
-
-function playRound() {
-    document.getElementById("round-value").innerText = currentRound;
-    sleep(1000);
     boardReady = true;
-    alert("Rock paper scissors lizard spock!")
+    resetGame();
+    if(difficultGame) {
+        console.log("Run difficult game");
+    } else {
+        launchEasyGameSequence();
+    }
+
 }
 
-function checkBoxClickCallback(event){
-    alert("The checkbox was clicked");
+async function launchEasyGameSequence(){
+    if(currentRound < maxRounds){
+        boardReady = true;
+        currentRound++;
+        console.log("Current round" + currentRound);
+        document.getElementById("round-value").innerText = currentRound;
+        resetImages();
+
+    } else {
+       let winner = determineGameWinner();
+       alert(winner);
+       boardReady = false;
+    }
+}
+
+async function onEasyGameClick(clickedButton){
+    boardReady = false;
+    let userChoiceValue = clickedButton.getAttribute("data-value");
+    console.log(userChoiceValue);
+
+    let computerChoice = generateComputerChoice();
+    let computerChoiceValue = computerChoice.getAttribute("data-value");
+
+    setImages(clickedButton, computerChoice);
+    let choiceString = userChoiceValue + computerChoiceValue;
+
+    await sleep(1000);
+
+    determineRoundWinner(choiceString);
+
+    launchEasyGameSequence();
+    
 }
 
 
+function determineGameWinner(){
+    let playerScore =  parseInt(document.getElementById("player-score").innerText);
+    let computerScore = parseInt(document.getElementById("computer-score").innerText);
 
-function resetImages(){
-    document.getElementById("player-choice-card").setAttribute("src", "assets/images/question-player.png");
-    document.getElementById("computer-choice-card").setAttribute("src", "assets/images/question-computer.png");
+    if(playerScore===computerScore) {
+        return "The game is a tie."
+    } else if (playerScore >computerScore) {
+        return "You won the game!!"
+    } else {
+        return "Shelbot won the game."
+    }
 }
 
 function generateComputerChoice(){
@@ -101,6 +99,7 @@ function generateComputerChoice(){
     console.log(computerChoice.getAttribute("data-value"));
     return computerChoice;
 }
+
 
 function determineRoundWinner(choiceString){
 
@@ -131,29 +130,13 @@ function determineRoundWinner(choiceString){
     }
 }
 
-function setImage(userChoice, computerChoice) {
+function setImages(userChoice, computerChoice) {
     document.getElementById("player-choice-card").setAttribute("src", userChoice.getAttribute("src"));
     document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
 }
-
-function userWins() {
-console.log("Win!");
-alert("You win!");
-let playerScore = parseInt( document.getElementById("player-score").innerText);
-document.getElementById("player-score").innerText = ++playerScore;
-
-}
-
-function userLoses() {
-alert("You lose!")
-console.log("Lose!");
-let computerScore = parseInt(document.getElementById("computer-score").innerText);
-document.getElementById("computer-score").innerText = ++computerScore;
-}
-
-function userTies() {
-alert("Tie!")
-console.log("Tie");
+function resetImages(){
+    document.getElementById("player-choice-card").setAttribute("src", "assets/images/question-player.png");
+    document.getElementById("computer-choice-card").setAttribute("src", "assets/images/question-computer.png");
 }
 
 function resetGame(){
@@ -165,19 +148,30 @@ function resetGame(){
     resetImages();
 }
 
-function announceGameWinner(){
-    let playerScore =  parseInt(document.getElementById("player-score").innerText);
-    let computerScore = parseInt(document.getElementById("computer-score").innerText);
-
-    if(playerScore===computerScore) {
-        return "The game is a tie."
-    } else if (playerScore >computerScore) {
-        return "You won the game!!"
-    } else {
-        return "Shelbot won the game."
+function userWins() {
+    console.log("Win!");
+    alert("You win!");
+    let playerScore = parseInt( document.getElementById("player-score").innerText);
+    document.getElementById("player-score").innerText = ++playerScore;
+    
     }
-}
+    
+    function userLoses() {
+    alert("You lose!")
+    console.log("Lose!");
+    let computerScore = parseInt(document.getElementById("computer-score").innerText);
+    document.getElementById("computer-score").innerText = ++computerScore;
+    }
+    
+    function userTies() {
+    alert("Tie!")
+    console.log("Tie");
+    }
 
-
-
- */
+    function resetGame(){
+        currentRound = 0;
+        document.getElementById("computer-score").innerText = 0;
+        document.getElementById("player-score").innerText = 0;
+        document.getElementById("round-value").innerText = 1;
+        resetImages();
+    }
