@@ -19,17 +19,47 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 });
 
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+
 var maxRounds = 3;
 var currentRound = 0;
-function startGame(event) {
-        if(currentRound < maxRounds){
-        alert("Rock, Paper, Scissors, Lizard Spock!");
-        currentRound++;
+
+
+
+const processClick = async (clickedElement)  =>{
+
+
+    let clickedTileId = clickedElement.id;
+    console.log(clickedTileId);
+    
+    let userChoiceValue = clickedElement.getAttribute("data-value");
+    let computerChoice = generateComputerChoice();
+    let computerChoiceValue = computerChoice.getAttribute("data-value");
+
+    setImage(clickedElement, computerChoice);
+    await sleep(500);
+    console.log(userChoiceValue+computerChoiceValue);
+    determineRoundWinner(userChoiceValue+computerChoiceValue);
+    await sleep(2000);
+    await sleep(1000);
+    resetImages();
+
+    if(currentRound <= 3) {
+        startGame();
     } else {
-        // Determine the game winner.
-        // Reset the entire game.
-        alert("Game over");
+        alert("Game over.")
     }
+
+
+}
+
+
+
+
+function startGame(event) {
+    currentRound++;
+    alert("Rock paper scissors lizard spock!")
+    
 }
 
 function checkBoxClickCallback(event){
@@ -37,7 +67,9 @@ function checkBoxClickCallback(event){
 }
 
 
-function onTileClick(event){
+    function onTileClick(event){
+        processClick(this);
+    /*
     let clickedTileId = this.id;
     console.log(clickedTileId);
     
@@ -46,14 +78,13 @@ function onTileClick(event){
     let computerChoiceValue = computerChoice.getAttribute("data-value");
 
     setImage(this, computerChoice);
-    wait(500);
 
     console.log(userChoiceValue+computerChoiceValue);
     determineRoundWinner(userChoiceValue+computerChoiceValue);
     wait(1500);
     resetImages();
     startGame();
-
+*/
 }
 
 function resetImages(){
@@ -94,7 +125,6 @@ function determineRoundWinner(choiceString){
             break;
         default:
             userLoses();
-
 
     }
 }
