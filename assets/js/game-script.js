@@ -49,7 +49,9 @@ const processClick = async (clickedElement)  =>{
         await sleep(1400);
         playRound();
     } else {
-        alert("Game over.")
+        let message = announceGameWinner();
+        console.log(message);
+        alert(message);
         boardReady = false;
     }
 }
@@ -153,4 +155,17 @@ function resetGame(){
     document.getElementById("player-score").innerText = 0;
     document.getElementById("round-value").innerText = currentRound;
     resetImages();
+}
+
+function announceGameWinner(){
+    let playerScore =  parseInt(document.getElementById("player-score").innerText);
+    let computerScore = parseInt(document.getElementById("computer-score").innerText);
+
+    if(playerScore===computerScore) {
+        return "The game is a tie."
+    } else if (playerScore >computerScore) {
+        return "You won the game!!"
+    } else {
+        return "Shelbot won the game."
+    }
 }
