@@ -45,6 +45,9 @@ async function launchDifficultGameSequence(){
         document.getElementById("round-value").innerText = round;
         let computerChoice = generateComputerChoice();
         document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
+
+        //TODO shuffle the deck
+        //TODO lower the time. 
         setTimeout( endChallengeRound,5000, computerChoice); 
         await sleep(7000);
     }
@@ -207,6 +210,8 @@ function userWins(choiceString) {
 }
 
 function userLoses(choiceString) {
+
+    //TODO add null check for choice string.
     console.log("choiceString lose: "+ choiceString);
     let statement = responseMap.get(choiceString);
 
