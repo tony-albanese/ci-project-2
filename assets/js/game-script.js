@@ -27,7 +27,6 @@ var responseMap = createResponseMap();
 
 var userChoiceDifficultGame = null;
 
-
 function onTileClick(event) {
 
     if (boardReady && !difficultGame) {
@@ -38,28 +37,18 @@ function onTileClick(event) {
     }
 }
 
-function setUserChoiceDifficultGame(clickedTile) {
-    userChoiceDifficultGame = clickedTile;
-}
-
-function launchGame(event) {
-    boardReady = true;
-    resetGame();
-    if (difficultGame) {
-        launchDifficultGameSequence();
-    } else {
-        launchEasyGameSequence();
-    }
-
-}
-
 async function launchDifficultGameSequence(){
 
     let round = 0;
 
-    let computerChoice = generateComputerChoice();
-    document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
-    setTimeout( endChallengeRound,5000, computerChoice);
+    for(round = 1; round <=3; round++) {
+        
+        let computerChoice = generateComputerChoice();
+        document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
+        setTimeout( endChallengeRound,5000, computerChoice); 
+        await sleep(7000);
+    }
+   
 
 
     console.log("Difficult game done.")
@@ -78,6 +67,22 @@ async function endChallengeRound(computerChoice){
         //resetImages();
         userChoiceDifficultGame = null;
     }
+}
+
+
+function setUserChoiceDifficultGame(clickedTile) {
+    userChoiceDifficultGame = clickedTile;
+}
+
+function launchGame(event) {
+    boardReady = true;
+    resetGame();
+    if (difficultGame) {
+        launchDifficultGameSequence();
+    } else {
+        launchEasyGameSequence();
+    }
+
 }
 
 async function launchEasyGameSequence() {
