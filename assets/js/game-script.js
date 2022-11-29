@@ -291,5 +291,4 @@ function hideDialogue(component){
 
 function checkBoxClickCallback(event){
    console.log("checkbox clicked.");
-   showEndGameDialogue("Somebody won!");
 }
