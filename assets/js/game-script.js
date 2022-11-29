@@ -260,6 +260,15 @@ async function showStartRoundDialogue(){
 
 }
 
+async function showEndGameDialogue(message){
+    let dialogueBox = document.getElementById("end-game-dialogue-box");
+    
+
+    let dialogueText = document.getElementById("end-game-winner");
+    dialogueText.innerText = message;
+
+    dialogueBox.style.display = "block";
+}
 
 function hideDialogue(component){
 
@@ -269,4 +278,5 @@ function hideDialogue(component){
 
 function checkBoxClickCallback(event){
    console.log("checkbox clicked.");
+   showEndGameDialogue("Somebody won!");
 }
