@@ -14,7 +14,7 @@
 --st-patricks-blue: #2a2f71ff;
 --linen: #fcefe6ff;
 --mimi-pink: #f8d0e0ff;
---firebrick: #ba1a26ff;
+--firebrick: rgb(186, 26, 38);
     
     --game-width: 100%;
     --button-row-width: 75%;
@@ -219,13 +219,26 @@ modal-dialogue {
 }
 
 modal-dialogue button {
-    background-color: red;
-    width:200px;
-    
+    width:250px;
+    font-size: xx-large;
+    height: 100px;
+    margin-left: 10px;
+    border-radius: 10px;
+    color: whitesmoke;
 }
+
+#play-again-button {
+    background-color: var(--st-patricks-blue);
+
+}
+
+#end-game-button {
+    background-color: var(--firebrick);
+}
+
 #modal-message, #end-game-winner {
-    font-size: x-large;
-background-color: #fefefe;
+    font-size: xxx-large;
+    background-color: #fefefe;
   margin: 20px auto; /* 15% from the top and centered */
   margin-top: 30%;
   margin-bottom: 5px;
