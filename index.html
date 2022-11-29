@@ -8,6 +8,8 @@
     <title>RPSLS!</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <!--Load the custom components before rest of document.-->
+    <script src="assets/js/custom-components.js"></script>
 </head>
 
 <body>
@@ -25,7 +27,7 @@
 
             <player-card class="grid-container player-area">
                 <h2 id="player-card-header" class="player-color player-area">You</h2>
-                <img src="assets/images/question-player.png" alt="A question mark" class="tile">
+                <img id="player-choice-card" src="assets/images/question-player.png" alt="A question mark" class="tile">
                 
             </player-card>
 
@@ -33,12 +35,12 @@
                 <h2>Score</h2>
                 <p id="player-score" class="player-color">0</p>
                 <p id="computer-score" class="computer-color">0</p>
+                <p id="round">Round <span id="round-value">--</span></p>
             </score-board>
 
             <computer-card class="grid-container computer-area">
                 <h2 id="computer-card-header" class="computer-color">Shelbot</h2>
-                <img src="assets/images/question-computer.png" alt="A question mark." class="tile">
-
+                <img id="computer-choice-card" src="assets/images/question-computer.png" alt="A question mark." class="tile">
             </computer-card>
 
         </game-play-panel>
@@ -46,12 +48,13 @@
        
         <game-tile-panel class="flex-container tile-area">
          
-            <img id="rock-tile"  src="assets/images/rock.png" alt="rock">
-            <img id="paper-tile"  src="assets/images/paper.png" alt="paper">
-            <img id="scissors-tile"  src="assets/images/scissors.png" alt="scissors">
-            <img id="lizard-tile"  src="assets/images/lizard.png" alt="lizard">
-            <img id="spock-tile"  src="assets/images/spock.png" alt="spock">
-
+         
+            <img id="rock-tile" class="game-tile" data-value="rock" src="assets/images/rock.png" alt="rock">
+            <img id="paper-tile" class="game-tile" data-value="paper" src="assets/images/paper.png" alt="paper">
+            <img id="scissors-tile" class="game-tile" data-value="scissors" src="assets/images/scissors.png" alt="scissors">
+            <img id="lizard-tile" class="game-tile" data-value="lizard" src="assets/images/lizard.png" alt="lizard">
+            <img id="spock-tile" class="game-tile" data-value="spock" src="assets/images/spock.png" alt="spock">
+  
         </game-tile-panel>
 
         
@@ -70,7 +73,8 @@
     </game-area>
 </div>
 
-<script src="https://kit.fontawesome.com/6a251fd2ee.js" crossorigin="anonymous"></script>  
+<script src="https://kit.fontawesome.com/6a251fd2ee.js" crossorigin="anonymous"></script>
+<script src="assets/js/game-script.js"></script>  
 </body>
 
 </html>
