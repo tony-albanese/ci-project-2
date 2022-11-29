@@ -126,10 +126,10 @@ function determineRoundWinner(choiceString) {
         case 'lizardlizard':
         case 'scissorsscissors':
         case 'spockspock':
-            userTies(choiceString);
+            userTies();
             break;
         default:
-            userLoses();
+            userLoses(choiceString);
 
     }
 }
@@ -165,6 +165,7 @@ function userWins(choiceString) {
 }
 
 function userLoses(choiceString) {
+    console.log("choiceString lose: "+ choiceString);
     let statement = responseMap.get(choiceString);
 
     console.log("You lose. " + statement);
@@ -196,15 +197,34 @@ function createResponseMap(){
     let responseMap = new Map();
 
     responseMap.set('scissorspaper', 'Scissors cuts paper.');
+    responseMap.set('paperscissors', 'Scissors cuts paper.');
+
     responseMap.set('paperrock', 'Paper covers rock.');
+    responseMap.set('rockpaper', 'Paper covers rock.');
+
     responseMap.set('rocklizard','Rock crushes lizard.');
+    responseMap.set('lizardrock','Rock crushes lizard.');
+
     responseMap.set('lizardspock', 'Lizard poisons Spock.');
+    responseMap.set('spocklizard', 'Lizard poisons Spock.');
+
     responseMap.set('spockscissors', 'Spock smashes scissors');
+    responseMap.set('scissorsspock', 'Spock smashes scissors');
+
     responseMap.set('scissorslizard', 'Scissors decapitates lizard.');
+    responseMap.set('lizardscissors', 'Scissors decapitates lizard.');
+
     responseMap.set('lizardpaper', 'Lizard eats paper.');
+    responseMap.set('paperlizard', 'Lizard eats paper.');
+
     responseMap.set('paperspock', 'Paper disporoves spock');
+    responseMap.set('spockpaper', 'Paper disporoves spock');
+
     responseMap.set('spockrock', 'Spock vaporizes rock.');
+    responseMap.set('rockspock', 'Spock vaporizes rock.');
+
     responseMap.set('rockscissors', 'Rock crushes scissors.');
+    responseMap.set('scissorsrock', 'Rock crushes scissors.');
    
     return responseMap;
 }
