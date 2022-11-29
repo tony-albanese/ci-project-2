@@ -228,10 +228,14 @@ function createResponseMap(){
 }
 
 
-async function showModalDialoge(){
+async function showDialogue(message){
     let dialogueBox = document.getElementById("dialogue-box");
     dialogueBox.style.display = "block";
-    setTimeout(hideDialogue, 4000, dialogueBox);
+
+    let dialogueText = document.getElementById("modal-message");
+    dialogueText.innerText = message;
+    await sleep(2000);
+    dialogueBox.style.display = "none";
 
 } 
 
