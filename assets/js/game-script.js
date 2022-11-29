@@ -55,9 +55,14 @@ function launchGame(event) {
 
 async function launchDifficultGameSequence(){
 
+    let round = 0;
+
     let computerChoice = generateComputerChoice();
     document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
     setTimeout( endChallengeRound,5000, computerChoice);
+
+
+    console.log("Difficult game done.")
     
 }
 
@@ -70,7 +75,7 @@ async function endChallengeRound(computerChoice){
 
         determineRoundWinner(userChoiceValue+computerChoiceValue);
         await sleep(3000);
-        resetImages();
+        //resetImages();
         userChoiceDifficultGame = null;
     }
 }
