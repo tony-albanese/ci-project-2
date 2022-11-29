@@ -188,7 +188,7 @@ function resetGame() {
 
 async function alertWinner(winner) {
     await sleep(1000);
-    alert(winner);
+    showEndGameDialogue(winner);
 }
 
 
