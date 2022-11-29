@@ -25,22 +25,54 @@ var boardReady = false;
 var difficultGame = false;
 var responseMap = createResponseMap();
 
+var userChoiceDifficultGame = null;
+
+
 function onTileClick(event) {
 
     if (boardReady && !difficultGame) {
         onEasyGameClick(this);
+    } else if(difficultGame) {
+        setUserChoiceDifficultGame(this);
+        document.getElementById("player-choice-card").setAttribute("src", userChoiceDifficultGame.getAttribute("src"));
     }
+}
+
+function setUserChoiceDifficultGame(clickedTile) {
+    userChoiceDifficultGame = clickedTile;
 }
 
 function launchGame(event) {
     boardReady = true;
     resetGame();
     if (difficultGame) {
-        console.log("Run difficult game");
+        launchDifficultGameSequence();
     } else {
         launchEasyGameSequence();
     }
 
+}
+
+async function launchDifficultGameSequence(){
+
+    let computerChoice = generateComputerChoice();
+    document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
+    setTimeout( endChallengeRound,5000, computerChoice);
+    
+}
+
+async function endChallengeRound(computerChoice){
+    if(userChoiceDifficultGame == null){
+        userLoses("You were too slow.");
+    } else {
+        let userChoiceValue = userChoiceDifficultGame.getAttribute("data-value");
+        let computerChoiceValue = computerChoice.getAttribute("data-value");
+
+        determineRoundWinner(userChoiceValue+computerChoiceValue);
+        await sleep(3000);
+        resetImages();
+        userChoiceDifficultGame = null;
+    }
 }
 
 async function launchEasyGameSequence() {
@@ -291,4 +323,6 @@ function hideDialogue(component){
 
 function checkBoxClickCallback(event){
    console.log("checkbox clicked.");
+   difficultGame = this.checked;
+   console.log(difficultGame);
 }
