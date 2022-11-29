@@ -14,7 +14,7 @@
 --st-patricks-blue: #2a2f71ff;
 --linen: #fcefe6ff;
 --mimi-pink: #f8d0e0ff;
---firebrick: #ba1a26ff;
+--firebrick: rgb(186, 26, 38);
     
     --game-width: 100%;
     --button-row-width: 75%;
@@ -188,6 +188,69 @@ settings-panel {
 margin-left: 1em;
 width: 50px;
 height: 50px;
+}
+
+
+/* Style the modal dialogue box */
+
+modal-dialogue {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+.modal-content {
+    display: grid;
+    margin-top: 0%;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    padding: 20px;
+}
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+modal-dialogue button {
+    width:250px;
+    font-size: xx-large;
+    height: 100px;
+    margin-left: 10px;
+    border-radius: 10px;
+    color: whitesmoke;
+}
+
+#play-again-button {
+    background-color: var(--st-patricks-blue);
+
+}
+
+#end-game-button {
+    background-color: var(--firebrick);
+}
+
+#modal-message, #end-game-winner {
+    font-size: xxx-large;
+    background-color: #fefefe;
+  margin: 20px auto; /* 15% from the top and centered */
+  margin-top: 15%;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border: 1px solid #888;
+width: 100%;
+  text-align: center;
 }
 
 

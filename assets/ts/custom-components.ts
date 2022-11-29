@@ -47,6 +47,13 @@ class SettingsPanel extends HTMLDivElement {
     }
 }
 
+
+class ModalDialogue extends HTMLDivElement {
+    constructor(){
+        super();
+    }
+}
+
 customElements.define("game-area", GameArea, { extends: "div" });
 customElements.define("game-tile-panel", GameTilePanel, { extends: "div" });
 customElements.define("game-play-panel", GamePlayPanel,{ extends: "div" } );
@@ -54,4 +61,4 @@ customElements.define("player-card", PlayerCard, { extends: "div" });
 customElements.define("score-board", ScoreBoard, { extends: "div" });
 customElements.define("computer-card", ComputerCard, { extends: "div" });
 customElements.define("settings-panel", SettingsPanel, { extends: "div" });
-
+customElements.define("modal-dialogue", ModalDialogue, { extends: "div" });

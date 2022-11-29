@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     // Add click listener to play button.
     let playButton = document.getElementById("play-button");
@@ -8,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add click listener to check button
     let checkBox = document.getElementById("difficulty-level-switch");
-    // checkBox.addEventListener("click", checkBoxClickCallback);
+    checkBox.addEventListener("click", checkBoxClickCallback);
 
     // Add click listener to choice tiles.
     // Get the container and loop through the siblings.
@@ -53,6 +50,7 @@ async function launchEasyGameSequence() {
         console.log("Current round" + currentRound);
         document.getElementById("round-value").innerText = currentRound;
         resetImages();
+        showStartRoundDialogue();
 
     } else {
         await (1000);
@@ -77,6 +75,8 @@ async function onEasyGameClick(clickedButton) {
     await sleep(1000);
 
     determineRoundWinner(choiceString);
+
+    await sleep(2000);
 
     launchEasyGameSequence();
 
@@ -157,7 +157,7 @@ function userWins(choiceString) {
     let statement = responseMap.get(choiceString);
 
     console.log("You win! " + statement);
-    alert("You win! " + statement);
+    showDialogue("You win! " + statement);
 
     let playerScore = parseInt(document.getElementById("player-score").innerText);
     document.getElementById("player-score").innerText = ++playerScore;
@@ -169,14 +169,13 @@ function userLoses(choiceString) {
     let statement = responseMap.get(choiceString);
 
     console.log("You lose. " + statement);
-    alert("You lose. " + statement);
+    showDialogue("You lose! "+ statement);
     let computerScore = parseInt(document.getElementById("computer-score").innerText);
     document.getElementById("computer-score").innerText = ++computerScore;
 }
 
 function userTies() {
-    alert("Tie!")
-    console.log("Tie");
+    showDialogue("Tie! Neither of you won.");
 }
 
 function resetGame() {
@@ -189,7 +188,7 @@ function resetGame() {
 
 async function alertWinner(winner) {
     await sleep(1000);
-    alert(winner);
+    showEndGameDialogue(winner);
 }
 
 
@@ -227,4 +226,69 @@ function createResponseMap(){
     responseMap.set('scissorsrock', 'Rock crushes scissors.');
    
     return responseMap;
+}
+
+
+async function showDialogue(message){
+    let dialogueBox = document.getElementById("dialogue-box");
+    dialogueBox.style.display = "block";
+
+    let dialogueText = document.getElementById("modal-message");
+    dialogueText.innerText = message;
+    await sleep(2000);
+    dialogueBox.style.display = "none";
+
+} 
+
+async function showStartRoundDialogue(){
+    let dialogueBox = document.getElementById("dialogue-box");
+    dialogueBox.style.display = "block";
+
+    let dialogueText = document.getElementById("modal-message");
+    dialogueText.innerText = "Rock!";
+    await sleep(400);
+    dialogueText.innerText = "Paper";
+    await sleep(400);
+    dialogueText.innerText = "Scissors";
+    await sleep(400);
+    dialogueText.innerText = "Lizard";
+    await sleep(400);
+    dialogueText.innerText = "Spock";
+    await sleep(400);
+
+    dialogueBox.style.display = "none";
+
+}
+
+async function showEndGameDialogue(message){
+    let dialogueBox = document.getElementById("end-game-dialogue-box");
+    
+    let dialogueText = document.getElementById("end-game-winner");
+    dialogueText.innerText = message;
+
+    let endGameButton = document.getElementById("end-game-button");
+    let playAgainButton = document.getElementById("play-again-button");
+
+
+    endGameButton.onclick = function () {
+        dialogueBox.style.display = "none";
+    }
+
+    playAgainButton.onclick = function () {
+        dialogueBox.style.display = "none";
+        launchGame();
+    }
+
+
+    dialogueBox.style.display = "block";
+}
+
+function hideDialogue(component){
+
+    component.style.display = "none";
+}
+
+
+function checkBoxClickCallback(event){
+   console.log("checkbox clicked.");
 }
