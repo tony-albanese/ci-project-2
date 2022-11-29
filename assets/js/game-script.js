@@ -229,12 +229,30 @@ function createResponseMap(){
 
 async function showModalDialoge(){
     let dialogueBox = document.getElementById("dialogue-box");
-
     dialogueBox.style.display = "block";
-
     setTimeout(hideDialogue, 4000, dialogueBox);
 
 } 
+
+async function showStartRoundDialogue(){
+    let dialogueBox = document.getElementById("dialogue-box");
+    dialogueBox.style.display = "block";
+
+    let dialogueText = document.getElementById("modal-message");
+    dialogueText.innerText = "Rock!";
+    await sleep(400);
+    dialogueText.innerText = "Paper";
+    await sleep(400);
+    dialogueText.innerText = "Scissors";
+    await sleep(400);
+    dialogueText.innerText = "Lizard";
+    await sleep(400);
+    dialogueText.innerText = "Spock";
+    await sleep(400);
+
+    dialogueBox.style.display = "none";
+
+}
 
 
 function hideDialogue(component){
@@ -244,5 +262,5 @@ function hideDialogue(component){
 
 
 function checkBoxClickCallback(event){
-    showModalDialoge();
+    showStartRoundDialogue();
 }
