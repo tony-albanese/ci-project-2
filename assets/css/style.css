@@ -206,14 +206,34 @@ modal-dialogue {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
 }
+.modal-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    
+    
+}
 
-#modal-message {
+modal-dialogue button {
+    background-color: red;
+    width:200px;
+    
+}
+#modal-message, #end-game-winner {
     font-size: x-large;
 background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 20px auto; /* 15% from the top and centered */
+  margin-top: 30%;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 60%; /* Could be more or less, depending on screen size */
+ 
   text-align: center;
 }
 
