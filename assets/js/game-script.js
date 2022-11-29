@@ -263,9 +263,22 @@ async function showStartRoundDialogue(){
 async function showEndGameDialogue(message){
     let dialogueBox = document.getElementById("end-game-dialogue-box");
     
-
     let dialogueText = document.getElementById("end-game-winner");
     dialogueText.innerText = message;
+
+    let endGameButton = document.getElementById("end-game-button");
+    let playAgainButton = document.getElementById("play-again-button");
+
+
+    endGameButton.onclick = function () {
+        dialogueBox.style.display = "none";
+    }
+
+    playAgainButton.onclick = function () {
+        dialogueBox.style.display = "none";
+        launchGame();
+    }
+
 
     dialogueBox.style.display = "block";
 }
