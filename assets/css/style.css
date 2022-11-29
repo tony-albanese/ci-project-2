@@ -207,14 +207,17 @@ modal-dialogue {
 
 }
 .modal-content {
+    display: grid;
+    margin-top: 0%;
+    margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
     width: 60%;
+    padding: 20px;
 }
 .modal-buttons {
     display: flex;
     justify-content: flex-end;
-    
     
 }
 
@@ -240,13 +243,13 @@ modal-dialogue button {
     font-size: xxx-large;
     background-color: #fefefe;
   margin: 20px auto; /* 15% from the top and centered */
-  margin-top: 30%;
+  margin-top: 15%;
   margin-bottom: 5px;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
   border: 1px solid #888;
- 
+width: 100%;
   text-align: center;
 }
 
