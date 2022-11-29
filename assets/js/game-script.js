@@ -1,5 +1,6 @@
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
     // Add click listener to play button.
     let playButton = document.getElementById("play-button");
@@ -25,6 +26,7 @@ var maxRounds = 3;
 var currentRound = 0;
 var boardReady = false;
 var difficultGame = false;
+var responseMap = createResponseMap();
 
 function onTileClick(event) {
 
@@ -116,7 +118,7 @@ function determineRoundWinner(choiceString) {
         case 'paperspock':
         case 'spockrock':
         case 'rockscissors':
-            userWins();
+            userWins(choiceString);
             break;
 
         case 'rockrock':
@@ -124,7 +126,7 @@ function determineRoundWinner(choiceString) {
         case 'lizardlizard':
         case 'scissorsscissors':
         case 'spockspock':
-            userTies();
+            userTies(choiceString);
             break;
         default:
             userLoses();
@@ -150,17 +152,23 @@ function resetGame() {
     resetImages();
 }
 
-function userWins() {
-    console.log("Win!");
-    alert("You win!");
+function userWins(choiceString) {
+   
+    let statement = responseMap.get(choiceString);
+
+    console.log("You win! " + statement);
+    alert("You win! " + statement);
+
     let playerScore = parseInt(document.getElementById("player-score").innerText);
     document.getElementById("player-score").innerText = ++playerScore;
 
 }
 
-function userLoses() {
-    alert("You lose!")
-    console.log("Lose!");
+function userLoses(choiceString) {
+    let statement = responseMap.get(choiceString);
+
+    console.log("You lose. " + statement);
+    alert("You lose. " + statement);
     let computerScore = parseInt(document.getElementById("computer-score").innerText);
     document.getElementById("computer-score").innerText = ++computerScore;
 }
@@ -181,4 +189,22 @@ function resetGame() {
 async function alertWinner(winner) {
     await sleep(1000);
     alert(winner);
+}
+
+
+function createResponseMap(){
+    let responseMap = new Map();
+
+    responseMap.set('scissorspaper', 'Scissors cuts paper.');
+    responseMap.set('paperrock', 'Paper covers rock.');
+    responseMap.set('rocklizard','Rock crushes lizard.');
+    responseMap.set('lizardspock', 'Lizard poisons Spock.');
+    responseMap.set('spockscissors', 'Spock smashes scissors');
+    responseMap.set('scissorslizard', 'Scissors decapitates lizard.');
+    responseMap.set('lizardpaper', 'Lizard eats paper.');
+    responseMap.set('paperspock', 'Paper disporoves spock');
+    responseMap.set('spockrock', 'Spock vaporizes rock.');
+    responseMap.set('rockscissors', 'Rock crushes scissors.');
+   
+    return responseMap;
 }
