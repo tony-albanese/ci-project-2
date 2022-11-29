@@ -42,7 +42,7 @@ async function launchDifficultGameSequence(){
     let round = 0;
 
     for(round = 1; round <=3; round++) {
-        
+        document.getElementById("round-value").innerText = round;
         let computerChoice = generateComputerChoice();
         document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
         setTimeout( endChallengeRound,5000, computerChoice); 
