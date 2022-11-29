@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     // Add click listener to play button.
     let playButton = document.getElementById("play-button");
@@ -8,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add click listener to check button
     let checkBox = document.getElementById("difficulty-level-switch");
-    // checkBox.addEventListener("click", checkBoxClickCallback);
+    checkBox.addEventListener("click", checkBoxClickCallback);
 
     // Add click listener to choice tiles.
     // Get the container and loop through the siblings.
@@ -227,4 +224,25 @@ function createResponseMap(){
     responseMap.set('scissorsrock', 'Rock crushes scissors.');
    
     return responseMap;
+}
+
+
+async function showModalDialoge(){
+    let dialogueBox = document.getElementById("dialogue-box");
+
+    dialogueBox.style.display = "block";
+
+    setTimeout(hideDialogue, 4000, dialogueBox);
+
+} 
+
+
+function hideDialogue(component){
+
+    component.style.display = "none";
+}
+
+
+function checkBoxClickCallback(event){
+    showModalDialoge();
 }
