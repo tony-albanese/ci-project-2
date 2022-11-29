@@ -263,5 +263,5 @@ function hideDialogue(component){
 
 
 function checkBoxClickCallback(event){
-    showStartRoundDialogue();
+   console.log("checkbox clicked.");
 }
