@@ -50,6 +50,7 @@ async function launchEasyGameSequence() {
         console.log("Current round" + currentRound);
         document.getElementById("round-value").innerText = currentRound;
         resetImages();
+        showStartRoundDialogue();
 
     } else {
         await (1000);
