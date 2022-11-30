@@ -7,3 +7,6 @@ Used color palette generated from Bazinga. BBT colors
 
 
 For testing, describe process of installing jest and nodemon
+
+Give credit to YouTube video for using strings to determine winner with case.
+
