@@ -202,7 +202,7 @@ function userWins(choiceString) {
    
     let statement = responseMap.get(choiceString);
 
-    console.log("You win! " + statement);
+
     showDialogue("You win! " + statement);
 
     let playerScore = parseInt(document.getElementById("player-score").innerText);
@@ -213,10 +213,8 @@ function userWins(choiceString) {
 function userLoses(choiceString) {
 
     //TODO add null check for choice string.
-    console.log("choiceString lose: "+ choiceString);
+ 
     let statement = responseMap.get(choiceString);
-
-    console.log("You lose. " + statement);
     showDialogue("You lose! "+ statement);
     let computerScore = parseInt(document.getElementById("computer-score").innerText);
     document.getElementById("computer-score").innerText = ++computerScore;
