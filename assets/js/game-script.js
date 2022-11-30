@@ -48,8 +48,8 @@ async function launchDifficultGameSequence(){
 
         //TODO shuffle the deck
         //TODO lower the time. 
-        setTimeout( endChallengeRound,5000, computerChoice); 
-        await sleep(7000);
+        setTimeout( endChallengeRound,3000, computerChoice); 
+        await sleep(5000);
     }
    
 
