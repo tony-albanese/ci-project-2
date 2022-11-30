@@ -56,7 +56,6 @@ async function launchDifficultGameSequence(){
     let winner = determineGameWinner();
     showEndGameDialogue(winner);
 
-    console.log("Difficult game done.")
     
 }
 
