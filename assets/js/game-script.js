@@ -61,7 +61,7 @@ async function launchDifficultGameSequence(){
 
 async function endChallengeRound(computerChoice){
     if(userChoiceDifficultGame == null){
-        userLoses("You were too slow.");
+        userLoses(null);
     } else {
         let userChoiceValue = userChoiceDifficultGame.getAttribute("data-value");
         let computerChoiceValue = computerChoice.getAttribute("data-value");
@@ -201,8 +201,6 @@ function resetGame() {
 function userWins(choiceString) {
    
     let statement = responseMap.get(choiceString);
-
-
     showDialogue("You win! " + statement);
 
     let playerScore = parseInt(document.getElementById("player-score").innerText);
@@ -211,10 +209,15 @@ function userWins(choiceString) {
 }
 
 function userLoses(choiceString) {
-
+    console.log("choice string " + choiceString);
+    let statement = "";
     //TODO add null check for choice string.
- 
-    let statement = responseMap.get(choiceString);
+    if(choiceString === null || choiceString === 'undefined') {
+        statement = "You're too slow!";
+    } else {
+        statement = responseMap.get(choiceString);
+    }
+
     showDialogue("You lose! "+ statement);
     let computerScore = parseInt(document.getElementById("computer-score").innerText);
     document.getElementById("computer-score").innerText = ++computerScore;
