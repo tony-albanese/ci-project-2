@@ -64,6 +64,15 @@ The second section contains a panel of five images (called "tiles") that represe
 The last section contains row of a button to initiate gameplay and a checkbox to indicate if the user wants to play the challenge game.
 
 #### Modal Overlays
+The user must know not only what the current score is and what round they are on, but also must be provided with feedback as to what the outcome a particular round is, who the winner of the game is, and as to when to make a choice. One could use the alert() JavaScript method to display some information to the user. However, this is not ideal as the alert has generic styling that breaks the theming of the game. One could also employ dialogues from frameworks such as Bootstrap or Materialize. This also is not a good choice as these dialogue boxes are for applications. In commercial video games, dialogue boxes have a "gameified" look. (give example) I wanted to do that here.
+
+The solution is to use a modal overlay. These are elements that cover the screen and prevent the user from interacting with the elements below. They are perfect for displaying information on time of the screen and then either be programmed to disappear automatically after a period of time or when the user dismisses them.
+
+Overlays are simple HTML elements. Their initial display is set to none to make them initially invisible and then they can be programmatically made to appear and disappear as needed. These overalays are styled with CSS like any other HTML elements.
+
+I chose overalys to cover the entire screen with an overlay to prevent interaction. In additon, I styled the elements the overlay (which are just text and some buttons) to have the same font and color scheme as the rest of the game. Overlays are used to announce the winner of a round, the winner of a game, and in the simple game, to prompt the user to make a choice by indivdiually flashing the words "Rock, Paper, Scissors, Lizard, Spock!". At the end of the game, in addition to being notified as to who won, the user is presented with two buttons offering the option to play again or to quit the game.
+
+Modal overlays are also used at the end of a particular round. It is not enough to know simply who one. The user must also know why they won or lost. Thus, a message is displayed next to the notification of a win or loss stating the game rule. For example, if the user selected rock and the computer Spock, then the overlay showing the following would appear: "You lose. Spock vaporizes rock." Or, if the user won, they would be told why. For example f the user chose paper and the computer chose rock, the message: "You won. Paper covers rock." would appear in the overlay.
 
 ## Testing
 
@@ -73,3 +82,4 @@ The last section contains row of a button to initiate gameplay and a checkbox to
 
 Give credit to YouTube video for using strings to determine winner with case.
 Algorithm for randomizing array.
+CSS overaly styling from W3Schools
