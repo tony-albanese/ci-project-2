@@ -25,18 +25,66 @@ var boardReady = false;
 var difficultGame = false;
 var responseMap = createResponseMap();
 
+var userChoiceDifficultGame = null;
+
 function onTileClick(event) {
 
     if (boardReady && !difficultGame) {
         onEasyGameClick(this);
+    } else if(difficultGame) {
+        setUserChoiceDifficultGame(this);
+        document.getElementById("player-choice-card").setAttribute("src", userChoiceDifficultGame.getAttribute("src"));
     }
+}
+
+async function launchDifficultGameSequence(){
+
+    let round = 0;
+
+    for(round = 1; round <=3; round++) {
+        document.getElementById("round-value").innerText = round;
+        let computerChoice = generateComputerChoice();
+        document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
+
+        //TODO shuffle the deck
+        shuffleTiles();
+        //TODO lower the time. 
+        setTimeout( endChallengeRound,3000, computerChoice); 
+        await sleep(5000);
+    }
+   
+    await sleep(3000);
+    let winner = determineGameWinner();
+    showEndGameDialogue(winner);
+
+    console.log("Difficult game done.")
+    
+}
+
+async function endChallengeRound(computerChoice){
+    if(userChoiceDifficultGame == null){
+        userLoses(null);
+    } else {
+        let userChoiceValue = userChoiceDifficultGame.getAttribute("data-value");
+        let computerChoiceValue = computerChoice.getAttribute("data-value");
+
+        determineRoundWinner(userChoiceValue+computerChoiceValue);
+        await sleep(3000);
+       
+    }
+   
+}
+
+
+function setUserChoiceDifficultGame(clickedTile) {
+    userChoiceDifficultGame = clickedTile;
 }
 
 function launchGame(event) {
     boardReady = true;
     resetGame();
     if (difficultGame) {
-        console.log("Run difficult game");
+        launchDifficultGameSequence();
     } else {
         launchEasyGameSequence();
     }
@@ -53,7 +101,7 @@ async function launchEasyGameSequence() {
         showStartRoundDialogue();
 
     } else {
-        await (1000);
+        await sleep (1000);
         let winner = determineGameWinner();
         alertWinner(winner);
         console.log(winner);
@@ -155,8 +203,6 @@ function resetGame() {
 function userWins(choiceString) {
    
     let statement = responseMap.get(choiceString);
-
-    console.log("You win! " + statement);
     showDialogue("You win! " + statement);
 
     let playerScore = parseInt(document.getElementById("player-score").innerText);
@@ -165,10 +211,15 @@ function userWins(choiceString) {
 }
 
 function userLoses(choiceString) {
-    console.log("choiceString lose: "+ choiceString);
-    let statement = responseMap.get(choiceString);
+    console.log("choice string " + choiceString);
+    let statement = "";
+    //TODO add null check for choice string.
+    if(choiceString === null || choiceString === 'undefined') {
+        statement = "You're too slow!";
+    } else {
+        statement = responseMap.get(choiceString);
+    }
 
-    console.log("You lose. " + statement);
     showDialogue("You lose! "+ statement);
     let computerScore = parseInt(document.getElementById("computer-score").innerText);
     document.getElementById("computer-score").innerText = ++computerScore;
@@ -291,4 +342,49 @@ function hideDialogue(component){
 
 function checkBoxClickCallback(event){
    console.log("checkbox clicked.");
+   difficultGame = this.checked;
+   console.log(difficultGame);
 }
+
+function shuffleTiles(){
+
+    let tilePanelArray = document.getElementsByTagName("game-tile-panel");
+    let tilePanel = tilePanelArray[0];
+
+    let newTileArray = [];
+
+    let tiles = tilePanel.children;
+    for(let i = 0; i < tiles.length; i++) {
+        newTileArray.push(tiles[i]);
+        
+    }
+
+    newTileArray = shuffle(newTileArray);
+
+    tilePanel.innerHTML = "";
+
+    for(let tile of newTileArray){
+        tilePanel.appendChild(tile);
+    }
+
+
+}
+
+
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
