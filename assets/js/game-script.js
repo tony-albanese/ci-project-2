@@ -344,7 +344,6 @@ function checkBoxClickCallback(event){
    console.log("checkbox clicked.");
    difficultGame = this.checked;
    console.log(difficultGame);
-   shuffleTiles();
 }
 
 function shuffleTiles(){
