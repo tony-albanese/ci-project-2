@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let tile of gameTiles) {
         tile.addEventListener("click", onTileClick);
+
+        tile.addEventListener("mouseover", onImageTileMouseOver);
+        tile.addEventListener("mouseout", onImageTileMouseOut);
     }
 });
 
@@ -386,4 +389,17 @@ function shuffle(array) {
     }
   
     return array;
+  }
+
+  function onImageTileMouseOver(event) {
+
+    if(boardReady){
+       this.style.borderRadius = "15px"
+    this.style.border = "4px solid red"; 
+    }
+    
+  }
+
+  function onImageTileMouseOut(event){
+    this.style.border = "none";
   }
