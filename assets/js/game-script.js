@@ -31,7 +31,7 @@ function onTileClick(event) {
 
     if (boardReady && !difficultGame) {
         onEasyGameClick(this);
-    } else if(difficultGame) {
+    } else if(difficultGame && boardReady) {
         setUserChoiceDifficultGame(this);
         document.getElementById("player-choice-card").setAttribute("src", userChoiceDifficultGame.getAttribute("src"));
     }
@@ -55,6 +55,7 @@ async function launchDifficultGameSequence(){
     await sleep(3000);
     let winner = determineGameWinner();
     showEndGameDialogue(winner);
+    boardReady = false;
 
     
 }
