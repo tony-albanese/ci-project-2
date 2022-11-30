@@ -47,6 +47,7 @@ async function launchDifficultGameSequence(){
         document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
 
         //TODO shuffle the deck
+        shuffleTiles();
         //TODO lower the time. 
         setTimeout( endChallengeRound,3000, computerChoice); 
         await sleep(5000);
