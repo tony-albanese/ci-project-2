@@ -98,7 +98,7 @@ async function launchEasyGameSequence() {
         showStartRoundDialogue();
 
     } else {
-        await (1000);
+        await sleep (1000);
         let winner = determineGameWinner();
         alertWinner(winner);
         console.log(winner);
