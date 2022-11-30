@@ -53,7 +53,9 @@ async function launchDifficultGameSequence(){
         await sleep(5000);
     }
    
-
+    await sleep(3000);
+    let winner = determineGameWinner();
+    showEndGameDialogue(winner);
 
     console.log("Difficult game done.")
     
@@ -68,9 +70,9 @@ async function endChallengeRound(computerChoice){
 
         determineRoundWinner(userChoiceValue+computerChoiceValue);
         await sleep(3000);
-        //resetImages();
-        userChoiceDifficultGame = null;
+       
     }
+   
 }
 
 
