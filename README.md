@@ -63,7 +63,7 @@ The second section contains a panel of five images (called "tiles") that represe
 #### Button Row
 The last section contains row of a button to initiate gameplay and a checkbox to indicate if the user wants to play the challenge game.
 
-#### Modal Overlays
+### Modal Overlays
 The user must know not only what the current score is and what round they are on, but also must be provided with feedback as to what the outcome a particular round is, who the winner of the game is, and as to when to make a choice. One could use the alert() JavaScript method to display some information to the user. However, this is not ideal as the alert has generic styling that breaks the theming of the game. One could also employ dialogues from frameworks such as Bootstrap or Materialize. This also is not a good choice as these dialogue boxes are for applications. In commercial video games, dialogue boxes have a "gameified" look. (give example) I wanted to do that here.
 
 The solution is to use a modal overlay. These are elements that cover the screen and prevent the user from interacting with the elements below. They are perfect for displaying information on time of the screen and then either be programmed to disappear automatically after a period of time or when the user dismisses them.
@@ -74,6 +74,10 @@ I chose overalys to cover the entire screen with an overlay to prevent interacti
 
 Modal overlays are also used at the end of a particular round. It is not enough to know simply who one. The user must also know why they won or lost. Thus, a message is displayed next to the notification of a win or loss stating the game rule. For example, if the user selected rock and the computer Spock, then the overlay showing the following would appear: "You lose. Spock vaporizes rock." Or, if the user won, they would be told why. For example f the user chose paper and the computer chose rock, the message: "You won. Paper covers rock." would appear in the overlay.
 
+### Challenge Game
+In the analog game, two real players who are playing without strategy are relying on chance to win. The simple version of the computer game is entirely based on chance for a win. The computer picks a tile and the player selects a tile. The player does not see the computer's choice until they themselves have made a choice. Since the computer is not emplying any strategy in a choice, i.e. it is picking at random, then the user's chance of winning is determined randomly. However, the number of outcomes is sifficiently small to ensure the user will win sometimes, but not all time. And conversly, they will lose sometimes, but not all the time. This is key to ensuring a pleasant game experience. However, the game play can be repetative and a bit boring after a while. 
+
+Therefore, I have implemented a challenge version of the game that allows the user to use some skill to increase their chance of winning. In the challenge version of the game, the user is presented with the computer's choice first. They then have a limited amount of time to make their own choice. So that means they must know the rules, perceive the computer's choice, and make the winning selection in time. If they fail to choose in the given time, they automatically lose. To prevent the user from getting too comfortable with the static layout of the image tiles, these are rearranged at the start of the round so the user has to quickly search for the winning tile in a new layout each round.
 ## Testing
 
 
