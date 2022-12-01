@@ -32,11 +32,20 @@ document.addEventListener("DOMContentLoaded", function () {
     acceptSettingsIcon.addEventListener("click", function(){
         sideMenu.style.width = "0px";
     } );
+
+    // Set the onchange listener for the rounds slider
+
+    let slider = document.getElementById("rounds-slider");
+    slider.addEventListener("change", onSliderChange);
+
+    // Set the value in the settings menue
+    let roundSettingValue = document.getElementById("round-setting-value");
+    roundSettingValue.innerText = slider.value;
 });
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
-var maxRounds = 3;
+var maxRounds = getSliderValue() ;
 var currentRound = 0;
 var boardReady = false;
 var difficultGame = false;
@@ -58,7 +67,7 @@ async function launchDifficultGameSequence(){
 
     let round = 0;
 
-    for(round = 1; round <=3; round++) {
+    for(round = 1; round <=maxRounds; round++) {
         document.getElementById("round-value").innerText = round;
         let computerChoice = generateComputerChoice();
         document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
@@ -68,13 +77,10 @@ async function launchDifficultGameSequence(){
         setTimeout( endChallengeRound,3000, computerChoice); 
         await sleep(5000);
     }
-   
+     boardReady = false;
     await sleep(3000);
     let winner = determineGameWinner();
-    showEndGameDialogue(winner);
-    boardReady = false;
-
-    
+    showEndGameDialogue(winner);   
 }
 
 async function endChallengeRound(computerChoice){
@@ -429,4 +435,18 @@ function closeMenu(){
 function openMenu(){
     let sideMenu = document.getElementById("side-menu");
     sideMenu.style.width = "300px";
+}
+
+function onSliderChange(event){
+    let rounds = this.value;
+    
+    let roundSettingValue = document.getElementById("round-setting-value");
+    roundSettingValue.innerText = rounds;
+    maxRounds = rounds;
+}
+
+function getSliderValue(){
+    let slider = document.getElementById("rounds-slider");
+    return slider.value;
+
 }
