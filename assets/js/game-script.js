@@ -78,7 +78,7 @@ async function launchDifficultGameSequence(){
         await difficultRoundEvaluate();
         await sleep(2000);
         await isGameOver();
-        await sleep(1000);
+        await sleep(250);
         }
         
         
