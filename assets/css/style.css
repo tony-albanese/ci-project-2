@@ -188,6 +188,7 @@ settings-panel {
 
 .settings-item {
     min-width: 300px;
+    padding-left: 10px;
 }
 /* Style the switch */
 #difficulty-level-switch {
