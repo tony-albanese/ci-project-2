@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //Set the event listeners for the settings icon and accept settings icon.
-  
+
     let sideMenu = document.getElementById("side-menu");
     let settingsIcon = document.getElementById("settings-icon");
     let acceptSettingsIcon = document.getElementById("accept-settings-icon");
@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
         sideMenu.style.width = "300px";
     });
 
-    acceptSettingsIcon.addEventListener("click", function(){
+    acceptSettingsIcon.addEventListener("click", function () {
         sideMenu.style.width = "0px";
-    } );
+    });
 
     // Set the onchange listener for the rounds slider
 
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
-var maxRounds = getSliderValue() ;
+var maxRounds = getSliderValue();
 var currentRound = 0;
 var boardReady = false;
 var difficultGame = false;
@@ -61,58 +61,57 @@ function onTileClick(event) {
 
     if (boardReady && !difficultGame) {
         onEasyGameClick(this);
-    } else if(difficultGame && boardReady) {
+    } else if (difficultGame && boardReady) {
         setUserChoiceDifficultGame(this);
         document.getElementById("player-choice-card").setAttribute("src", userChoiceDifficultGame.getAttribute("src"));
-    
+
     }
 }
 
 
-async function launchDifficultGameSequence(){
-        currentRound = 1;
+async function launchDifficultGameSequence() {
+    currentRound = 1;
 
-        for(let i = 0; i < maxRounds; i++){
-            await difficultRoundInitialize();
-            await sleep(4000);
+    for (let i = 0; i < maxRounds; i++) {
+        await difficultRoundInitialize();
+        await sleep(4000);
         await difficultRoundEvaluate();
         await sleep(2000);
         await isGameOver();
         await sleep(250);
-        }
-        
+    }
+
 }
 
-async function difficultRoundInitialize(){ 
+async function difficultRoundInitialize() {
     boardReady = true;
     document.getElementById("round-value").innerText = currentRound;
     currentRound++;
     computerChoiceDifficultGame = generateComputerChoice();
     document.getElementById("computer-choice-card").setAttribute("src", computerChoiceDifficultGame.getAttribute("src"));
     shuffleTiles();
-    
+
 }
 
-async function difficultRoundEvaluate(){
-   
-    if(userChoiceDifficultGame == null){
+async function difficultRoundEvaluate() {
+
+    if (userChoiceDifficultGame == null) {
         userLoses(null);
     } else {
         let userChoiceValue = userChoiceDifficultGame.getAttribute("data-value");
         let computerChoiceValue = computerChoiceDifficultGame.getAttribute("data-value");
-        determineRoundWinner(userChoiceValue+computerChoiceValue);
+        determineRoundWinner(userChoiceValue + computerChoiceValue);
     }
-   
+
 }
 
-async function isGameOver(){
+async function isGameOver() {
 
+    if (currentRound > maxRounds) {
 
-    if(currentRound > maxRounds){
-  
         let winner = determineGameWinner();
-        showEndGameDialogue(winner);  
-      
+        showEndGameDialogue(winner);
+
     }
 
 }
@@ -142,7 +141,7 @@ async function launchEasyGameSequence() {
         showStartRoundDialogue();
 
     } else {
-        
+
         let winner = determineGameWinner();
         alertWinner(winner);
         boardReady = false;
@@ -238,7 +237,7 @@ function resetGame() {
 }
 
 function userWins(choiceString) {
-   
+
     let statement = responseMap.get(choiceString);
     showDialogue("You win! " + statement);
 
@@ -251,13 +250,13 @@ function userLoses(choiceString) {
 
     let statement = "";
     //TODO add null check for choice string.
-    if(choiceString === null || choiceString === 'undefined') {
+    if (choiceString === null || choiceString === 'undefined') {
         statement = "You're too slow!";
     } else {
         statement = responseMap.get(choiceString);
     }
 
-    showDialogue("You lose! "+ statement);
+    showDialogue("You lose! " + statement);
     let computerScore = parseInt(document.getElementById("computer-score").innerText);
     document.getElementById("computer-score").innerText = ++computerScore;
 }
@@ -280,7 +279,7 @@ async function alertWinner(winner) {
 }
 
 
-function createResponseMap(){
+function createResponseMap() {
     let responseMap = new Map();
 
     responseMap.set('scissorspaper', 'Scissors cuts paper.');
@@ -289,8 +288,8 @@ function createResponseMap(){
     responseMap.set('paperrock', 'Paper covers rock.');
     responseMap.set('rockpaper', 'Paper covers rock.');
 
-    responseMap.set('rocklizard','Rock crushes lizard.');
-    responseMap.set('lizardrock','Rock crushes lizard.');
+    responseMap.set('rocklizard', 'Rock crushes lizard.');
+    responseMap.set('lizardrock', 'Rock crushes lizard.');
 
     responseMap.set('lizardspock', 'Lizard poisons Spock.');
     responseMap.set('spocklizard', 'Lizard poisons Spock.');
@@ -312,12 +311,12 @@ function createResponseMap(){
 
     responseMap.set('rockscissors', 'Rock crushes scissors.');
     responseMap.set('scissorsrock', 'Rock crushes scissors.');
-   
+
     return responseMap;
 }
 
 
-async function showDialogue(message){
+async function showDialogue(message) {
     let dialogueBox = document.getElementById("dialogue-box");
     dialogueBox.style.display = "block";
 
@@ -326,9 +325,9 @@ async function showDialogue(message){
     await sleep(2000);
     dialogueBox.style.display = "none";
 
-} 
+}
 
-async function showStartRoundDialogue(){
+async function showStartRoundDialogue() {
     let dialogueBox = document.getElementById("dialogue-box");
     dialogueBox.style.display = "block";
 
@@ -348,9 +347,9 @@ async function showStartRoundDialogue(){
 
 }
 
-async function showEndGameDialogue(message){
+async function showEndGameDialogue(message) {
     let dialogueBox = document.getElementById("end-game-dialogue-box");
-    
+
     let dialogueText = document.getElementById("end-game-winner");
     dialogueText.innerText = message;
 
@@ -370,17 +369,17 @@ async function showEndGameDialogue(message){
     dialogueBox.style.display = "block";
 }
 
-function hideDialogue(component){
+function hideDialogue(component) {
 
     component.style.display = "none";
 }
 
 
-function checkBoxClickCallback(event){
-   difficultGame = this.checked;
+function checkBoxClickCallback(event) {
+    difficultGame = this.checked;
 }
 
-function shuffleTiles(){
+function shuffleTiles() {
 
     let tilePanelArray = document.getElementsByTagName("game-tile-panel");
     let tilePanel = tilePanelArray[0];
@@ -388,16 +387,16 @@ function shuffleTiles(){
     let newTileArray = [];
 
     let tiles = tilePanel.children;
-    for(let i = 0; i < tiles.length; i++) {
+    for (let i = 0; i < tiles.length; i++) {
         newTileArray.push(tiles[i]);
-        
+
     }
 
     newTileArray = shuffle(newTileArray);
 
     tilePanel.innerHTML = "";
 
-    for(let tile of newTileArray){
+    for (let tile of newTileArray) {
         tilePanel.appendChild(tile);
     }
 
@@ -406,22 +405,22 @@ function shuffleTiles(){
 
 
 function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-  
+    let currentIndex = array.length, randomIndex;
+
     // While there remain elements to shuffle.
     while (currentIndex != 0) {
-  
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
     }
-  
+
     return array;
-  }
+}
 
 function onImageTileMouseOver(event) {
 
@@ -439,25 +438,25 @@ function onImageTileMouseOut(event) {
     this.style.transition = "0.1s";
 }
 
-function closeMenu(){
+function closeMenu() {
     let sideMenu = document.getElementById("side-menu");
     sideMenu.style.width = "0px";
 }
 
-function openMenu(){
+function openMenu() {
     let sideMenu = document.getElementById("side-menu");
     sideMenu.style.width = "300px";
 }
 
-function onSliderChange(event){
+function onSliderChange(event) {
     let rounds = this.value;
-    
+
     let roundSettingValue = document.getElementById("round-setting-value");
     roundSettingValue.innerText = rounds;
     maxRounds = rounds;
 }
 
-function getSliderValue(){
+function getSliderValue() {
     let slider = document.getElementById("rounds-slider");
     return slider.value;
 
