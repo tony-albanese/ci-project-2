@@ -307,8 +307,8 @@ width: 100%;
 
     .settings-icon {
         left: 5px;
-        top: 
     }
+
     game-area {
         margin-top: 1em;
     }
@@ -416,7 +416,12 @@ width: 100%;
 
 
 @media only screen and (max-width: 320px){
-
+    h1 {
+        margin-bottom: 2px;
+    }
+    game-tile-panel {
+        padding: 0;
+    }
   
     game-tile-panel img {
         width: 115px;
@@ -435,6 +440,12 @@ width: 100%;
 
     score-board {
         width: 125px;
-        height: 125px;
+        height: 150px;
+        margin-top: 2px;
+        margin-bottom: 10px;
+    }
+
+    #player-choice-card, #computer-choice-card {
+        width: 75px;
     }
 }
