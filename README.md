@@ -87,3 +87,4 @@ Therefore, I have implemented a challenge version of the game that allows the us
 - I used a switch block and case statements to determine the winner of each round. The switch was based on a unique string made from the user and computer tile choices. The inspiration for this method came from the YouTuber Ania Kubow on her Channel "Code with Ania Kubow" in which she shows how to code a rock paper scissors game. LINK TO VIDEO
 - Most programming languages have a built in methods for shuffling the contents of an array. JavaScript does not. The method I used to shuffle the contents of the tile card array was taken from stackoverflow and can be found here:
 - The initial styling for the overlay came from W3Schools. I took the CSS they used and just tweaked a few things for my own design.
+- initial styling for the slider came from w3 schools
