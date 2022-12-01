@@ -74,7 +74,7 @@ async function launchDifficultGameSequence() {
 
     for (let i = 0; i < maxRounds; i++) {
         await difficultRoundInitialize();
-        await sleep(4000);
+        await sleep(2000); //Change this value to manipulate how much time the user has to make a choice.
         await difficultRoundEvaluate();
         await sleep(2000);
         await isGameOver();
@@ -108,10 +108,8 @@ async function difficultRoundEvaluate() {
 async function isGameOver() {
 
     if (currentRound > maxRounds) {
-
         let winner = determineGameWinner();
         showEndGameDialogue(winner);
-
     }
 
 }
