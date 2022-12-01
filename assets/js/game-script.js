@@ -122,13 +122,6 @@ async function isGameOver(){
 
 }
 
-function difficultRoundEnd(){
-    let winner = determineGameWinner();
-    showEndGameDialogue(winner);  
-}
-
-
-
 function setUserChoiceDifficultGame(clickedTile) {
     userChoiceDifficultGame = clickedTile;
 }
