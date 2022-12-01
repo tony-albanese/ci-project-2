@@ -300,6 +300,15 @@ width: 100%;
 /* Media query for a mobile screen */
 
 @media only screen and (max-width: 768px){
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .settings-icon {
+        left: 5px;
+        top: 
+    }
     game-area {
         margin-top: 1em;
     }
@@ -314,6 +323,10 @@ width: 100%;
 /* Media query for a mobile screen */
 @media only screen and (max-width: 425px) {
 
+    .settings-icon {
+        font-size: large;
+        left: 5px;
+    }
     game-area {
         grid-template-areas: 
         "header-area header-area"
@@ -403,6 +416,8 @@ width: 100%;
 
 
 @media only screen and (max-width: 320px){
+
+  
     game-tile-panel img {
         width: 115px;
     }
