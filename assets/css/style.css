@@ -179,6 +179,11 @@ game-tile-panel img {
 settings-panel {
     font-size: xx-large;
     align-items: center;
+    flex-direction: column;
+}
+
+#accept-settings-icon {
+    font-size: xxx-large;
 }
 
 /* Style the switch */
