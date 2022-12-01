@@ -32,6 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
     acceptSettingsIcon.addEventListener("click", function(){
         sideMenu.style.width = "0px";
     } );
+
+    // Set the onchange listener for the rounds slider
+
+    let slider = document.getElementById("rounds-slider");
+    slider.addEventListener("change", onSliderChange);
+
+    // Set the value in the settings menue
+    let roundSettingValue = document.getElementById("round-setting-value");
+    roundSettingValue.innerText = slider.value;
 });
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
@@ -429,4 +438,11 @@ function closeMenu(){
 function openMenu(){
     let sideMenu = document.getElementById("side-menu");
     sideMenu.style.width = "300px";
+}
+
+function onSliderChange(event){
+    let rounds = this.value;
+    
+    let roundSettingValue = document.getElementById("round-setting-value");
+    roundSettingValue.innerText = rounds;
 }
