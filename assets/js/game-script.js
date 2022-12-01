@@ -50,7 +50,6 @@ var currentRound = 0;
 var boardReady = false;
 var difficultGame = false;
 var responseMap = createResponseMap();
-
 var userChoiceDifficultGame = null;
 
 function onTileClick(event) {
@@ -321,13 +320,13 @@ async function showStartRoundDialogue(){
     let dialogueText = document.getElementById("modal-message");
     dialogueText.innerText = "Rock!";
     await sleep(400);
-    dialogueText.innerText = "Paper";
+    dialogueText.innerText = "Paper!";
     await sleep(400);
-    dialogueText.innerText = "Scissors";
+    dialogueText.innerText = "Scissors!";
     await sleep(400);
-    dialogueText.innerText = "Lizard";
+    dialogueText.innerText = "Lizard!";
     await sleep(400);
-    dialogueText.innerText = "Spock";
+    dialogueText.innerText = "Spock!";
     await sleep(400);
 
     dialogueBox.style.display = "none";
