@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //Set the event listeners for the settings icon and accept settings icon.
+  
     let sideMenu = document.getElementById("side-menu");
-
     let settingsIcon = document.getElementById("settings-icon");
     let acceptSettingsIcon = document.getElementById("accept-settings-icon");
 
@@ -97,6 +97,7 @@ function setUserChoiceDifficultGame(clickedTile) {
 }
 
 function launchGame(event) {
+    
     boardReady = true;
     resetGame();
     if (difficultGame) {
@@ -419,4 +420,14 @@ function onImageTileMouseOver(event) {
 function onImageTileMouseOut(event) {
     this.style.border = "none";
     this.style.transition = "0.1s";
+}
+
+function closeMenu(){
+    let sideMenu = document.getElementById("side-menu");
+    sideMenu.style.width = "0px";
+}
+
+function openMenu(){
+    let sideMenu = document.getElementById("side-menu");
+    sideMenu.style.width = "300px";
 }
