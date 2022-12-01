@@ -424,7 +424,8 @@ width: 100%;
     }
   
     game-tile-panel img {
-        width: 115px;
+        width: 105px;
+        padding: 1em;
     }
     
     player-card {
