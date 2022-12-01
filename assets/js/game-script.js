@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
-var maxRounds = 3;
+var maxRounds = getSliderValue() ;
 var currentRound = 0;
 var boardReady = false;
 var difficultGame = false;
@@ -445,4 +445,11 @@ function onSliderChange(event){
     
     let roundSettingValue = document.getElementById("round-setting-value");
     roundSettingValue.innerText = rounds;
+    maxRounds = rounds;
+}
+
+function getSliderValue(){
+    let slider = document.getElementById("rounds-slider");
+    return slider.value;
+
 }
