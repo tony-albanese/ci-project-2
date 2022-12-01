@@ -260,6 +260,18 @@ width: 100%;
     color: var(--international-orange-engineering);
 }
 
+
+
+/* Style the elements for the side menu */
+
+/* Style the settings icon */
+
+.settings-icon {
+    position: fixed;
+    font-size: 60px;
+    top: 0;
+    left: 20px;
+}
 /* Media query for a laptop screen */
 @media only screen and (max-width: 1024px) {
 
