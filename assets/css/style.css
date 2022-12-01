@@ -177,12 +177,19 @@ game-tile-panel img {
 
 
 settings-panel {
-    font-size: xxx-large;
-    grid-column: 4;
-    grid-row: 4;
+    font-size: xx-large;
     align-items: center;
+    flex-direction: column;
 }
 
+#accept-settings-icon {
+    font-size: xxx-large;
+}
+
+.settings-item {
+    min-width: 300px;
+    padding-left: 10px;
+}
 /* Style the switch */
 #difficulty-level-switch {
 margin-left: 1em;
@@ -260,6 +267,32 @@ width: 100%;
     color: var(--international-orange-engineering);
 }
 
+
+
+/* Style the elements for the side menu */
+/* The basic settings taken from W3 Schools */
+.side-menu {
+    height: 100%; /* 100% Full-height */
+    width: 0px; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: rgb(175, 177, 209);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
+    font-size: xxx-large;
+  }
+
+/* Style the settings icon */
+
+.settings-icon {
+    position: fixed;
+    font-size: 60px;
+    top: 0;
+    left: 20px;
+}
 /* Media query for a laptop screen */
 @media only screen and (max-width: 1024px) {
 
@@ -276,6 +309,15 @@ width: 100%;
 /* Media query for a mobile screen */
 
 @media only screen and (max-width: 768px){
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .settings-icon {
+        left: 5px;
+    }
+
     game-area {
         margin-top: 1em;
     }
@@ -290,12 +332,16 @@ width: 100%;
 /* Media query for a mobile screen */
 @media only screen and (max-width: 425px) {
 
+    .settings-icon {
+        font-size: large;
+        left: 5px;
+    }
     game-area {
         grid-template-areas: 
         "header-area header-area"
         "game-play-panel-area game-play-panel-area"
         "tile-area tile-area" 
-        "button-area settings-area" 
+        "button-area button-area" 
         
         ;
     }
@@ -362,7 +408,6 @@ width: 100%;
     }
     
     settings-panel{
-        grid-area: settings-area;
         font-size: x-large;
         justify-content:space-around;
     }
@@ -380,8 +425,16 @@ width: 100%;
 
 
 @media only screen and (max-width: 320px){
+    h1 {
+        margin-bottom: 2px;
+    }
+    game-tile-panel {
+        padding: 0;
+    }
+  
     game-tile-panel img {
-        width: 115px;
+        width: 105px;
+        padding: 1em;
     }
     
     player-card {
@@ -397,6 +450,12 @@ width: 100%;
 
     score-board {
         width: 125px;
-        height: 125px;
+        height: 150px;
+        margin-top: 2px;
+        margin-bottom: 10px;
+    }
+
+    #player-choice-card, #computer-choice-card {
+        width: 75px;
     }
 }

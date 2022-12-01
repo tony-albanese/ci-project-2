@@ -35,6 +35,9 @@ Writing a sleep() method in javascript
 https://blog.devgenius.io/how-to-make-javascript-sleep-or-wait-d95d33c99909
 
 
+Need to give credits for icons.
+
+
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 

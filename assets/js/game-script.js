@@ -18,6 +18,20 @@ document.addEventListener("DOMContentLoaded", function () {
         tile.addEventListener("mouseover", onImageTileMouseOver);
         tile.addEventListener("mouseout", onImageTileMouseOut);
     }
+
+    //Set the event listeners for the settings icon and accept settings icon.
+  
+    let sideMenu = document.getElementById("side-menu");
+    let settingsIcon = document.getElementById("settings-icon");
+    let acceptSettingsIcon = document.getElementById("accept-settings-icon");
+
+    settingsIcon.addEventListener("click", function () {
+        sideMenu.style.width = "300px";
+    });
+
+    acceptSettingsIcon.addEventListener("click", function(){
+        sideMenu.style.width = "0px";
+    } );
 });
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
@@ -83,6 +97,7 @@ function setUserChoiceDifficultGame(clickedTile) {
 }
 
 function launchGame(event) {
+    closeMenu();
     boardReady = true;
     resetGame();
     if (difficultGame) {
@@ -332,7 +347,6 @@ async function showEndGameDialogue(message){
         launchGame();
     }
 
-
     dialogueBox.style.display = "block";
 }
 
@@ -405,4 +419,14 @@ function onImageTileMouseOver(event) {
 function onImageTileMouseOut(event) {
     this.style.border = "none";
     this.style.transition = "0.1s";
+}
+
+function closeMenu(){
+    let sideMenu = document.getElementById("side-menu");
+    sideMenu.style.width = "0px";
+}
+
+function openMenu(){
+    let sideMenu = document.getElementById("side-menu");
+    sideMenu.style.width = "300px";
 }
