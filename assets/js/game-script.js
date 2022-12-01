@@ -67,7 +67,7 @@ async function launchDifficultGameSequence(){
 
     let round = 0;
 
-    for(round = 1; round <=3; round++) {
+    for(round = 1; round <=maxRounds; round++) {
         document.getElementById("round-value").innerText = round;
         let computerChoice = generateComputerChoice();
         document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
@@ -77,13 +77,10 @@ async function launchDifficultGameSequence(){
         setTimeout( endChallengeRound,3000, computerChoice); 
         await sleep(5000);
     }
-   
+     boardReady = false;
     await sleep(3000);
     let winner = determineGameWinner();
-    showEndGameDialogue(winner);
-    boardReady = false;
-
-    
+    showEndGameDialogue(winner);   
 }
 
 async function endChallengeRound(computerChoice){
