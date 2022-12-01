@@ -18,6 +18,20 @@ document.addEventListener("DOMContentLoaded", function () {
         tile.addEventListener("mouseover", onImageTileMouseOver);
         tile.addEventListener("mouseout", onImageTileMouseOut);
     }
+
+    //Set the event listeners for the settings icon and accept settings icon.
+    let sideMenu = document.getElementById("side-menu");
+
+    let settingsIcon = document.getElementById("settings-icon");
+    let acceptSettingsIcon = document.getElementById("accept-settings-icon");
+
+    settingsIcon.addEventListener("click", function () {
+        sideMenu.style.width = "300px";
+    });
+
+    acceptSettingsIcon.addEventListener("click", function(){
+        sideMenu.style.width = "0px";
+    } );
 });
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
