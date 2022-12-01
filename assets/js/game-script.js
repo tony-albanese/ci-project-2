@@ -97,7 +97,7 @@ function setUserChoiceDifficultGame(clickedTile) {
 }
 
 function launchGame(event) {
-    
+    closeMenu();
     boardReady = true;
     resetGame();
     if (difficultGame) {
@@ -346,7 +346,6 @@ async function showEndGameDialogue(message){
         dialogueBox.style.display = "none";
         launchGame();
     }
-
 
     dialogueBox.style.display = "block";
 }
