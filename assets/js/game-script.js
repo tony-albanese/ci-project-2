@@ -391,15 +391,18 @@ function shuffle(array) {
     return array;
   }
 
-  function onImageTileMouseOver(event) {
+function onImageTileMouseOver(event) {
 
-    if(boardReady){
-       this.style.borderRadius = "15px"
-    this.style.border = "4px solid red"; 
+    if (boardReady) {
+        this.style.transition = "0.2s";
+        this.style.borderRadius = "15px"
+        this.style.border = "4px solid red";
+
     }
-    
-  }
 
-  function onImageTileMouseOut(event){
+}
+
+function onImageTileMouseOut(event) {
     this.style.border = "none";
-  }
+    this.style.transition = "0.1s";
+}
