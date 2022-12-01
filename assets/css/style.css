@@ -186,6 +186,9 @@ settings-panel {
     font-size: xxx-large;
 }
 
+.settings-item {
+    min-width: 300px;
+}
 /* Style the switch */
 #difficulty-level-switch {
 margin-left: 1em;
