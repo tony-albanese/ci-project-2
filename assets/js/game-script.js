@@ -128,43 +128,6 @@ function difficultRoundEnd(){
 }
 
 
-/* 
-async function launchDifficultGameSequence(){
-
-    let round = 0;
-
-    for(round = 1; round <=maxRounds; round++) {
-        document.getElementById("round-value").innerText = round;
-        let computerChoice = generateComputerChoice();
-        document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
-
-        shuffleTiles();
-    
-        setTimeout( endChallengeRound,3000, computerChoice); 
-        await sleep(5000);
-    }
-     boardReady = false;
-    await sleep(3000);
-    let winner = determineGameWinner();
-    showEndGameDialogue(winner);   
-}
-
-async function endChallengeRound(computerChoice){
-    if(userChoiceDifficultGame == null){
-        userLoses(null);
-    } else {
-        let userChoiceValue = userChoiceDifficultGame.getAttribute("data-value");
-        let computerChoiceValue = computerChoice.getAttribute("data-value");
-
-        determineRoundWinner(userChoiceValue+computerChoiceValue);
-        await sleep(3000);
-       
-    }
-   
-}
-
-*/
-
 
 function setUserChoiceDifficultGame(clickedTile) {
     userChoiceDifficultGame = clickedTile;
