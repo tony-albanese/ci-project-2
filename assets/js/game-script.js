@@ -51,6 +51,11 @@ var boardReady = false;
 var difficultGame = false;
 var responseMap = createResponseMap();
 var userChoiceDifficultGame = null;
+var computerChoiceDifficultGame = null;
+var difficultGameIntervalId = null;
+var gameOverId = null;
+var initializeId = null;
+var evaluateId = null;
 
 function onTileClick(event) {
 
@@ -59,9 +64,71 @@ function onTileClick(event) {
     } else if(difficultGame && boardReady) {
         setUserChoiceDifficultGame(this);
         document.getElementById("player-choice-card").setAttribute("src", userChoiceDifficultGame.getAttribute("src"));
+        console.log(userChoiceDifficultGame);
     }
 }
 
+
+async function launchDifficultGameSequence(){
+        currentRound = 1;
+
+        for(let i = 0; i < maxRounds; i++){
+            await difficultRoundInitialize();
+            await sleep(4000);
+        await difficultRoundEvaluate();
+        await sleep(2000);
+        await isGameOver();
+        await sleep(1000);
+        }
+        
+        
+    
+}
+
+async function difficultRoundInitialize(){
+    console.log("difficult round initialize");
+ 
+    boardReady = true;
+    document.getElementById("round-value").innerText = currentRound;
+    currentRound++;
+    computerChoiceDifficultGame = generateComputerChoice();
+    document.getElementById("computer-choice-card").setAttribute("src", computerChoiceDifficultGame.getAttribute("src"));
+    
+}
+
+async function difficultRoundEvaluate(){
+   
+    if(userChoiceDifficultGame == null){
+        userLoses(null);
+    } else {
+        let userChoiceValue = userChoiceDifficultGame.getAttribute("data-value");
+        let computerChoiceValue = computerChoiceDifficultGame.getAttribute("data-value");
+        determineRoundWinner(userChoiceValue+computerChoiceValue);
+    }
+   
+}
+
+async function isGameOver(){
+
+
+    if(currentRound > maxRounds){
+  
+        let winner = determineGameWinner();
+        showEndGameDialogue(winner);  
+      
+    } else {
+        
+    }
+
+}
+
+function difficultRoundEnd(){
+    let winner = determineGameWinner();
+    showEndGameDialogue(winner);  
+}
+
+
+/* 
 async function launchDifficultGameSequence(){
 
     let round = 0;
@@ -95,6 +162,8 @@ async function endChallengeRound(computerChoice){
     }
    
 }
+
+*/
 
 
 function setUserChoiceDifficultGame(clickedTile) {
@@ -176,7 +245,7 @@ function generateComputerChoice() {
 
 
 function determineRoundWinner(choiceString) {
-
+    console.log(choiceString);
     switch (choiceString) {
         case 'scissorspaper':
         case 'paperrock':
