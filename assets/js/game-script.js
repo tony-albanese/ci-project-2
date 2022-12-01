@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let tile of gameTiles) {
         tile.addEventListener("click", onTileClick);
+
+        tile.addEventListener("mouseover", onImageTileMouseOver);
+        tile.addEventListener("mouseout", onImageTileMouseOut);
     }
 });
 
@@ -31,7 +34,7 @@ function onTileClick(event) {
 
     if (boardReady && !difficultGame) {
         onEasyGameClick(this);
-    } else if(difficultGame) {
+    } else if(difficultGame && boardReady) {
         setUserChoiceDifficultGame(this);
         document.getElementById("player-choice-card").setAttribute("src", userChoiceDifficultGame.getAttribute("src"));
     }
@@ -46,9 +49,8 @@ async function launchDifficultGameSequence(){
         let computerChoice = generateComputerChoice();
         document.getElementById("computer-choice-card").setAttribute("src", computerChoice.getAttribute("src"));
 
-        //TODO shuffle the deck
         shuffleTiles();
-        //TODO lower the time. 
+    
         setTimeout( endChallengeRound,3000, computerChoice); 
         await sleep(5000);
     }
@@ -56,8 +58,8 @@ async function launchDifficultGameSequence(){
     await sleep(3000);
     let winner = determineGameWinner();
     showEndGameDialogue(winner);
+    boardReady = false;
 
-    console.log("Difficult game done.")
     
 }
 
@@ -388,3 +390,19 @@ function shuffle(array) {
   
     return array;
   }
+
+function onImageTileMouseOver(event) {
+
+    if (boardReady) {
+        this.style.transition = "0.2s";
+        this.style.borderRadius = "15px"
+        this.style.border = "4px solid red";
+
+    }
+
+}
+
+function onImageTileMouseOut(event) {
+    this.style.border = "none";
+    this.style.transition = "0.1s";
+}
