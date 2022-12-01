@@ -280,7 +280,7 @@ width: 100%;
     background-color: rgb(205, 190, 233); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
     font-size: xxx-large;
   }
 
