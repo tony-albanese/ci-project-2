@@ -93,6 +93,7 @@ async function difficultRoundInitialize(){
     currentRound++;
     computerChoiceDifficultGame = generateComputerChoice();
     document.getElementById("computer-choice-card").setAttribute("src", computerChoiceDifficultGame.getAttribute("src"));
+    shuffleTiles();
     
 }
 
