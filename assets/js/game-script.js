@@ -64,7 +64,7 @@ function onTileClick(event) {
     } else if(difficultGame && boardReady) {
         setUserChoiceDifficultGame(this);
         document.getElementById("player-choice-card").setAttribute("src", userChoiceDifficultGame.getAttribute("src"));
-        console.log(userChoiceDifficultGame);
+    
     }
 }
 
@@ -81,13 +81,9 @@ async function launchDifficultGameSequence(){
         await sleep(250);
         }
         
-        
-    
 }
 
-async function difficultRoundInitialize(){
-    console.log("difficult round initialize");
- 
+async function difficultRoundInitialize(){ 
     boardReady = true;
     document.getElementById("round-value").innerText = currentRound;
     currentRound++;
@@ -141,7 +137,6 @@ async function launchEasyGameSequence() {
     if (currentRound < maxRounds) {
         boardReady = true;
         currentRound++;
-        console.log("Current round" + currentRound);
         document.getElementById("round-value").innerText = currentRound;
         resetImages();
         showStartRoundDialogue();
@@ -150,7 +145,6 @@ async function launchEasyGameSequence() {
         
         let winner = determineGameWinner();
         alertWinner(winner);
-        console.log(winner);
         boardReady = false;
     }
 }
@@ -158,7 +152,6 @@ async function launchEasyGameSequence() {
 async function onEasyGameClick(clickedButton) {
     boardReady = false;
     let userChoiceValue = clickedButton.getAttribute("data-value");
-    console.log(userChoiceValue);
 
     let computerChoice = generateComputerChoice();
     let computerChoiceValue = computerChoice.getAttribute("data-value");
@@ -194,13 +187,11 @@ function generateComputerChoice() {
     let gameTiles = document.getElementsByClassName('game-tile');
     let randomIndex = Math.floor(Math.random() * 5);
     let computerChoice = gameTiles[randomIndex]
-    console.log(computerChoice.getAttribute("data-value"));
     return computerChoice;
 }
 
 
 function determineRoundWinner(choiceString) {
-    console.log(choiceString);
     switch (choiceString) {
         case 'scissorspaper':
         case 'paperrock':
@@ -257,7 +248,7 @@ function userWins(choiceString) {
 }
 
 function userLoses(choiceString) {
-    console.log("choice string " + choiceString);
+
     let statement = "";
     //TODO add null check for choice string.
     if(choiceString === null || choiceString === 'undefined') {
@@ -386,9 +377,7 @@ function hideDialogue(component){
 
 
 function checkBoxClickCallback(event){
-   console.log("checkbox clicked.");
    difficultGame = this.checked;
-   console.log(difficultGame);
 }
 
 function shuffleTiles(){
