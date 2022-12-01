@@ -177,9 +177,7 @@ game-tile-panel img {
 
 
 settings-panel {
-    font-size: xxx-large;
-    grid-column: 4;
-    grid-row: 4;
+    font-size: xx-large;
     align-items: center;
 }
 
@@ -263,7 +261,7 @@ width: 100%;
 
 
 /* Style the elements for the side menu */
-
+/* The basic settings taken from W3 Schools */
 .side-menu {
     height: 100%; /* 100% Full-height */
     width: 0px; /* 0 width - change this with JavaScript */
@@ -321,7 +319,7 @@ width: 100%;
         "header-area header-area"
         "game-play-panel-area game-play-panel-area"
         "tile-area tile-area" 
-        "button-area settings-area" 
+        "button-area button-area" 
         
         ;
     }
@@ -388,7 +386,6 @@ width: 100%;
     }
     
     settings-panel{
-        grid-area: settings-area;
         font-size: x-large;
         justify-content:space-around;
     }
