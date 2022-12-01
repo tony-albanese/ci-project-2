@@ -84,6 +84,7 @@ async function launchDifficultGameSequence() {
 }
 
 async function difficultRoundInitialize() {
+    resetUserImage();
     boardReady = true;
     document.getElementById("round-value").innerText = currentRound;
     currentRound++;
@@ -223,6 +224,10 @@ function setImages(userChoice, computerChoice) {
 function resetImages() {
     document.getElementById("player-choice-card").setAttribute("src", "assets/images/question-player.png");
     document.getElementById("computer-choice-card").setAttribute("src", "assets/images/question-computer.png");
+}
+
+function resetUserImage(){
+    document.getElementById("player-choice-card").setAttribute("src", "assets/images/question-player.png");
 }
 
 function resetGame() {
