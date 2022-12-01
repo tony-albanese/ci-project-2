@@ -116,8 +116,6 @@ async function isGameOver(){
         let winner = determineGameWinner();
         showEndGameDialogue(winner);  
       
-    } else {
-        
     }
 
 }
