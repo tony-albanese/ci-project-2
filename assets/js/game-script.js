@@ -386,6 +386,7 @@ function hideDialogue(component) {
 
 function checkBoxClickCallback(event) {
     difficultGame = this.checked;
+    setDifficultySliderVisibility();
 }
 
 function shuffleTiles() {
@@ -498,4 +499,13 @@ function onTimingSliderChange(event){
 function updateDifficultyMenuText(level){
     let difficultyLevel = document.getElementById("difficulty-level");
     difficultyLevel.innerText = level;
+}
+
+function setDifficultySliderVisibility() {
+    let difficultyMenuItem = document.getElementById("difficulty-menu-item");
+    if(difficultGame) {
+        difficultyMenuItem.style.display = "block";
+    } else {
+        difficultyMenuItem.style.display = "none";
+    }
 }
