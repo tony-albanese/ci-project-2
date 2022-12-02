@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPSLS!</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Load the custom components before rest of document.-->
+    <script src="assets/js/custom-components.js"></script>
+</head>
+
+<body>
+
+    <div id="panel" class="grid-container">
+        
+    <header class="header-area">
+        <div class = "settings-icon">
+            <i id="settings-icon" class="fa-solid fa-sliders"></i>
+        </div>
+        <h1>Rock, Paper, Scissors, Lizard, <span class="spock">Spock</span>!</h1>
+    </header>
+
+    <game-area class="grid-container">
+    
+        <game-play-panel class="flex-container game-play-panel-area">
+            
+
+            <player-card class="grid-container player-area">
+                <h2 id="player-card-header" class="player-color player-area">You</h2>
+                <img id="player-choice-card" src="assets/images/question-player.png" alt="A question mark" class="tile">
+            </player-card>
+
+            <score-board class="grid-container score-area">
+                <h2>Score</h2>
+                <p id="player-score" class="player-color">0</p>
+                <p id="computer-score" class="computer-color">0</p>
+                <p id="round">Round <span id="round-value">--</span></p>
+            </score-board>
+
+            <computer-card class="grid-container computer-area">
+                <h2 id="computer-card-header" class="computer-color">Shelbot</h2>
+                <img id="computer-choice-card" src="assets/images/question-computer.png" alt="A question mark." class="tile">
+            </computer-card>
+
+        </game-play-panel>
+
+       
+        <game-tile-panel class="flex-container tile-area">
+        
+            <img id="rock-tile" class="game-tile" data-value="rock" src="assets/images/rock.png" alt="rock">
+            <img id="paper-tile" class="game-tile" data-value="paper" src="assets/images/paper.png" alt="paper">
+            <img id="scissors-tile" class="game-tile" data-value="scissors" src="assets/images/scissors.png" alt="scissors">
+            <img id="lizard-tile" class="game-tile" data-value="lizard" src="assets/images/lizard.png" alt="lizard">
+            <img id="spock-tile" class="game-tile" data-value="spock" src="assets/images/spock.png" alt="spock">
+  
+        </game-tile-panel>
+
+    
+        <button id="play-button" class="button-area"><i class="fa-solid fa-play"></i></button>
+
+
+    
+    </game-area>
+</div>
+
+
+<div id="side-menu" class="side-menu">
+    <settings-panel class="flex-container">
+    
+        <div class="settings-item slider-container">
+            <label for="rounds-slider">Total Rounds <span id="round-setting-value"></span></label>
+            <input type="range" name="rounds-slider" value="3" id="rounds-slider" min="1" max="10" step="1" class="slider">
+        </div>
+    
+        <div class="settings-item">
+            <label for="difficulty-level-switch">Challenge Mode</label>
+            <input id="difficulty-level-switch" type="checkbox">
+        </div>
+    
+        <div id="difficulty-menu-item" class="settings-item slider-container">
+            <label for="timing-slider">Speed <span id="difficulty-level">normal</span></label>
+            <input type="range" name="timing-slider" value="2" id="timing-slider" min="1" max="3" step="1" class="slider">
+        </div>
+        <i id="accept-settings-icon" class="fa-regular fa-circle-check"></i>
+    
+    </settings-panel>
+ 
+</div>
+
+<modal-dialogue id="dialogue-box">
+    <p id="modal-message">Dummy default message.</p>
+</modal-dialogue>
+
+<modal-dialogue id="end-game-dialogue-box">
+    <div class="modal-content">
+        <p id="end-game-winner"></p>
+        <div class="modal-buttons">
+            <button id="play-again-button">Play Again</button>
+            <button id="end-game-button">End Game</button>
+        </div>
+    </div>
+</modal-dialogue>
+
+
+<script src="https://kit.fontawesome.com/6a251fd2ee.js" crossorigin="anonymous"></script>
+<script src="assets/js/game-script.js"></script>  
+</body>
+
+</html>
