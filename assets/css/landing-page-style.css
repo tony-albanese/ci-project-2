@@ -38,7 +38,6 @@ h1 {
     font-size: 72px;
     margin-bottom: 0.5em;
     color: var(--linen);
-    background-color:rgba(60, 71, 153, 0.6) ;
     width: auto;
 
 }
@@ -54,4 +53,22 @@ body {
     background: url("../images/hero.webp") no-repeat center center;
     height: 400px;
     overflow: hidden;
+}
+
+#rules {
+    background: url("../images/Pierre_ciseaux_feuille_lézard_spock.svg") no-repeat center;
+    height: 600px;
+    overflow: hidden;
+}
+
+.rules-overlay {
+    width: 100%;
+    height: 100% ;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    background-color:rgba(60, 71, 153, 0.6) ;
 }
