@@ -123,3 +123,27 @@ li {
     font-size: xx-large;
 }
 
+footer {
+    height: 150px;
+    width: 100%;
+    color: var(--linen);
+    background-color: var(--computer-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    font-size: large;
+    padding-top: 1em;
+    padding-left: 1em;
+    margin-top: 2em;
+
+}
+
+footer h3 {
+    margin-top: 5px;
+    font-size: x-large;
+    padding: 2px;
+}
+
+footer a {
+    color: var(--linen);
+    font-size: large;
+}
