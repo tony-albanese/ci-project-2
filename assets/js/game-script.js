@@ -89,6 +89,7 @@ async function launchDifficultGameSequence() {
 }
 
 async function difficultRoundInitialize() {
+    userChoiceDifficultGame = null;
     resetUserImage();
     boardReady = true;
     document.getElementById("round-value").innerText = currentRound;
