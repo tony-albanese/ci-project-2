@@ -160,12 +160,12 @@ game-tile-panel img {
 
 /* Style the play button */
 #play-button {
-    width: 100%;
+    width: 15%;
     height: 100px;
     font-size: xxx-large;
-    background-color: var(--international-orange-engineering);
+    background-color: #8aae5d;
     color: var(--linen);
-    grid-column: 2/4;
+    grid-column: 1/6;
     grid-row: 4;
     border-radius: 12px;
 }
