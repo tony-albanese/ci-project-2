@@ -477,20 +477,24 @@ function onTimingSliderChange(event){
     switch(newValue) {
         case 1: 
             roundInterval = 3500;
+            updateDifficultyMenuText("easy");
             break;
         case 2:
             roundInterval = 2000;
+            updateDifficultyMenuText("normal");
             break;
         case 3:
             roundInterval =  1500;
+            updateDifficultyMenuText("hard");
             break;
         default: 
             roundInterval = 2000;
+            updateDifficultyMenuText("normal");
     }
 
 }
 
-function getTimingSliderValue(){
-    let slider = document.getElementById("timing-slider");
-    return slider.value;
+function updateDifficultyMenuText(level){
+    let difficultyLevel = document.getElementById("difficulty-level");
+    difficultyLevel.innerText = level;
 }
