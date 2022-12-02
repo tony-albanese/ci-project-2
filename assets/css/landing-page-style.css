@@ -35,13 +35,23 @@ header{
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 72px;
     margin-bottom: 0.5em;
+    color: var(--linen);
+    background-color:rgba(60, 71, 153, 0.6) ;
+    width: auto;
 
 }
 
 body {
     font-family: 'Anton', sans-serif;
+    
+}
+
+#hero {
     background-color: black;
     color: white;
+    background: url("../images/hero.webp") no-repeat center center;
+    height: 600px;
+    overflow: hidden;
 }
