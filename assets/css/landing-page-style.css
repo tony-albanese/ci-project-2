@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+:root {
+    --debug-border-color: red;
+    
+    /* CSS HEX */
+    --international-orange-engineering: rgb(195, 0, 0);
+    --kombu-green: #374434ff;
+    --windsor-tan: #9d5312ff;
+    --camel: #bb9b81ff;
+    --jonquil: #fbcf1eff;
+
+    /* CSS HEX */
+--space-cadet: #1e2245ff;
+--st-patricks-blue: #2a2f71ff;
+--linen: #fcefe6ff;
+--mimi-pink: #f8d0e0ff;
+--firebrick: rgb(186, 26, 38);
+    
+    --game-width: 100%;
+    --button-row-width: 75%;
+
+    --background-color:#fcefe6;
+    --computer-color:#2a2f71ff;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+header{
+   text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 0.5em;
+
+}
+
+body {
+    font-family: 'Anton', sans-serif;
+    background-color: black;
+    color: white;
+}
