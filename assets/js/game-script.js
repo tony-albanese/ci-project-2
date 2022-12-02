@@ -41,6 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set the value in the settings menue
     let roundSettingValue = document.getElementById("round-setting-value");
     roundSettingValue.innerText = slider.value;
+
+
+    //Set the onchange listener for the round timing slider
+    let timingSlider = document.getElementById("timing-slider");
+    timingSlider.addEventListener("change", onTimingSliderChange);
 });
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
@@ -52,10 +57,9 @@ var difficultGame = false;
 var responseMap = createResponseMap();
 var userChoiceDifficultGame = null;
 var computerChoiceDifficultGame = null;
-var difficultGameIntervalId = null;
-var gameOverId = null;
-var initializeId = null;
-var evaluateId = null;
+
+
+var roundInterval = 2000;
 
 function onTileClick(event) {
 
@@ -74,7 +78,8 @@ async function launchDifficultGameSequence() {
 
     for (let i = 0; i < maxRounds; i++) {
         await difficultRoundInitialize();
-        await sleep(2000); //Change this value to manipulate how much time the user has to make a choice.
+        console.log(roundInterval);
+        await sleep(roundInterval); //Change this value to manipulate how much time the user has to make a choice.
         await difficultRoundEvaluate();
         await sleep(2000);
         await isGameOver();
@@ -463,4 +468,29 @@ function getSliderValue() {
     let slider = document.getElementById("rounds-slider");
     return slider.value;
 
+}
+
+function onTimingSliderChange(event){
+    let newValue = parseInt(this.value);
+    console.log(newValue);
+
+    switch(newValue) {
+        case 1: 
+            roundInterval = 3500;
+            break;
+        case 2:
+            roundInterval = 2000;
+            break;
+        case 3:
+            roundInterval =  1500;
+            break;
+        default: 
+            roundInterval = 2000;
+    }
+
+}
+
+function getTimingSliderValue(){
+    let slider = document.getElementById("timing-slider");
+    return slider.value;
 }
