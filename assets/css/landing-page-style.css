@@ -52,6 +52,6 @@ body {
     background-color: black;
     color: white;
     background: url("../images/hero.webp") no-repeat center center;
-    height: 600px;
+    height: 400px;
     overflow: hidden;
 }
