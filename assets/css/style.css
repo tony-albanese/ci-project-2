@@ -163,7 +163,7 @@ game-tile-panel img {
     width: 15%;
     height: 100px;
     font-size: xxx-large;
-    background-color: #8aae5d;
+    background-color: #62803c;
     color: var(--linen);
     grid-column: 1/6;
     grid-row: 4;
