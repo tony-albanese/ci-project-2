@@ -334,6 +334,14 @@ width: 100%;
     top: 0;
     left: 20px;
 }
+
+/* Set the default visibility of the difficulty slider to none
+We want it to be visible only during the difficult game.
+*/
+
+#difficulty-menu-item {
+    display: none;
+}
 /* Media query for a laptop screen */
 @media only screen and (max-width: 1024px) {
 
