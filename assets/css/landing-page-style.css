@@ -58,14 +58,15 @@ body {
 
 #rules {
     background: url("../images/Pierre_ciseaux_feuille_lézard_spock.svg") no-repeat center;
-    height: 600px;
-    overflow: hidden;
+    height: auto;
+    width: 100%;
 }
 
 .rules-overlay {
-    width: 100%;
+    width: 90%;
     height: 100% ;
     background-color: rgba(255, 255, 255, 0.7);
+    margin: auto;
 }
 
 .hero-overlay {
@@ -95,3 +96,26 @@ button {
     text-transform: uppercase;
     color: var(--international-orange-engineering);
 }
+
+h2{
+    letter-spacing: 0.1em;
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
+
+li {
+    font-family: Arial, Helvetica, sans-serif;
+    list-style-type: none;
+    padding-left: 25px;
+    font-size: large;
+    margin-bottom: 4px;
+}
+
+
+.rules-overlay p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
