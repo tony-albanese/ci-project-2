@@ -147,3 +147,32 @@ footer a {
     color: var(--linen);
     font-size: large;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px){
+    h1 {
+        font-size: 58px;
+    }
+
+    .rules-overlay p {
+        font-size: x-large;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    h1 {
+        font-size: 42px;
+    }
+
+    .hero-overlay p {
+        margin-bottom: 2em;
+        font-size: x-large;
+    }
+    button {
+        font-size: xx-large;
+        width: 220px;
+        height: 80px;
+    }
+
+}
