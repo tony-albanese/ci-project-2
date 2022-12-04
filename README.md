@@ -29,6 +29,7 @@ For testing, describe process of installing jest and nodemon
 
 As a user I want to:
 + Play the game on a large screen, tablet, or mobile screen.
++ See all of the game elements should fit on one screen. No scrolling should be required to play the game.
 + Have some control the difficulty of the game
 + Use skill to increase my chances of winning the game
 + Have an intutitive and clear layout
@@ -89,7 +90,60 @@ Modal overlays are also used at the end of a particular round. It is not enough 
 In the analog game, two real players who are playing without strategy are relying on chance to win. The simple version of the computer game is entirely based on chance for a win. The computer picks a tile and the player selects a tile. The player does not see the computer's choice until they themselves have made a choice. Since the computer is not emplying any strategy in a choice, i.e. it is picking at random, then the user's chance of winning is determined randomly. However, the number of outcomes is sifficiently small to ensure the user will win sometimes, but not all time. And conversly, they will lose sometimes, but not all the time. This is key to ensuring a pleasant game experience. However, the game play can be repetative and a bit boring after a while. 
 
 Therefore, I have implemented a challenge version of the game that allows the user to use some skill to increase their chance of winning. In the challenge version of the game, the user is presented with the computer's choice first. They then have a limited amount of time to make their own choice. So that means they must know the rules, perceive the computer's choice, and make the winning selection in time. If they fail to choose in the given time, they automatically lose. To prevent the user from getting too comfortable with the static layout of the image tiles, these are rearranged at the start of the round so the user has to quickly search for the winning tile in a new layout each round.
+
+
 ## Testing
+### Development Testing
+Throughout the development of the project, testing was performed. As elements were added or a CSS style was applied, the behavior was checked in the Firefox Developer Edition web browser as well as through the developer tools on Google Chrome. A local webserver was launched in python and then tested on these two browser.
+
+#### Deploying a Local Server
+To deploy the website locally for debug and design purposes, I opened a terminal and launched a python server by entering:
+
+***
+python3 -m http.server
+***
+A message with the URL of the webserver running on the local machine was then displayed. I copied the link and pasted it into my browser to see the webpages.
+
+#### Development Testing Visual Components
+For both the landing page and the game page, responsiveness was tested using the breakpoints in the Chrome browser's developer tools. For example, when I implemented the row of image tiles to serve as the user choices for selecting rock, paper, sciessors, etc, I openened the dev tools in Chrome by clicking on the three dots in the upper right corner, then selecting More Tools, and then selecting developer tools. From there, I would view the page at different breakbponts by clicking on the bars above the page. If I noticed text that was overlapping, or anything offscreen, then I would make a media query in CSS and adjust the layout to fix the issue.
+
+#### Development Testing Javascript
+
+#### Unit Testing Javascript
+
+### High Level Testing
+High level testing was performed. The accuracy of links and navigation was tested for proper functionality. Website layout responsiveness was tested on the Chrome, Firefox, Opera, and Safari web browsers running on laptops. The website was also tested on a real Android device (Motorola G6+). The testing performed can be found in the following document whose size prevents clear reading here.
+
+
+
+### Validator Testing
+All Pages were run through the [W3C HTML Validator](https://validator.w3.org/) and showed no errors.  
+CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) and showed no errors.  
+
+## Version Control Strategy
+Git was employed in this project and the project code hosted on [GitHub](https://github.com/). I used branches in order to keep the main branch as "pure" as possible. The strategy was to have each branch dedicated to one feature or fix. For example, coding the landing page or coding the structure page. I did not always stick to this strategy. There is a branch called re-design that has far too many commits. Ideally, these would be broken down further so that each branch is self explanatory as to what it is responsble for. Once I was satisfied at a particular stage of a branch, I would navigate to GitHub, click on my repository, select the branch, and create a pull request. GitHub would then check if there are no conflicts and indicate if the branch could be merged into main. (One can choose which branch to merge into.) Once the pull request is created, I navigated down, wrote a comment, and clicked on the green Merge button and the commits would be merged into the main branch.
+
+I tried to keep commits as atomic as possible - focusing only one one element or feature at a time. This was not always the case, but most of the commits are realtively small changes.
+
+### VCS in Visual Studio Code
+To make a commit, I clicked on the branch icon in the sidebar of the ide. There, one could see all the files that had changed since the last commit. To stage commits, I clicked on the plus icon next to the file that I wanted to stage. If I thought changes in different files should be commited together, I added multiple files. Occasionaly, after adding a bug or a breaking change, I would discard my changes by clicking in the left curly arrow icon. I then added a commit message in the textfield at the top of the sidebar which was as descriptive and brief as possible. I then clickd on the Commit button. To push, I clicked on the three dot icon and selected push.
+
+
+## Deployment
+
+### Project Creation
+* The project was started by navigating to the [template] and clicking 'Use this template'. Under Repository name I input ci-project-2. I then navigated to the new [repository](https://github.com/tony-albanese/ci-project-2). 
+
+TODO: Import into VS Code Desktop
+
+### Using Github Pages
+1. Navigate to the GitHub [Repository:](https://github.com/tony-albanese/ci-project-2)
+1. Click the 'Settings' Tab.
+1. Scroll Down to the Git Hub Pages on the left panel.
+1. Select Deploy from a Branch
+1. Select 'main' as the source.
+1. Click the Save button.
+1. Click on the link to go to the live deployed page.
 
 
 
