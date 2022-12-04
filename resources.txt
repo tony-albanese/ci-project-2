@@ -70,3 +70,14 @@ function shuffle(array) {
 
   return array;
 }
+
+background image of universe
+<a href="https://www.freepik.com/free-photo/blue-universe-star-explosion_10292774.htm#query=universe&position=7&from_view=search&track=sph">Image by wirestock</a> on Freepik
+
+
+image for icon COLORS
+<a href="https://commons.wikimedia.org/wiki/File:Pierre_ciseaux_feuille_l%C3%A9zard_spock.svg">Nojhan</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons
+
+
+Image for icon black
+<a href="https://commons.wikimedia.org/wiki/File:Rock_paper_scissors_lizard_spock.svg">Diriector Doc</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons

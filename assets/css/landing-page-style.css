@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+:root {
+    --debug-border-color: red;
+    
+    /* CSS HEX */
+    --international-orange-engineering: rgb(195, 0, 0);
+    --kombu-green: #374434ff;
+    --windsor-tan: #9d5312ff;
+    --camel: #bb9b81ff;
+    --jonquil: #fbcf1eff;
+
+    /* CSS HEX */
+--space-cadet: #1e2245ff;
+--st-patricks-blue: #2a2f71ff;
+--linen: #fcefe6ff;
+--mimi-pink: #f8d0e0ff;
+--firebrick: rgb(186, 26, 38);
+    
+    --game-width: 100%;
+    --button-row-width: 75%;
+
+    --background-color:#fcefe6;
+    --computer-color:#2a2f71ff;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+header{
+   text-align: center;
+}
+
+h1 {
+    font-size: 72px;
+    margin-bottom: 0.5em;
+    color: var(--computer-color);
+    width: auto;
+    letter-spacing: 0.3rem;
+
+}
+
+body {
+    font-family: 'Anton', sans-serif;
+    
+}
+
+#hero {
+    background-color: black;
+    color: black;
+    background: url("../images/hero.webp") no-repeat center center;
+    height: 600px;
+    overflow: hidden;
+}
+
+#rules {
+    background: url("../images/Pierre_ciseaux_feuille_lézard_spock.svg") no-repeat center;
+    height: auto;
+    width: 100%;
+}
+
+.rules-overlay {
+    width: 90%;
+    height: 100% ;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: auto;
+}
+
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    background-color:rgba(255,255,255, 0.75) ;
+   text-align: center;
+}
+
+.hero-overlay p {
+    margin-bottom: 2em;
+    font-size: xx-large;
+}
+
+button {
+    font-size: xxx-large;
+    width: 280px;
+    height: 100px;
+    color:var(--linen);
+    background-color: var(--international-orange-engineering);
+    border-radius: 12px;
+
+}
+
+/* style the spock span */
+.spock {
+    text-transform: uppercase;
+    color: var(--international-orange-engineering);
+}
+
+h2{
+    letter-spacing: 0.1em;
+    font-size: xxx-large;
+    text-align: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+ul {
+    margin-top: 2em;
+}
+li {
+    font-family: Arial, Helvetica, sans-serif;
+    list-style-type: circle;
+    list-style-position: inside;
+    padding-left: 5%;
+    font-size: large;
+    margin-bottom: 1em;
+    font-size: x-large;
+}
+
+
+.rules-overlay p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+}
+
+footer {
+    height: 150px;
+    width: 100%;
+    color: var(--linen);
+    background-color: var(--computer-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    font-size: large;
+    padding-top: 1em;
+    padding-left: 1em;
+    margin-top: 2em;
+
+}
+
+footer h3 {
+    margin-top: 5px;
+    font-size: x-large;
+    padding: 2px;
+}
+
+footer a {
+    color: var(--linen);
+    font-size: large;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px){
+    h1 {
+        font-size: 58px;
+    }
+
+    .rules-overlay p {
+        font-size: x-large;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    h1 {
+        font-size: 42px;
+    }
+
+    .hero-overlay p {
+        margin-bottom: 2em;
+        font-size: x-large;
+    }
+    button {
+        font-size: xx-large;
+        width: 220px;
+        height: 80px;
+    }
+
+}
