@@ -108,11 +108,69 @@ A message with the URL of the webserver running on the local machine was then di
 For both the landing page and the game page, responsiveness was tested using the breakpoints in the Chrome browser's developer tools. For example, when I implemented the row of image tiles to serve as the user choices for selecting rock, paper, sciessors, etc, I openened the dev tools in Chrome by clicking on the three dots in the upper right corner, then selecting More Tools, and then selecting developer tools. From there, I would view the page at different breakbponts by clicking on the bars above the page. If I noticed text that was overlapping, or anything offscreen, then I would make a media query in CSS and adjust the layout to fix the issue.
 
 #### Development Testing Javascript
+Throughout the development of the project, the JavaScript methods were manually tested by either playing a section of the game and checking behavior or by using the console.log() method to check the state of variables throughout the course of the game in order to isolate bugs in code. Since this was a constant process, the examples are too numerous to list. However, I will give a few examples of how the JavaScript was tested for some key components of the game.
 
+__Shuffling the Tiles__
+The shuffling of the tiles was a key feature of the challenge game. In order to do that, all of the children in the <game-tile-element> had to be fetched, copied into an array, and shuffled. The children were fetched using the method:
+    ***
+function shuffleTiles() {
+
+    let tilePanelArray = document.getElementsByTagName("game-tile-panel");
+    let tilePanel = tilePanelArray[0];
+
+    console.log(tilePanel); //Verify I have all of the children of the tile panel.
+    let newTileArray = [];
+
+    let tiles = tilePanel.children;
+    console.log(tiles); //Verify I have all of the children of the tile panel.
+    for (let i = 0; i < tiles.length; i++) {
+        newTileArray.push(tiles[i]);
+
+    }
+    console.log(newTileArray); //Verify the elements are copied into the new array.
+    newTileArray = shuffle(newTileArray);
+    console.log(newTileArray); // Verify the elements are shuffled.
+
+    tilePanel.innerHTML = "";
+
+    for (let tile of newTileArray) {
+        tilePanel.appendChild(tile);
+    }
+
+
+}
+***
+
+The console.log() statements are used to show the states of the variables holding the collection or arrays of elements as the method is executed. For example, I expect to see five elements in newTileArray after the first for loop. Then, after calling the shuffle array method, I should see that they are shuffled by printing them to the console. The final result was checked manually by seeing if the tiles were reshuffled after each round in the challenge game.
+
+__Rounds__
+The variables to keep track of the current round was also tracked using console.log().
+
+***
+async function launchEasyGameSequence() {
+    console.log(currentRound);
+    if (currentRound < maxRounds) {
+        boardReady = true;
+        currentRound++;
+        console.log(currentRound);
+        document.getElementById("round-value").innerText = currentRound;
+        resetImages();
+        showStartRoundDialogue();
+
+    } else {
+
+        let winner = determineGameWinner();
+        alertWinner(winner);
+        boardReady = false;
+    }
+}
+
+***
+In this example, currentRound value was checked before the if statement to ensure that the correct value was being compared and then after the increment operation to ensure it would be incremented. I expected to see the values incremented in both log statements which is what occurred.
 #### Unit Testing Javascript
 
 ### High Level Testing
-High level testing was performed. The accuracy of links and navigation was tested for proper functionality. Website layout responsiveness was tested on the Chrome, Firefox, Opera, and Safari web browsers running on laptops. The website was also tested on a real Android device (Motorola G6+). The testing performed can be found in the following document whose size prevents clear reading here.
+High level testing was performed. The accuracy of navigation was tested for proper functionality. Website layout responsiveness was tested on the Chrome, Firefox, Opera, and Safari web browsers running on laptops. The website was also tested on a real Android device (Motorola G6+). In addtion to testing layout responsiveness, the gameplay was tested. The testing performed can be found in the following document whose size prevents clear reading here.
 
 
 
@@ -146,6 +204,7 @@ TODO: Import into VS Code Desktop
 1. Click on the link to go to the live deployed page.
 
 
+## Features left to implement
 
 ## Credits
 - The images were take from flaticon.com and are used with permission.
