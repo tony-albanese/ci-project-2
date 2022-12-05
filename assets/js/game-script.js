@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let playButton = document.getElementById("play-button");
     playButton.addEventListener("click", launchGame);
 
+    //Add click listener to home button.
+    let homeButton = document.getElementById("home-button");
+    homeButton.addEventListener("click", function () {
+        window.open("index.html", "_self").focus();
+    });
+
     // Add click listener to check button
     let checkBox = document.getElementById("difficulty-level-switch");
     checkBox.addEventListener("click", checkBoxClickCallback);

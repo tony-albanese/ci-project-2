@@ -239,6 +239,17 @@ height: 35px;
     cursor: pointer; /* Cursor on hover */
   }
 
+  #home-button {
+    font-family: 'Anton', sans-serif;;
+    margin-top: 10px;
+    width: 200px;
+    height: 100px;
+    border-radius: 12px;
+    font-size: xx-large;
+    color: white;
+    background-color: var(--international-orange-engineering);
+  }
+
 /* Style the modal dialogue box */
 
 modal-dialogue {
