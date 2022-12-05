@@ -421,6 +421,7 @@ We want it to be visible only during the difficult game.
     h1 {
         grid-area: header-area;
         font-size: large;
+        margin-bottom: 0;
     }
 
     score-board h2 {
@@ -438,9 +439,11 @@ We want it to be visible only during the difficult game.
         grid-area: game-play-panel-area;
     }
     game-tile-panel img {
-        width: 100px;
+        width: 60px;
     }
-    
+    .tile {
+        width: 60%;
+    }
     player-card {
         width: 100px;
         height: 100px;
@@ -448,7 +451,7 @@ We want it to be visible only during the difficult game.
 
     game-tile-panel img {
         box-sizing: border-box;
-        max-width: 75px;
+        max-width: 60px;
         padding: 0.5em;
     }
 
