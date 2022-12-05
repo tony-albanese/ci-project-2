@@ -158,6 +158,10 @@ footer a {
     .rules-overlay p {
         font-size: x-large;
     }
+
+    #hero {
+        height: 800px;
+    }
 }
 
 @media only screen and (max-width: 425px){
