@@ -310,8 +310,8 @@ function createResponseMap() {
     responseMap.set('lizardpaper', 'Lizard eats paper.');
     responseMap.set('paperlizard', 'Lizard eats paper.');
 
-    responseMap.set('paperspock', 'Paper disporoves spock');
-    responseMap.set('spockpaper', 'Paper disporoves spock');
+    responseMap.set('paperspock', 'Paper disproves spock');
+    responseMap.set('spockpaper', 'Paper disproves spock');
 
     responseMap.set('spockrock', 'Spock vaporizes rock.');
     responseMap.set('rockspock', 'Spock vaporizes rock.');
