@@ -209,8 +209,11 @@ console.log(currentRound);
 ***
 In this example, currentRound value was checked before the if statement to ensure that the correct value was being compared and then after the increment operation to ensure it would be incremented. I expected to see the values incremented in both log statements which is what occurred.
 
-#### Unit Testing Javascript
-Ideally, unit testing would be the 
+### Unit Testing Javascript
+Ideally, unit testing would be performed on each method using a library such as jest. Unit testing is beyond the scope of this project and the implementation is not architected in such a way as to lend itself to unit testing. For a simple game such as this, the architecture of having many independant methods works fine.
+
+However, a better architecture would be to have these methods grouped into objects and then use dependency injection and mocking to make the methods more testable. As currently written, the methods reference the DOM and thus unit testing them becomes extremely difficult.
+
 ### High Level Testing
 High level testing was performed. The accuracy of navigation was tested for proper functionality. Website layout responsiveness was tested on the Chrome, Firefox, Opera, and Safari web browsers running on laptops. The website was also tested on a real Android device (Motorola G6+). In addtion to testing layout responsiveness, the gameplay was tested. The testing performed can be found in the following document whose size prevents clear reading here.
 
@@ -219,6 +222,9 @@ High level testing was performed. The accuracy of navigation was tested for prop
 ### Validator Testing
 All Pages were run through the [W3C HTML Validator](https://validator.w3.org/) and showed no errors.  
 CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) and showed no errors.  
+
+### Lighthouse Testing
+A lighthouse report was generated for both the landing page 
 
 ## Version Control Strategy
 Git was employed in this project and the project code hosted on [GitHub](https://github.com/). I used branches in order to keep the main branch as "pure" as possible. The strategy was to have each branch dedicated to one feature or fix. For example, coding the landing page or coding the structure page. I did not always stick to this strategy. There is a branch called re-design that has far too many commits. Ideally, these would be broken down further so that each branch is self explanatory as to what it is responsble for. Once I was satisfied at a particular stage of a branch, I would navigate to GitHub, click on my repository, select the branch, and create a pull request. GitHub would then check if there are no conflicts and indicate if the branch could be merged into main. (One can choose which branch to merge into.) Once the pull request is created, I navigated down, wrote a comment, and clicked on the green Merge button and the commits would be merged into the main branch.
