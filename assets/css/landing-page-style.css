@@ -49,7 +49,7 @@ body {
 }
 
 #hero {
-    background-color: black;
+    background-color: white;
     color: black;
     background: url("../images/hero.webp") no-repeat center center;
     height: 600px;

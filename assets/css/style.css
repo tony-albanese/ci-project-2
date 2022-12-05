@@ -239,6 +239,17 @@ height: 35px;
     cursor: pointer; /* Cursor on hover */
   }
 
+  #home-button {
+    font-family: 'Anton', sans-serif;;
+    margin-top: 10px;
+    width: 200px;
+    height: 100px;
+    border-radius: 12px;
+    font-size: xx-large;
+    color: white;
+    background-color: var(--international-orange-engineering);
+  }
+
 /* Style the modal dialogue box */
 
 modal-dialogue {
@@ -259,13 +270,14 @@ modal-dialogue {
     margin-top: 0%;
     margin-bottom: 5px;
     margin-left: auto;
-    margin-right: auto;
-    width: 60%;
-    padding: 20px;
+    margin-right: auto;    
 }
+
+
 .modal-buttons {
     display: flex;
     justify-content: flex-end;
+    margin-right: 10px;
     
 }
 
@@ -412,43 +424,48 @@ We want it to be visible only during the difficult game.
     }
 
     score-board h2 {
-        font-size: x-large;
+        font-size: large;
     }
 
     player-card h2, computer-card h2 {
-        font-size: x-large;
+        font-size: large;
     }
+
+
 
     game-play-panel {
         flex-direction: column;
         grid-area: game-play-panel-area;
     }
     game-tile-panel img {
-        width: 125px;
+        width: 100px;
     }
     
     player-card {
-        width: 125px;
-        height: 125px;
+        width: 100px;
+        height: 100px;
     }
 
-    
+    .tile {
+        width: 60%;
+    }
+
     computer-card {
-        width: 125px;
-        height: 125px;
+        width: 100px;
+        height: 100px;
     }
 
     score-board {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         border: 2px solid black;
         border-radius: 10px;
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
-    #round {
-        font-size: x-large;
+    #round, #computer-score, #player-score {
+        font-size: large;
     }
 
     game-tile-panel {
@@ -477,6 +494,21 @@ We want it to be visible only during the difficult game.
     label {
         text-align: center;
     }
+
+    #end-game-winner, #modal-message {
+        font-size: medium;
+        place-self: center;
+         padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    modal-dialogue button {
+        width:100px;
+        font-size: medium;
+        height: 60px;
+        width: 70%;
+    }
+
 }
 
 

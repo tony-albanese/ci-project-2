@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A game based on Rock, Paper, Scissors, Lizard, Spock from the Big Bang Theory show.">
+    <meta name="keywords" content="rock paper scissors, spock, big bang theory show">
+
     <title>RPSLS!</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel='shortcut icon' type='image/x-icon' href='assets/images/rpsls_icon_dark.png'>
     <!--Load the custom components before rest of document.-->
     <script src="assets/js/custom-components.js"></script>
 </head>
@@ -17,7 +21,7 @@
     <div id="panel" class="grid-container">
         
     <header class="header-area">
-        <div class = "settings-icon">
+        <div class = "settings-icon" aria-label="open the menu">
             <i id="settings-icon" class="fa-solid fa-sliders"></i>
         </div>
         <h1>Rock, Paper, Scissors, Lizard, <span class="spock">Spock</span>!</h1>
@@ -27,7 +31,6 @@
     
         <game-play-panel class="flex-container game-play-panel-area">
             
-
             <player-card class="grid-container player-area">
                 <h2 id="player-card-header" class="player-color player-area">You</h2>
                 <img id="player-choice-card" src="assets/images/question-player.png" alt="A question mark" class="tile">
@@ -47,7 +50,6 @@
 
         </game-play-panel>
 
-       
         <game-tile-panel class="flex-container tile-area">
         
             <img id="rock-tile" class="game-tile" data-value="rock" src="assets/images/rock.png" alt="rock">
@@ -57,18 +59,15 @@
             <img id="spock-tile" class="game-tile" data-value="spock" src="assets/images/spock.png" alt="spock">
   
         </game-tile-panel>
-
     
-        <button id="play-button" class="button-area"><i class="fa-solid fa-play"></i></button>
-
-
-    
+        <button id="play-button" class="button-area" aria-label="Play the game."><i class="fa-solid fa-play"></i></button>
     </game-area>
 </div>
 
 
 <div id="side-menu" class="side-menu flex-container">
     <settings-panel class="flex-container">
+        
     
         <div class="settings-item slider-container">
             <label for="rounds-slider">Total Rounds <span id="round-setting-value"></span></label>
@@ -84,7 +83,9 @@
             <label for="timing-slider">Speed <span id="difficulty-level">normal</span></label>
             <input type="range" name="timing-slider" value="2" id="timing-slider" min="1" max="3" step="1" class="slider">
         </div>
-        <i id="accept-settings-icon" class="fa-regular fa-circle-check"></i>
+    
+        <i id="accept-settings-icon" class="fa-regular fa-circle-check" aria-label="close the menu"></i>
+        <button id="home-button" aria-label="go to home screen"><i class="fa-solid fa-house"></i> HOME</button>
     
     </settings-panel>
 
@@ -112,8 +113,8 @@
     <div class="modal-content">
         <p id="end-game-winner"></p>
         <div class="modal-buttons">
-            <button id="play-again-button">Play Again</button>
-            <button id="end-game-button">End Game</button>
+            <button id="play-again-button" aria-label="Play again.">Play Again</button>
+            <button id="end-game-button" aria-label="End game.">End Game</button>
         </div>
     </div>
 </modal-dialogue>

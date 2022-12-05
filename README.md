@@ -58,6 +58,9 @@ Below the hero section are two groups of text that explain the rules of the game
 
 To provide some imagry to enhance the rather large block of text, an image showing the five images of rock, paper, scissors, lizard, spock is shown that encapsulates the rules of the game.
 
+### Footer
+The footer section contains the links required to properly cite the sources for the images use. The content of the links is provided by the content creators and is how they wish their work to be credited.
+
 ### Use of graphics
 The question marks are used to cover the choices of the computer and user. They are colored using the variation of blue and red from the tv show.
 

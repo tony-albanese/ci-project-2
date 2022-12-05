@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let playButton = document.getElementById("play-button");
     playButton.addEventListener("click", launchGame);
 
+    //Add click listener to home button.
+    let homeButton = document.getElementById("home-button");
+    homeButton.addEventListener("click", function () {
+        window.open("index.html", "_self").focus();
+    });
+
     // Add click listener to check button
     let checkBox = document.getElementById("difficulty-level-switch");
     checkBox.addEventListener("click", checkBoxClickCallback);
@@ -236,15 +242,6 @@ function resetUserImage(){
     document.getElementById("player-choice-card").setAttribute("src", "assets/images/question-player.png");
 }
 
-function resetGame() {
-    currentRound = 1;
-    boardReady = false;
-    document.getElementById("computer-score").innerText = 0;
-    document.getElementById("player-score").innerText = 0;
-    document.getElementById("round-value").innerText = currentRound;
-    resetImages();
-}
-
 function userWins(choiceString) {
 
     let statement = responseMap.get(choiceString);
@@ -273,6 +270,7 @@ function userLoses(choiceString) {
 function userTies() {
     showDialogue("Tie! Neither of you won.");
 }
+
 
 function resetGame() {
     currentRound = 0;
@@ -312,8 +310,8 @@ function createResponseMap() {
     responseMap.set('lizardpaper', 'Lizard eats paper.');
     responseMap.set('paperlizard', 'Lizard eats paper.');
 
-    responseMap.set('paperspock', 'Paper disporoves spock');
-    responseMap.set('spockpaper', 'Paper disporoves spock');
+    responseMap.set('paperspock', 'Paper disproves spock');
+    responseMap.set('spockpaper', 'Paper disproves spock');
 
     responseMap.set('spockrock', 'Spock vaporizes rock.');
     responseMap.set('rockspock', 'Spock vaporizes rock.');
