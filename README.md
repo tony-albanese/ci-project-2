@@ -326,10 +326,18 @@ CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css
 ### Lighthouse Testing
 A lighthouse report was generated for both the landing page and the game page and for both desktop and mobile. Here are the lighthouse reports:
 
-+ Game Page Desktop ![lighthouse report game desktop](assets/screenshots/game-lighthouse-desktop.png)
-+ Game Page Mobile ![lighthouse report game mobile](assets/screenshots/game-lighthouse-mobile.png)
-+ Landing Page Desktop ![lighthouse report landing page desktop](assets/screenshots/landing-page-lighthouse-desktop.png)
-+ Landing Page Desktop ![lighthouse report landing page mobile](assets/screenshots/landing-page-lighthouse-mobile.png)
++ Game Page Desktop 
+
+![lighthouse report game desktop](assets/screenshots/game-lighthouse-desktop.png)
++ Game Page Mobile 
+
+![lighthouse report game mobile](assets/screenshots/game-lighthouse-mobile.png)
++ Landing Page Desktop 
+
+![lighthouse report landing page desktop](assets/screenshots/landing-page-lighthouse-desktop.png)
++ Landing Page Desktop 
+
+![lighthouse report landing page mobile](assets/screenshots/landing-page-lighthouse-mobile.png)
 
 
 ## Version Control Strategy
