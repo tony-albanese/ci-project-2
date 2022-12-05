@@ -236,15 +236,6 @@ function resetUserImage(){
     document.getElementById("player-choice-card").setAttribute("src", "assets/images/question-player.png");
 }
 
-function resetGame() {
-    currentRound = 1;
-    boardReady = false;
-    document.getElementById("computer-score").innerText = 0;
-    document.getElementById("player-score").innerText = 0;
-    document.getElementById("round-value").innerText = currentRound;
-    resetImages();
-}
-
 function userWins(choiceString) {
 
     let statement = responseMap.get(choiceString);
@@ -273,6 +264,7 @@ function userLoses(choiceString) {
 function userTies() {
     showDialogue("Tie! Neither of you won.");
 }
+
 
 function resetGame() {
     currentRound = 0;
@@ -509,3 +501,5 @@ function setDifficultySliderVisibility() {
         difficultyMenuItem.style.display = "none";
     }
 }
+
+module.exports = createResponseMap;
