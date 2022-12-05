@@ -3,8 +3,6 @@
 README
 
 # Rock Paper Scissors Lizard Spock!
-
-
 ## Introduction
 Rock, Paper, Scissors, Lizard, Spock is a variation on the classic game Rock, Paper, Scissors. In the classic version, each of two players selects one of the three options to "show" their opponent by making a symbol with their fist. A fist for rock, an open hand with fingers together for paper, and two extended fingers (index and middle) for scissors. The winner is determined by the following rules : Scissors cuts paper, paper covers rock, and rock crushes scissors. The problem is that with only three choices, there are a limited number of outcomes and thus many games end up with a tie.
 
@@ -133,6 +131,24 @@ If the user checks on challenge mode check, a slider appears in which the user c
 
 > Use skill to increase my chances of winning the game
 
+## Technology Used ###
+* HTML
+    * The site uses HTML5 to structure the page elements.
+* CSS
+    * The site uses pure CSS3 to style the HTML elements. No libraries were used.
+* JavaScript
+    * The interactivity was written in vanilla JavaScript.
+* [GIMP](https://www.gimp.org/)
+    * GNU Image Manipulator Program. This powerful image editor was used to crop, scale, and adjust opacity of images.
+* [Google Fonts](https://fonts.google.com/knowledge)
+    * Three fonts, Heebo, Quicksand, and Nunito Sans were used in the site. They are available from Google Fonts.
+* [Fontawesome](https://fontawesome.com/)
+    * The icons on the landing page in the exam cards were from Fontawesome. I used the freely available font kit.
+* [Coolers.co](https://coolors.co/)
+    * I used their palette generator to generate the colors from the hero image using their free tool.
+* [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/)
+    * Using Firefox Developer Edition from Mozilla helped me diagnose layout and CSS problems as well as test differnt screen sizes. 
+
 
 ## Testing
 ### Development Testing
@@ -246,8 +262,6 @@ To make a commit, I clicked on the branch icon in the sidebar of the ide. There,
 ### Project Creation
 * The project was started by navigating to the [template] and clicking 'Use this template'. Under Repository name I input ci-project-2. I then navigated to the new [repository](https://github.com/tony-albanese/ci-project-2). 
 
-TODO: Import into VS Code Desktop
-
 ### Using Github Pages
 1. Navigate to the GitHub [Repository:](https://github.com/tony-albanese/ci-project-2)
 1. Click the 'Settings' Tab.
@@ -257,12 +271,12 @@ TODO: Import into VS Code Desktop
 1. Click the Save button.
 1. Click on the link to go to the live deployed page.
 
-
 ## Features left to implement
+
 
 ## Credits
 - The images were take from flaticon.com and are used with permission.
 - I used a switch block and case statements to determine the winner of each round. The switch was based on a unique string made from the user and computer tile choices. The inspiration for this method came from the YouTuber Ania Kubow on her Channel "Code with Ania Kubow" in which she shows how to code a rock paper scissors game. LINK TO VIDEO
 - Most programming languages have a built in methods for shuffling the contents of an array. JavaScript does not. The method I used to shuffle the contents of the tile card array was taken from stackoverflow and can be found here:
 - The initial styling for the overlay came from W3Schools. I took the CSS they used and just tweaked a few things for my own design.
-- initial styling for the slider came from w3 schools
+- Initial styling for the slider came from w3 schools
