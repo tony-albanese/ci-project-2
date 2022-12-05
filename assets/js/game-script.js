@@ -501,5 +501,3 @@ function setDifficultySliderVisibility() {
         difficultyMenuItem.style.display = "none";
     }
 }
-
-module.exports = createResponseMap;
