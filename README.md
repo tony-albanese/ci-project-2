@@ -224,7 +224,13 @@ All Pages were run through the [W3C HTML Validator](https://validator.w3.org/) a
 CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) and showed no errors.  
 
 ### Lighthouse Testing
-A lighthouse report was generated for both the landing page 
+A lighthouse report was generated for both the landing page and the game page and for both desktop and mobile. Here are the lighthouse reports:
+
++ Game Page Desktop ![lighthouse report game desktop](assets/screenshots/game-lighthouse-desktop.png)
++ Game Page Mobile ![lighthouse report game mobile](assets/screenshots/game-lighthouse-mobile.png)
++ Landing Page Desktop ![lighthouse report landing page desktop](assets/screenshots/landing-page-lighthouse-desktop.png)
++ Landing Page Desktop ![lighthouse report landing page mobile](assets/screenshots/landing-page-lighthouse-mobile.png)
+
 
 ## Version Control Strategy
 Git was employed in this project and the project code hosted on [GitHub](https://github.com/). I used branches in order to keep the main branch as "pure" as possible. The strategy was to have each branch dedicated to one feature or fix. For example, coding the landing page or coding the structure page. I did not always stick to this strategy. There is a branch called re-design that has far too many commits. Ideally, these would be broken down further so that each branch is self explanatory as to what it is responsble for. Once I was satisfied at a particular stage of a branch, I would navigate to GitHub, click on my repository, select the branch, and create a pull request. GitHub would then check if there are no conflicts and indicate if the branch could be merged into main. (One can choose which branch to merge into.) Once the pull request is created, I navigated down, wrote a comment, and clicked on the green Merge button and the commits would be merged into the main branch.
