@@ -1,3 +1,4 @@
+/*
 {
     "compilerOptions": {
       "target": "es5",
@@ -6,3 +7,6 @@
       "sourceMap": true,
     }
   } , "assets/js/custom-components.ts", "assets/js/custom-components.js", "assets/js/custom-components.js", "assets/js/custom-components.js", "assets/js/custom-components.js", "assets/js/custom-components.js"
+
+
+  */
