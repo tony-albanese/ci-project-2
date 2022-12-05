@@ -262,6 +262,8 @@ modal-dialogue {
     margin-right: auto;
     width: 60%;
     padding: 20px;
+    
+    
 }
 .modal-buttons {
     display: flex;
@@ -481,6 +483,17 @@ We want it to be visible only during the difficult game.
 
     label {
         text-align: center;
+    }
+
+    #end-game-winner, #modal-message {
+        font-size: medium;
+    }
+
+    modal-dialogue button {
+        width:100px;
+        font-size: medium;
+        height: 60px;
+   
     }
 }
 
