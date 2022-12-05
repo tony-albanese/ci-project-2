@@ -259,12 +259,10 @@ modal-dialogue {
     margin-top: 0%;
     margin-bottom: 5px;
     margin-left: auto;
-    margin-right: auto;
-    /* width: 60%; */
-    /* padding: 20px; */
-    
-    
+    margin-right: auto;    
 }
+
+
 .modal-buttons {
     display: flex;
     justify-content: flex-end;
@@ -489,7 +487,8 @@ We want it to be visible only during the difficult game.
     #end-game-winner, #modal-message {
         font-size: medium;
         place-self: center;
-        
+         padding-left: 0px;
+        padding-right: 0px;
     }
 
     modal-dialogue button {
@@ -498,6 +497,7 @@ We want it to be visible only during the difficult game.
         height: 60px;
         width: 70%;
     }
+
 }
 
 
