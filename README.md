@@ -131,9 +131,62 @@ If the user checks on challenge mode check, a slider appears in which the user c
 
 > Use skill to increase my chances of winning the game
 
-## Technology Used ###
+## Technology Used ##
 * HTML
-    * The site uses HTML5 to structure the page elements.
+    * The site uses HTML5 to structure the page elements. Custom elements were employed to increase the readability of the HTML and to make the semantics clearer.
+    * To implement the html tag, a class was created which extended the HTMLDivElement (since I wanted my custom elements to behave as divs)
+    * Then the element tag was registered to this class in javascript.
+    * I wrote the custom classes in TypeScript and transpiled them to JavaScript
+
+    Here is an example of the custom tags:
+    ***
+    <game-play-panel class="flex-container game-play-panel-area">
+            
+            <player-card class="grid-container player-area">
+                <h2 id="player-card-header" class="player-color player-area">You</h2>
+                <img id="player-choice-card" src="assets/images/question-player.png" alt="A question mark" class="tile">
+            </player-card>
+
+            <score-board class="grid-container score-area">
+                <h2>Score</h2>
+                <p id="player-score" class="player-color">0</p>
+                <p id="computer-score" class="computer-color">0</p>
+                <p id="round">Round <span id="round-value">--</span></p>
+            </score-board>
+
+            <computer-card class="grid-container computer-area">
+                <h2 id="computer-card-header" class="computer-color">Shelbot</h2>
+                <img id="computer-choice-card" src="assets/images/question-computer.png" alt="A question mark." class="tile">
+            </computer-card>
+
+        </game-play-panel>
+    ***
+    Here is how they are registered in TypeScript
+
+    ***
+class PlayerCard extends HTMLDivElement {
+    constructor(){
+        super();
+    }
+}
+
+class ScoreBoard extends HTMLDivElement {
+    constructor(){
+        super();
+    }
+}
+
+class ComputerCard extends HTMLDivElement {
+    constructor(){
+        super();
+    }
+}
+
+customElements.define("player-card", PlayerCard, { extends: "div" });
+customElements.define("score-board", ScoreBoard, { extends: "div" });
+customElements.define("computer-card", ComputerCard, { extends: "div" });
+***
+
 * CSS
     * The site uses pure CSS3 to style the HTML elements. No libraries were used.
 * JavaScript
