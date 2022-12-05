@@ -412,43 +412,48 @@ We want it to be visible only during the difficult game.
     }
 
     score-board h2 {
-        font-size: x-large;
+        font-size: large;
     }
 
     player-card h2, computer-card h2 {
-        font-size: x-large;
+        font-size: large;
     }
+
+
 
     game-play-panel {
         flex-direction: column;
         grid-area: game-play-panel-area;
     }
     game-tile-panel img {
-        width: 125px;
+        width: 100px;
     }
     
     player-card {
-        width: 125px;
-        height: 125px;
+        width: 100px;
+        height: 100px;
     }
 
-    
+    .tile {
+        width: 60%;
+    }
+
     computer-card {
-        width: 125px;
-        height: 125px;
+        width: 100px;
+        height: 100px;
     }
 
     score-board {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         border: 2px solid black;
         border-radius: 10px;
         margin-top: 10px;
         margin-bottom: 10px;
     }
 
-    #round {
-        font-size: x-large;
+    #round, #computer-score, #player-score {
+        font-size: large;
     }
 
     game-tile-panel {
