@@ -111,14 +111,27 @@ I chose overalys to cover the entire screen with an overlay to prevent interacti
 > Have the option to play again or quit
 
 Modal overlays are also used at the end of a particular round. It is not enough to know simply who one. The user must also know why they won or lost. Thus, a message is displayed next to the notification of a win or loss stating the game rule. For example, if the user selected rock and the computer Spock, then the overlay showing the following would appear: "You lose. Spock vaporizes rock." Or, if the user won, they would be told why. For example f the user chose paper and the computer chose rock, the message: "You won. Paper covers rock." would appear in the overlay.
-![message overlay](assets/screenshots/message-overlay.png)
-> Know where I stand as the game progresses
+![message overlay](assets/screenshots/message.png)
+> Know where I stand as the game progresses  
+> Understand why I have won or lost a round
 
 ### Challenge Game
 In the analog game, two real players who are playing without strategy are relying on chance to win. The simple version of the computer game is entirely based on chance for a win. The computer picks a tile and the player selects a tile. The player does not see the computer's choice until they themselves have made a choice. Since the computer is not emplying any strategy in a choice, i.e. it is picking at random, then the user's chance of winning is determined randomly. However, the number of outcomes is sifficiently small to ensure the user will win sometimes, but not all time. And conversly, they will lose sometimes, but not all the time. This is key to ensuring a pleasant game experience. However, the game play can be repetative and a bit boring after a while. 
 
 Therefore, I have implemented a challenge version of the game that allows the user to use some skill to increase their chance of winning. In the challenge version of the game, the user is presented with the computer's choice first. They then have a limited amount of time to make their own choice. So that means they must know the rules, perceive the computer's choice, and make the winning selection in time. If they fail to choose in the given time, they automatically lose. To prevent the user from getting too comfortable with the static layout of the image tiles, these are rearranged at the start of the round so the user has to quickly search for the winning tile in a new layout each round.
 
+> Use skill to increase my chances of winning the game
+
+### Side menu
+The side menu can be accessed by clicking on the settings icon in the upper left corner of the screen. Upon clicking this icon, a side menu is shown. Here, the user can choose the number of rounds in a game by manipulating the slider. The user can close the menu by clicking on the check button or navigate back to the home screen by clicking on the home button.
+![side menu default](assets/screenshots/side-menu-default.png)
+> Have some control the difficulty of the game
+
+If the user checks on challenge mode check, a slider appears in which the user can choose the difficulty of the challenge game. On easy, the timing between the rounds is increased and on hard the time is decreased so the user has to make the choice faster.
+
+![side menu challenge](assets/screenshots/side-menu-challenge.png)
+
+> Use skill to increase my chances of winning the game
 
 
 ## Testing
@@ -177,7 +190,7 @@ The variables to keep track of the current round was also tracked using console.
 
 ***
 async function launchEasyGameSequence() {
-    console.log(currentRound);
+console.log(currentRound);
     if (currentRound < maxRounds) {
         boardReady = true;
         currentRound++;
@@ -193,15 +206,15 @@ async function launchEasyGameSequence() {
         boardReady = false;
     }
 }
-
 ***
 In this example, currentRound value was checked before the if statement to ensure that the correct value was being compared and then after the increment operation to ensure it would be incremented. I expected to see the values incremented in both log statements which is what occurred.
-#### Unit Testing Javascript
 
+#### Unit Testing Javascript
+Ideally, unit testing would be the 
 ### High Level Testing
 High level testing was performed. The accuracy of navigation was tested for proper functionality. Website layout responsiveness was tested on the Chrome, Firefox, Opera, and Safari web browsers running on laptops. The website was also tested on a real Android device (Motorola G6+). In addtion to testing layout responsiveness, the gameplay was tested. The testing performed can be found in the following document whose size prevents clear reading here.
 
-
+[High level testing table.](assets/screenshots/test-cases.pdf)
 
 ### Validator Testing
 All Pages were run through the [W3C HTML Validator](https://validator.w3.org/) and showed no errors.  
