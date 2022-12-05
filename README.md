@@ -194,8 +194,6 @@ function shuffleTiles() {
     for (let tile of newTileArray) {
         tilePanel.appendChild(tile);
     }
-
-
 }
 ***
 
@@ -272,7 +270,10 @@ To make a commit, I clicked on the branch icon in the sidebar of the ide. There,
 1. Click on the link to go to the live deployed page.
 
 ## Features left to implement
++ A visual timer would help the user to see how much time they have left.
++ Having keyboard entry for the choices would also be a good feature for users that are not comfortable using a mouse (or trackpad)
 
+The biggest feature to implement would actually be done under the hood. Each part of the game could be broken into classes and their data and methods encapsulated. This would allow for the implementatiion of an publish/subscribe pattern. For example, the scoreboard could be a class as would the game data state. The scoreboard could observe the score and upon change, update the UI. The game state object would emit the new score to its observers whenever the score was updated. Such an architecture is easier to test, debug, and allows for the separation of concerns among app components.
 
 ## Credits
 - The images were take from flaticon.com and are used with permission.
