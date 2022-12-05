@@ -446,8 +446,10 @@ We want it to be visible only during the difficult game.
         height: 100px;
     }
 
-    .tile {
-        width: 60%;
+    game-tile-panel img {
+        box-sizing: border-box;
+        max-width: 75px;
+        padding: 0.5em;
     }
 
     computer-card {
