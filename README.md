@@ -371,8 +371,10 @@ To make a commit, I clicked on the branch icon in the sidebar of the ide. There,
 The biggest feature to implement would actually be done under the hood. Each part of the game could be broken into classes and their data and methods encapsulated. This would allow for the implementation of a publish/subscribe pattern. For example, the scoreboard could be a class as would the game data state. The scoreboard could observe the score and upon change, update the UI. The game state object would emit the new score to its observers whenever the score was updated. Such an architecture is easier to test, debug, and allows for the separation of concerns among app components.
 
 ## Credits
-- The images were take from flaticon.com and are used with permission.
+- The images on the game page were taken were take from flaticon.com and are used with permission.
+- The background images on the landing page were taken from [wikimedia commons](https://commons.wikimedia.org/wiki/Main_Page) and are cited on the page. 
 - I used a switch block and case statements to determine the winner of each round. The switch was based on a unique string made from the user and computer tile choices. The inspiration for this method came from the YouTuber Ania Kubow on her Channel "Code with Ania Kubow" in which she shows how to code a rock paper scissors game. [3 ways to code Rock Paper Scissors in JavaScript (Beginner to Intermediate to Advanced!)](https://www.youtube.com/watch?v=RwFeg0cEZvQ)
-- Most programming languages have a built in methods for shuffling the contents of an array. JavaScript does not. The method I used to shuffle the contents of the tile card array was taken from stackoverflow and can be found here:
-- The initial styling for the overlay came from W3Schools. I took the CSS they used and just tweaked a few things for my own design.
-- Initial styling for the slider came from w3 schools
+- Most programming languages have a built in methods for shuffling the contents of an array. JavaScript does not. The method I used to shuffle the contents of the tile card array was taken from [stackoverflow](https://stackoverflow.com/) and can be found here: [Randomize a JavaScript array](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
+- The initial styling for the overlay came from W3Schools. I took the CSS they used and just tweaked a few settings for my own design.
+- Initial styling for the slider came from w3 schools.
+- The code for the sleep() method was taken from this [blog](https://blog.devgenius.io/how-to-make-javascript-sleep-or-wait-d95d33c99909)
