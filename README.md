@@ -173,31 +173,31 @@ If the user checks on challenge mode check, a slider appears in which the user c
     * I wrote the custom classes in TypeScript and transpiled them to JavaScript
 
     Here is an example of the custom tags:
-    ***
+    ```
     <game-play-panel class="flex-container game-play-panel-area">
             
-            <player-card class="grid-container player-area">
-                <h2 id="player-card-header" class="player-color player-area">You</h2>
-                <img id="player-choice-card" src="assets/images/question-player.png" alt="A question mark" class="tile">
-            </player-card>
+        <player-card class="grid-container player-area">
+            <h2 id="player-card-header" class="player-color player-area">You</h2>
+            <img id="player-choice-card" src="assets/images/question-player.png" alt="A question mark" class="tile">
+        </player-card>
 
-            <score-board class="grid-container score-area">
-                <h2>Score</h2>
-                <p id="player-score" class="player-color">0</p>
-                <p id="computer-score" class="computer-color">0</p>
-                <p id="round">Round <span id="round-value">--</span></p>
-            </score-board>
+        <score-board class="grid-container score-area">
+            <h2>Score</h2>
+            <p id="player-score" class="player-color">0</p>
+            <p id="computer-score" class="computer-color">0</p>
+            <p id="round">Round <span id="round-value">--</span></p>
+        </score-board>
 
-            <computer-card class="grid-container computer-area">
-                <h2 id="computer-card-header" class="computer-color">Shelbot</h2>
-                <img id="computer-choice-card" src="assets/images/question-computer.png" alt="A question mark." class="tile">
-            </computer-card>
+        <computer-card class="grid-container computer-area">
+            <h2 id="computer-card-header" class="computer-color">Shelbot</h2>
+            <img id="computer-choice-card" src="assets/images/question-computer.png" alt="A question mark." class="tile">
+        </computer-card>
 
-        </game-play-panel>
-    ***
-    Here is how they are registered in TypeScript
+    </game-play-panel>
+    ```
+Here is how they are registered in TypeScript
 
-    ***
+```
 class PlayerCard extends HTMLDivElement {
     constructor(){
         super();
@@ -219,7 +219,7 @@ class ComputerCard extends HTMLDivElement {
 customElements.define("player-card", PlayerCard, { extends: "div" });
 customElements.define("score-board", ScoreBoard, { extends: "div" });
 customElements.define("computer-card", ComputerCard, { extends: "div" });
-***
+```
 
 * CSS
     * The site uses pure CSS3 to style the HTML elements. No libraries were used.
@@ -244,9 +244,9 @@ Throughout the development of the project, testing was performed. As elements we
 #### Deploying a Local Server
 To deploy the website locally for debug and design purposes, I opened a terminal and launched a python server by entering:
 
-***
+```
 python3 -m http.server
-***
+```
 A message with the URL of the webserver running on the local machine was then displayed. I copied the link and pasted it into my browser to see the webpages.
 
 #### Development Testing Visual Components
@@ -257,7 +257,8 @@ Throughout the development of the project, the JavaScript methods were manually 
 
 __Shuffling the Tiles__
 The shuffling of the tiles was a key feature of the challenge game. In order to do that, all of the children in the <game-tile-element> had to be fetched, copied into an array, and shuffled. The children were fetched using the method:
-    ***
+
+```
 function shuffleTiles() {
 
     let tilePanelArray = document.getElementsByTagName("game-tile-panel");
@@ -282,14 +283,14 @@ function shuffleTiles() {
         tilePanel.appendChild(tile);
     }
 }
-***
+```
 
 The console.log() statements are used to show the states of the variables holding the collection or arrays of elements as the method is executed. For example, I expect to see five elements in newTileArray after the first for loop. Then, after calling the shuffle array method, I should see that they are shuffled by printing them to the console. The final result was checked manually by seeing if the tiles were reshuffled after each round in the challenge game.
 
 __Rounds__
 The variables to keep track of the current round was also tracked using console.log().
 
-***
+```
 async function launchEasyGameSequence() {
 console.log(currentRound);
     if (currentRound < maxRounds) {
@@ -307,7 +308,7 @@ console.log(currentRound);
         boardReady = false;
     }
 }
-***
+```
 In this example, currentRound value was checked before the if statement to ensure that the correct value was being compared and then after the increment operation to ensure it would be incremented. I expected to see the values incremented in both log statements which is what occurred.
 
 ### Unit Testing Javascript
