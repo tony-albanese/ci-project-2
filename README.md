@@ -375,6 +375,6 @@ The biggest feature to implement would actually be done under the hood. Each par
 - The background images on the landing page were taken from [wikimedia commons](https://commons.wikimedia.org/wiki/Main_Page) and are cited on the page. 
 - I used a switch block and case statements to determine the winner of each round. The switch was based on a unique string made from the user and computer tile choices. The inspiration for this method came from the YouTuber Ania Kubow on her Channel "Code with Ania Kubow" in which she shows how to code a rock paper scissors game. [3 ways to code Rock Paper Scissors in JavaScript (Beginner to Intermediate to Advanced!)](https://www.youtube.com/watch?v=RwFeg0cEZvQ)
 - Most programming languages have a built in methods for shuffling the contents of an array. JavaScript does not. The method I used to shuffle the contents of the tile card array was taken from [stackoverflow](https://stackoverflow.com/) and can be found here: [Randomize a JavaScript array](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
-- The initial styling for the overlay came from W3Schools. I took the CSS they used and just tweaked a few settings for my own design.
-- Initial styling for the slider came from w3 schools.
+- The initial styling for the overlay came from [W3Schools How To Create a Modal Box](https://www.w3schools.com/howto/howto_css_modals.asp). I took the CSS they used and just tweaked a few settings for my own design.
+- Initial styling for the slider came [W3Schools How TO - Range Sliders](https://www.w3schools.com/howto/howto_js_rangeslider.asp).
 - The code for the sleep() method was taken from this [blog](https://blog.devgenius.io/how-to-make-javascript-sleep-or-wait-d95d33c99909)
