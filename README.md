@@ -342,7 +342,7 @@ A lighthouse report was generated for both the landing page and the game page an
 
 
 ## Version Control Strategy
-Git was employed in this project and the project code hosted on [GitHub](https://github.com/). I used branches in order to keep the main branch as "pure" as possible. The strategy was to have each branch dedicated to one feature or fix. For example, coding the landing page or coding the structure page. I did not always stick to this strategy. There is a branch called re-design that has far too many commits. Ideally, these would be broken down further so that each branch is self explanatory as to what it is responsble for. Once I was satisfied at a particular stage of a branch, I would navigate to GitHub, click on my repository, select the branch, and create a pull request. GitHub would then check if there are no conflicts and indicate if the branch could be merged into main. (One can choose which branch to merge into.) Once the pull request is created, I navigated down, wrote a comment, and clicked on the green Merge button and the commits would be merged into the main branch.
+Git was employed in this project and the project code hosted on [GitHub](https://github.com/). I used branches in order to keep the main branch as "pure" as possible. The strategy was to have each branch dedicated to one feature or fix.  Once I was satisfied at a particular stage of a branch, I would navigate to GitHub, click on my repository, select the branch, and create a pull request. GitHub would then check if there are no conflicts and indicate if the branch could be merged into main. (One can choose which branch to merge into.) Once the pull request is created, I navigated down, wrote a comment, and clicked on the green Merge button and the commits would be merged into the main branch.
 
 I tried to keep commits as atomic as possible - focusing only one one element or feature at a time. This was not always the case, but most of the commits are realtively small changes.
 
@@ -353,10 +353,10 @@ To make a commit, I clicked on the branch icon in the sidebar of the ide. There,
 ## Deployment
 
 ### Project Creation
-* The project was started by navigating to the [template] and clicking 'Use this template'. Under Repository name I input ci-project-2. I then navigated to the new [repository](https://github.com/tony-albanese/ci-project-2). 
+* The project was started by navigating to the [template] and clicking 'Use this template'. Under Repository name I input ci-project-2. I then navigated to the new [repository for project 2](https://github.com/tony-albanese/ci-project-2). 
 
 ### Using Github Pages
-1. Navigate to the GitHub [Repository:](https://github.com/tony-albanese/ci-project-2)
+1. Navigate to the GitHub [Repository: Project 2](https://github.com/tony-albanese/ci-project-2)
 1. Click the 'Settings' Tab.
 1. Scroll Down to the Git Hub Pages on the left panel.
 1. Select Deploy from a Branch
@@ -368,7 +368,7 @@ To make a commit, I clicked on the branch icon in the sidebar of the ide. There,
 + A visual timer would help the user to see how much time they have left.
 + Having keyboard entry for the choices would also be a good feature for users that are not comfortable using a mouse (or trackpad)
 
-The biggest feature to implement would actually be done under the hood. Each part of the game could be broken into classes and their data and methods encapsulated. This would allow for the implementatiion of an publish/subscribe pattern. For example, the scoreboard could be a class as would the game data state. The scoreboard could observe the score and upon change, update the UI. The game state object would emit the new score to its observers whenever the score was updated. Such an architecture is easier to test, debug, and allows for the separation of concerns among app components.
+The biggest feature to implement would actually be done under the hood. Each part of the game could be broken into classes and their data and methods encapsulated. This would allow for the implementation of a publish/subscribe pattern. For example, the scoreboard could be a class as would the game data state. The scoreboard could observe the score and upon change, update the UI. The game state object would emit the new score to its observers whenever the score was updated. Such an architecture is easier to test, debug, and allows for the separation of concerns among app components.
 
 ## Credits
 - The images were take from flaticon.com and are used with permission.
