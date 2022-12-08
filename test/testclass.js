@@ -39,8 +39,6 @@ class TestMethods {
 
         return responseMap;
     }
-
-
 }
 
 module.exports = TestMethods;
