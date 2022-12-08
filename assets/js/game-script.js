@@ -287,7 +287,7 @@ function resetImages() {
     document.getElementById("computer-choice-card").setAttribute("src", "assets/images/question-computer.png");
 }
 
-function resetUserImage(){
+function resetUserImage() {
     document.getElementById("player-choice-card").setAttribute("src", "assets/images/question-player.png");
 }
 
@@ -559,11 +559,11 @@ function getSliderValue() {
  * is set (which determines the time between rounds), and the difficulty level is displayed in the side 
  * menu. 
  */
-function onTimingSliderChange(event){
+function onTimingSliderChange(event) {
     let newValue = parseInt(this.value);
- 
-    switch(newValue) {
-        case 1: 
+
+    switch (newValue) {
+        case 1:
             roundInterval = 3500;
             updateDifficultyMenuText("easy");
             break;
@@ -572,16 +572,16 @@ function onTimingSliderChange(event){
             updateDifficultyMenuText("normal");
             break;
         case 3:
-            roundInterval =  1500;
+            roundInterval = 1500;
             updateDifficultyMenuText("hard");
             break;
-        default: 
+        default:
             roundInterval = 2000;
             updateDifficultyMenuText("normal");
     }
 }
 
-function updateDifficultyMenuText(level){
+function updateDifficultyMenuText(level) {
     let difficultyLevel = document.getElementById("difficulty-level");
     difficultyLevel.innerText = level;
 }
@@ -589,7 +589,7 @@ function updateDifficultyMenuText(level){
 //This method displays or hides the difficulty menu based on whether or not a difficult game is played.
 function setDifficultySliderVisibility() {
     let difficultyMenuItem = document.getElementById("difficulty-menu-item");
-    if(difficultGame) {
+    if (difficultGame) {
         difficultyMenuItem.style.display = "block";
     } else {
         difficultyMenuItem.style.display = "none";
