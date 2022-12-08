@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 :root {
     --debug-border-color: red;
-    
+
     /* CSS HEX */
     --international-orange-engineering: rgb(195, 0, 0);
     --kombu-green: #374434ff;
@@ -10,18 +11,18 @@
     --jonquil: #fbcf1eff;
 
     /* CSS HEX */
---space-cadet: #1e2245ff;
---st-patricks-blue: #2a2f71ff;
---linen: #fcefe6ff;
---mimi-pink: #f8d0e0ff;
---firebrick: rgb(186, 26, 38);
-    
+    --space-cadet: #1e2245ff;
+    --st-patricks-blue: #2a2f71ff;
+    --linen: #fcefe6ff;
+    --mimi-pink: #f8d0e0ff;
+    --firebrick: rgb(186, 26, 38);
+
     --game-width: 100%;
     --button-row-width: 75%;
 
-    --background-color:#fcefe6;
-    --computer-color:#2a2f71ff;
-    
+    --background-color: #fcefe6;
+    --computer-color: #2a2f71ff;
+
 }
 
 * {
@@ -30,8 +31,8 @@
     border: none;
 }
 
-header{
-   text-align: center;
+header {
+    text-align: center;
 }
 
 h1 {
@@ -45,7 +46,7 @@ h1 {
 
 body {
     font-family: 'Anton', sans-serif;
-    
+
 }
 
 #hero {
@@ -64,7 +65,7 @@ body {
 
 .rules-overlay {
     width: 90%;
-    height: 100% ;
+    height: 100%;
     background-color: rgba(255, 255, 255, 0.7);
     margin: auto;
 }
@@ -72,8 +73,8 @@ body {
 .hero-overlay {
     width: 100%;
     height: 100%;
-    background-color:rgba(255,255,255, 0.75) ;
-   text-align: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    text-align: center;
 }
 
 .hero-overlay p {
@@ -85,7 +86,7 @@ button {
     font-size: xxx-large;
     width: 280px;
     height: 100px;
-    color:var(--linen);
+    color: var(--linen);
     background-color: var(--international-orange-engineering);
     border-radius: 12px;
 
@@ -97,16 +98,18 @@ button {
     color: var(--international-orange-engineering);
 }
 
-h2{
+h2 {
     letter-spacing: 0.1em;
     font-size: xxx-large;
     text-align: center;
     margin-bottom: 1em;
     margin-top: 1em;
 }
+
 ul {
     margin-top: 2em;
 }
+
 li {
     font-family: Arial, Helvetica, sans-serif;
     list-style-type: circle;
@@ -116,7 +119,6 @@ li {
     margin-bottom: 1em;
     font-size: x-large;
 }
-
 
 .rules-overlay p {
     font-family: Arial, Helvetica, sans-serif;
@@ -150,7 +152,7 @@ footer a {
 
 /* Media Queries */
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
     h1 {
         font-size: 58px;
     }
@@ -164,7 +166,7 @@ footer a {
     }
 }
 
-@media only screen and (max-width: 425px){
+@media only screen and (max-width: 425px) {
     h1 {
         font-size: 42px;
     }
@@ -173,6 +175,7 @@ footer a {
         margin-bottom: 2em;
         font-size: x-large;
     }
+
     button {
         font-size: xx-large;
         width: 220px;
