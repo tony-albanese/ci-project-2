@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 :root {
     --debug-border-color: red;
-    
+
     /* CSS HEX */
     --international-orange-engineering: rgb(195, 0, 0);
     --kombu-green: #374434ff;
@@ -10,18 +11,18 @@
     --jonquil: #fbcf1eff;
 
     /* CSS HEX */
---space-cadet: #1e2245ff;
---st-patricks-blue: #2a2f71ff;
---linen: #fcefe6ff;
---mimi-pink: #f8d0e0ff;
---firebrick: rgb(186, 26, 38);
-    
+    --space-cadet: #1e2245ff;
+    --st-patricks-blue: #2a2f71ff;
+    --linen: #fcefe6ff;
+    --mimi-pink: #f8d0e0ff;
+    --firebrick: rgb(186, 26, 38);
+
     --game-width: 100%;
     --button-row-width: 75%;
 
-    --background-color:#fcefe6;
-    --computer-color:#2a2f71ff;
-    
+    --background-color: #fcefe6;
+    --computer-color: #2a2f71ff;
+
 }
 
 * {
@@ -30,8 +31,8 @@
     border: none;
 }
 
-header{
-   text-align: center;
+header {
+    text-align: center;
 }
 
 h1 {
@@ -72,41 +73,42 @@ game-area {
 }
 
 game-play-panel {
-   
     width: var(--game-width);
     height: auto;
     justify-content: center;
     align-items: flex-end;
     grid-row: 2;
     grid-column: 1/6;
-   
+
 }
 
 /* Style the cards that show the players and computers choices. */
-player-card, computer-card {
+player-card,
+computer-card {
 
-width: 300px;
-height: 300px;
-justify-items: center;
+    width: 300px;
+    height: 300px;
+    justify-items: center;
 
 }
 
-player-card h2, computer-card h2 {
+player-card h2,
+computer-card h2 {
     font-size: xxx-large;
 }
 
 .player-color {
-color: var(--international-orange-engineering);
+    color: var(--international-orange-engineering);
 }
 
 .computer-color {
-color: var(--computer-color);
+    color: var(--computer-color);
 }
 
 /* Style the scoreboard */
 
 score-board {
- 
+
     width: 300px;
     height: 200px;
     justify-items: center;
@@ -114,10 +116,10 @@ score-board {
 
 score-board h2 {
 
-font-size: xxx-large;
-grid-column: 1/3;
-grid-row: 1;
-align-self: end;
+    font-size: xxx-large;
+    grid-column: 1/3;
+    grid-row: 1;
+    align-self: end;
 }
 
 score-board p {
@@ -125,14 +127,15 @@ score-board p {
     align-self: center;
     font-size: xxx-large;
 }
+
 #player-score {
-grid-column: 1;
-grid-row: 2;
+    grid-column: 1;
+    grid-row: 2;
 }
 
-#computer-score{
-grid-column: 2;
-grid-row: 2;
+#computer-score {
+    grid-column: 2;
+    grid-row: 2;
 }
 
 #round {
@@ -141,8 +144,8 @@ grid-row: 2;
 }
 
 /* Style the game-tile-panel */
-game-tile-panel{
-   
+game-tile-panel {
+
     width: var(--game-width);
     justify-content: center;
     padding: 1em;
@@ -170,9 +173,9 @@ game-tile-panel img {
     border-radius: 12px;
 }
 
-.fa-play{
+.fa-play {
     color: var(--linen);
-    
+
 }
 
 
@@ -180,7 +183,7 @@ settings-panel {
     font-size: xx-large;
     align-items: center;
     flex-direction: column;
-    
+
 }
 
 #accept-settings-icon {
@@ -192,55 +195,74 @@ settings-panel {
     padding-left: 10px;
     box-sizing: border-box;
     margin-bottom: 50px;
-  
+
 }
+
 /* Style the switch */
 #difficulty-level-switch {
-margin-left: 1em;
-width: 35px;
-height: 35px;
+    margin-left: 1em;
+    width: 35px;
+    height: 35px;
 }
 
 /* Style the slider */
 
-  /* The slider itself */
-  .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;
+    /* Override default CSS styles */
     appearance: none;
-    width: 270px; /* Full-width */
-    height: 25px; /* Specified height */
-    background:var(--background-color); /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    width: 270px;
+    /* Full-width */
+    height: 25px;
+    /* Specified height */
+    background: var(--background-color);
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    opacity: 0.8;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
     transition: opacity .2s;
 
-  }
-  
-  /* Mouse-over effects */
-  .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-  
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: var(--international-orange-engineering); /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: var(--international-orange-engineering); /* Green background */
-    cursor: pointer; /* Cursor on hover */
-  }
+}
 
-  #home-button {
-    font-family: 'Anton', sans-serif;;
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1;
+    /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: var(--international-orange-engineering);
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: var(--international-orange-engineering);
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+#home-button {
+    font-family: 'Anton', sans-serif;
+    ;
     margin-top: 10px;
     width: 200px;
     height: 100px;
@@ -248,7 +270,7 @@ height: 35px;
     font-size: xx-large;
     color: white;
     background-color: var(--international-orange-engineering);
-  }
+}
 
 /* Style the modal dialogue box */
 
@@ -258,19 +280,25 @@ modal-dialogue {
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 
 }
+
 .modal-content {
     display: grid;
     margin-top: 0%;
     margin-bottom: 5px;
     margin-left: auto;
-    margin-right: auto;    
+    margin-right: auto;
 }
 
 
@@ -278,11 +306,11 @@ modal-dialogue {
     display: flex;
     justify-content: flex-end;
     margin-right: 10px;
-    
+
 }
 
 modal-dialogue button {
-    width:250px;
+    width: 250px;
     font-size: xx-large;
     height: 100px;
     margin-left: 10px;
@@ -299,20 +327,21 @@ modal-dialogue button {
     background-color: var(--firebrick);
 }
 
-#modal-message, #end-game-winner {
+#modal-message,
+#end-game-winner {
     font-size: xxx-large;
     background-color: #fefefe;
-  margin: 20px auto; /* 15% from the top and centered */
-  margin-top: 15%;
-  margin-bottom: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  border: 1px solid #888;
-width: 100%;
-  text-align: center;
+    margin: 20px auto;
+    /* 15% from the top and centered */
+    margin-top: 15%;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    text-align: center;
 }
-
 
 /* style the spock span */
 .spock {
@@ -321,24 +350,31 @@ width: 100%;
 }
 
 
-
 /* Style the elements for the side menu */
 /* The basic settings taken from W3 Schools */
 .side-menu {
-    height: 100%; /* 100% Full-height */
-    width: 0px; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    height: 100%;
+    /* 100% Full-height */
+    width: 0px;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
     left: 0;
     background-color: rgb(175, 177, 209);
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.3s;
+    /* 0.5 second transition effect to slide in the sidenav */
     font-size: xxx-large;
     flex-direction: column;
     justify-content: space-around;
-  }
+}
 
 /* Style the settings icon */
 
@@ -354,6 +390,7 @@ width: 100%;
     min-width: 300px;
     padding-left: 10px;
 }
+
 /* Set the default visibility of the difficulty slider to none
 We want it to be visible only during the difficult game.
 */
@@ -361,6 +398,7 @@ We want it to be visible only during the difficult game.
 #difficulty-menu-item {
     display: none;
 }
+
 /* Media query for a laptop screen */
 @media only screen and (max-width: 1024px) {
 
@@ -373,10 +411,9 @@ We want it to be visible only during the difficult game.
     }
 }
 
-
 /* Media query for a mobile screen */
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
 
     h1 {
         font-size: 48px;
@@ -393,7 +430,7 @@ We want it to be visible only during the difficult game.
     #play-button {
         height: 100px;
         width: 100px;
-        
+
     }
 }
 
@@ -404,13 +441,14 @@ We want it to be visible only during the difficult game.
         font-size: large;
         left: 5px;
     }
+
     game-area {
-        grid-template-areas: 
-        "header-area header-area"
-        "game-play-panel-area game-play-panel-area"
-        "tile-area tile-area" 
-        "button-area button-area" 
-        
+        grid-template-areas:
+            "header-area header-area"
+            "game-play-panel-area game-play-panel-area"
+            "tile-area tile-area"
+            "button-area button-area"
+
         ;
     }
 
@@ -427,20 +465,20 @@ We want it to be visible only during the difficult game.
         font-size: large;
     }
 
-    player-card h2, computer-card h2 {
+    player-card h2,
+    computer-card h2 {
         font-size: large;
     }
-
-
 
     game-play-panel {
         flex-direction: column;
         grid-area: game-play-panel-area;
     }
+
     game-tile-panel img {
         width: 100px;
     }
-    
+
     player-card {
         width: 100px;
         height: 100px;
@@ -464,7 +502,9 @@ We want it to be visible only during the difficult game.
         margin-bottom: 10px;
     }
 
-    #round, #computer-score, #player-score {
+    #round,
+    #computer-score,
+    #player-score {
         font-size: large;
     }
 
@@ -479,31 +519,32 @@ We want it to be visible only during the difficult game.
         height: 50px;
         font-size: medium;
     }
-    
-    settings-panel{
+
+    settings-panel {
         font-size: x-large;
-        justify-content:space-around;
+        justify-content: space-around;
     }
 
-    #difficulty-level-switch {  
+    #difficulty-level-switch {
         width: 25px;
         height: 25px;
         margin-right: 1em;
-        }
+    }
 
     label {
         text-align: center;
     }
 
-    #end-game-winner, #modal-message {
+    #end-game-winner,
+    #modal-message {
         font-size: medium;
         place-self: center;
-         padding-left: 0px;
+        padding-left: 0px;
         padding-right: 0px;
     }
 
     modal-dialogue button {
-        width:100px;
+        width: 100px;
         font-size: medium;
         height: 60px;
         width: 70%;
@@ -511,26 +552,26 @@ We want it to be visible only during the difficult game.
 
 }
 
-
-@media only screen and (max-width: 320px){
+@media only screen and (max-width: 320px) {
     h1 {
         margin-bottom: 2px;
     }
+
     game-tile-panel {
         padding: 0;
     }
-  
+
     game-tile-panel img {
         width: 105px;
         padding: 1em;
     }
-    
+
     player-card {
         width: 125px;
         height: 125px;
     }
 
-    
+
     computer-card {
         width: 125px;
         height: 125px;
@@ -543,7 +584,8 @@ We want it to be visible only during the difficult game.
         margin-bottom: 10px;
     }
 
-    #player-choice-card, #computer-choice-card {
+    #player-choice-card,
+    #computer-choice-card {
         width: 75px;
     }
 }
