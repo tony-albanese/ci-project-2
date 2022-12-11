@@ -81,3 +81,8 @@ image for icon COLORS
 
 Image for icon black
 <a href="https://commons.wikimedia.org/wiki/File:Rock_paper_scissors_lizard_spock.svg">Diriector Doc</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+
+
+credit for 404 page image
+<a href="https://www.freepik.com/free-vector/error-404-concept-landing-page_4660894.htm#query=error&position=4&from_view=search&track=sph">Image by pikisuperstar</a> on Freepik
+
