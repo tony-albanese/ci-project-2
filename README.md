@@ -316,6 +316,111 @@ Ideally, unit testing would be performed on each method using a library such as 
 
 However, a better architecture would be to have these methods grouped into classes and then use dependency injection and mocking to make the methods more testable. As currently written, the methods reference the DOM and thus unit testing them becomes extremely difficult.
 
+An approximation of unit testing was done for the hashmap. The function was copied into a class on a separate script as a static method. The method was then called with each possible combination of input and the output logged to the console to be manually checked.
+
+```
+/**
+ * This class contains a copy of the method used to return a hashmap off all the possible responses based on the 
+ * the possible combinations of keys. 
+ */
+class TestMethods {
+
+    static createResponseMap() {
+        let responseMap = new Map();
+
+        responseMap.set('scissorspaper', 'Scissors cuts paper.');
+        responseMap.set('paperscissors', 'Scissors cuts paper.');
+
+        responseMap.set('paperrock', 'Paper covers rock.');
+        responseMap.set('rockpaper', 'Paper covers rock.');
+
+        responseMap.set('rocklizard', 'Rock crushes lizard.');
+        responseMap.set('lizardrock', 'Rock crushes lizard.');
+
+        responseMap.set('lizardspock', 'Lizard poisons Spock.');
+        responseMap.set('spocklizard', 'Lizard poisons Spock.');
+
+        responseMap.set('spockscissors', 'Spock smashes scissors');
+        responseMap.set('scissorsspock', 'Spock smashes scissors');
+
+        responseMap.set('scissorslizard', 'Scissors decapitates lizard.');
+        responseMap.set('lizardscissors', 'Scissors decapitates lizard.');
+
+        responseMap.set('lizardpaper', 'Lizard eats paper.');
+        responseMap.set('paperlizard', 'Lizard eats paper.');
+
+        responseMap.set('paperspock', 'Paper disporoves spock');
+        responseMap.set('spockpaper', 'Paper disporoves spock');
+
+        responseMap.set('spockrock', 'Spock vaporizes rock.');
+        responseMap.set('rockspock', 'Spock vaporizes rock.');
+
+        responseMap.set('rockscissors', 'Rock crushes scissors.');
+        responseMap.set('scissorsrock', 'Rock crushes scissors.');
+
+        return responseMap;
+    }
+}
+
+module.exports = TestMethods;
+
+/**
+ * This method ensures that the map returns the correct string for every key by printing the string
+ * to the console.
+ */
+function testMap() {
+    let map = TestMethods.createResponseMap();
+    console.log(map.get("scissorspaper"));
+    console.log(map.get("paperscissors"));
+    console.log(map.get("paperrock"));
+    console.log(map.get("rockpaper"));
+    console.log(map.get("rocklizard"));
+    console.log(map.get("lizardrock"));
+    console.log(map.get("lizardspock"));
+    console.log(map.get("spocklizard"));
+    console.log(map.get("spockscissors"));
+    console.log(map.get("scissorsspock"));
+    console.log(map.get("scissorslizard"));
+    console.log(map.get("lizardscissors"));
+    console.log(map.get("lizardpaper"));
+    console.log(map.get("paperlizard"));
+    console.log(map.get("paperspock"));
+    console.log(map.get("spockpaper"));
+    console.log(map.get("spockrock"));
+    console.log(map.get("rockspock"));
+    console.log(map.get("rockscissors"));
+    console.log(map.get("scissorsrock"));
+}
+
+testMap();
+
+```
+Here is the output:
+```
+[Running] node "/home/tony/CodeInstitute/ci-project-2/test/testclass.js"
+Scissors cuts paper.
+Scissors cuts paper.
+Paper covers rock.
+Paper covers rock.
+Rock crushes lizard.
+Rock crushes lizard.
+Lizard poisons Spock.
+Lizard poisons Spock.
+Spock smashes scissors
+Spock smashes scissors
+Scissors decapitates lizard.
+Scissors decapitates lizard.
+Lizard eats paper.
+Lizard eats paper.
+Paper disporoves spock
+Paper disporoves spock
+Spock vaporizes rock.
+Spock vaporizes rock.
+Rock crushes scissors.
+Rock crushes scissors.
+
+```
+
 ### High Level Testing
 High level testing was performed. The accuracy of navigation was tested for proper functionality. Website layout responsiveness was tested on the Chrome, Firefox, Opera, and Safari web browsers running on laptops. In addtion to testing layout responsiveness, the gameplay was tested. The testing performed can be found in the following document whose size prevents clear reading here.
 
