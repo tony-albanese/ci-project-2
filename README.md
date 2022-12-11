@@ -17,6 +17,7 @@ README
     + [Modal Overlays](#modal-overlays)
     + [Challenge Game](#challenge-game)
     + [Side menu](#side-menu)
+    + [404 Error](#404-warning)
   * [Technology Used](#technology-used)
   * [Testing](#testing)
     + [Development Testing](#development-testing)
@@ -164,6 +165,10 @@ If the user checks on challenge mode check, a slider appears in which the user c
 
 > Use skill to increase my chances of winning the game  
 > Have an intutitive and clear layout
+
+### 404 Warning 
+Should the user enter an invalid URL on the site, the following warning page is displayed along with a link to the home screen.
+![404 error page](assets/screenshots/404-screenshot.png)
 
 ## Technology Used ##
 * HTML
